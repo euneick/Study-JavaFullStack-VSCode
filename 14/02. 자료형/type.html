@@ -85,13 +85,15 @@
 
         // 명시적 형 변환 - 강제 형 변환
         let strA = "10";
-        let strB = "10개";
+        let strB = "16개";
 
         let numA = Number(strA);        // Number() 함수 : 매개변수를 받아 숫자형으로 강제로 형 변환하는 함수
         let numB = Number(strB);
 
         console.log(numA);
         console.log(numB);
+
+        console.log(parseInt(strB, 10));    // 문자열이 숫자로 시작하지만 뒤에 문자가 있는 경우 앞의 숫자만 추출하여 숫자형으로 변환하는 함수
 
         let num = 2022;
         let str = String(num);          // String() 함수 : 매개변수를 받아 문자형으로 강제로 형 변환하는 함수
