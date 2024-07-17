@@ -26,6 +26,7 @@
         console.log(1 * "hello");       // NaN : Not a Number의 약자로, 해당 값이 있기에 안전한 수학연산이 가능함. (단, 정상적인 연산은 아니다.)
 
 
+        console.log("================================================================");
         // 문자형 ========================================================================================================================
         console.log(typeof 'hello');    // JavaScript에선 큰 따옴표 " 와 작은 따옴표 ' 및 백틱 ` 기호 모두 문자열로 처리함
 
@@ -54,6 +55,7 @@
         console.log(introduce);
 
 
+        console.log("================================================================");
         // 논리형 ========================================================================================================================
         console.log(100 == 10);
         console.log(100 != 10);
@@ -61,14 +63,64 @@
         console.log(100 > 10);
 
 
+        console.log("================================================================");
         // undefined형 , null형 ==========================================================================================================
         /*
             undefined   - 변수에 값이 할당되지 않은 상태
             null        - 변수에 할당된 값이 유효하지 않은 상태
         */
+        let undefinedVar;
+        console.log(undefinedVar);
+        let nullVar = null;
+        console.log(nullVar);
+        // 다른 언어와 달리 에러 코드와 함께 프로그램이 종료되지 않고, 값을 정상적으로 출력하고 다음을 진행한다.
 
 
+        console.log("================================================================");
+        // 자료형 변환 ===================================================================================================================
+        // 묵시적 형 변환 - 자동 형 변환
+        let numberCast = 10;
+        let stringCast = "20";
+        console.log(numberCast + stringCast);
 
+        // 명시적 형 변환 - 강제 형 변환
+        let strA = "10";
+        let strB = "10개";
+
+        let numA = Number(strA);        // Number() 함수 : 매개변수를 받아 숫자형으로 강제로 형 변환하는 함수
+        let numB = Number(strB);
+
+        console.log(numA);
+        console.log(numB);
+
+        let num = 2022;
+        let str = String(num);          // String() 함수 : 매개변수를 받아 문자형으로 강제로 형 변환하는 함수
+
+        console.log(str);
+
+        let varA;
+        let varB = null;
+        let varC = true;
+
+        let _strA = String(varA);
+        let _strB = String(varB);
+        let _strC = String(varC);
+
+        console.log(_strA);
+        console.log(_strB);
+        console.log(_strC);
+
+        varA = "하이";
+        varB = 0;
+        varC = "";
+
+        let boolA = Boolean(varA);
+        let boolB = Boolean(varB);
+        let boolC = Boolean(varC);
+
+        console.log(boolA);
+        console.log(boolB);
+        console.log(boolC);
     </script>
 </body>
 
