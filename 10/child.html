@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            자식 선택자
+                기호 : >
+                    - 하위 선택자와는 다르게 자식 요소만 선택
+                    - 문법
+                        상위요소>최종선택할자식요소 { }        
+        */
+        section>p {
+            /* section 요소의 자식요소들 중 p 요소들 모두 선택 */
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>예약 방법 & 사용요금</h1>
+        <p>아직 온라인 예약 신청이 ......</p>           <!-- section 요소의 자식 요소 -->
+        <div>
+            <p>가족실(2~4인) : 60,000원/일</p>          <!-- section 요소의 자손 요소 -->
+            <p>도미토리(4인공용) : 25,000원/일</p>      <!-- section 요소의 자손 요소 -->
+        </div>
+    </section>
+</body>
+
+</html>
