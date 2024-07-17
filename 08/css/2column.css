@@ -1,0 +1,40 @@
+* {
+    /* 브라우저 기본 마진 리셋 */
+    margin: 0;
+    /* 브라우저 기본 패딩 리셋 */
+    padding: 0;
+    /* 테두리까지 포함해서 박스모델 너비를 계산하게끔 설정 */
+    box-sizing: border-box;
+}
+
+#container {
+    width: 1200px;
+    margin: 20px auto;          /* 좌우 마진을 20px로 설정하고 내용을 가운데 오도록 설정 */
+}
+
+#header {
+    width: 100%;
+    height: 120px;
+    background-color: #acacac;
+}
+
+#sidebar {
+    width: 300px;
+    height: 600px;
+    background-color: #e9e9e9;
+    float: left;
+}
+
+#contents {
+    width: 900px;
+    height: 600px;
+    background-color: #f7f7f7;
+    float: left;
+}
+
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color: #888888;
+    clear: left;
+}

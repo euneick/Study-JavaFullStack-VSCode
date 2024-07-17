@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin 속성으로 여백 설정하기</title>
+
+    <style>
+        div {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+        }
+
+        #margin1 { margin: 50px; }                      /* 네 방향 모두 한번에 지정 */
+        #margin2 { margin: 30px 50px; }                 /* 위아래 30px, 좌우 50px */
+        #margin3 { margin: 30px 20px 50px; }            /* 위 30px, 좌우 20px, 아래 50px */
+        #margin4 { margin: 30px 50px 30px 50px; }       /* 위 우측 아래 좌측 순으로 각각 지정 */
+        #margin5 {
+             margin-right: 20px;                        /* 우측 마진을 직접 지정 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="margin1"></div>
+    <div id="margin2"></div>
+    <div id="margin3"></div>
+    <div id="margin4"></div>
+    <div id="margin5"></div>
+</body>
+
+</html>

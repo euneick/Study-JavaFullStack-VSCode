@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>여러 데이터 나열하기</h1>
+    <form action="a.jsp" method="get">
+        <!-- 드롭다운 목록 -->
+        <label for="prod1">상품 선택</label>
+        <select name="prod" id="prod1">
+            <option value="s_3">선물용 3kg</option>
+            <option value="s_5">선물용 5kg</option>
+            <option value="f_3">가정용 3kg          <!-- HTML5 버전부터는 닫는태그 생략 가능 -->
+            <option value="f_5">가정용 5kg
+        </select>
+
+        <hr>
+
+        <!-- 데이터 목록 -->
+        <!-- text필드의 list 속성값과 datalist태그의 id 속성값이 일치해야 데이터목록이 연결됨 -->
+        <!-- datalist의 option에서 선택한 value 속성값은 연결된 text필드의 value속성값으로 설정됨 -->
+        <label for="prod2">포장여부</label>
+        <input type="text" id="prod2" list="pack" name="p" value="">
+        <datalist id="pack">
+            <option value="package">선물포장</option>
+            <option value="unpackage">선물포장안함</option>
+        </datalist>
+
+        <button type="submit">주문하기</button>
+        <button type="reset">취소하기</button>
+    </form>
+</body>
+
+</html>

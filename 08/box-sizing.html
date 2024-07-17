@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            margin-bottom: 20px;
+        }
+
+        .box1 {
+            box-sizing: border-box;     /* 테두리까지 포함해서 너비 지정 */
+            width: 200px;       /* 모든 영역 너비 설정 */
+            height: 100px;      /* 모든 영역 높이 설정 */
+            border: 10px solid #ccc;
+            padding: 20px;
+        }
+
+        .box2 {
+            box-sizing: content-box;    /* 컨텐츠 영역만 너비 지정, 기본값 */
+            width: 200px;       /* 컨텐츠 영역 너비 설정 */
+            height: 100px;      /* 컨텐츠 영역 높이 설정 */
+            border: 10px solid blue;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+
+</html>

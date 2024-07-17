@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input tag</title>
+</head>
+
+<body>
+    <!-- 
+        <form></form> 태그
+            - 입력한 정보를 서버페이지로 전달을 요청하는 태그
+            1. action 속성
+                form 태그 사이에 입력태그들에 의해 입력받은 데이터들을 전달할 서버페이지의 주소를 작성하는 속성
+            2. method 속성
+                입력 받은 데이터들을 get 또는 post 전송방식 중 하나를 설정하는 속성
+    -->
+    <form action="main.jsp" method="get">
+        text<br>
+        <input type="text"><br>
+        password<br>
+        <input type="password"><br>
+        tel<br>
+        <input type="tel"><br>
+        url<br>
+        <input type="url"><br>
+        search<br>
+        <input type="search"><br>
+        email<br>
+        <input type="email"><br>
+        checkbox<br>
+        <input type="checkbox">A <input type="checkbox">B<br>
+        radio<br>   <!-- radio 타입의 경우 name속성 값을 같게 하면 그룹으로 묶임 -->
+        <input type="radio" name="gender">남
+        <input type="radio" name="gender">여<br>
+        file<br>
+        <input type="file"> 첨부할 파일 선택<br>
+        button<br>
+        <input type="button" value="버튼이름"><br>
+        image button <br> <!-- image button 은 submit의 기능을 한다 -->
+        <input type="image" src="../04/images/link.png"><br>
+        hidden <br>
+        <input type="hidden" name="email" value="hidden data"><br>
+        data <br>
+        <input type="date"><br>
+        datetime-local <br>
+        <input type="datetime-local"><br>
+        month <br>
+        <input type="month"><br>
+        week <br>
+        <input type="week"><br>
+        time <br>
+        <input type="time"><br>
+        range <br>
+        <input type="range"><br>
+        color <br>
+        <input type="color"><br>
+        submit <br>     <!-- 서버페이지로 데이터를 전송하는 버튼, form 태그 안에서만 작성이 가능 -->
+        <input type="submit" value="submit 버튼 이름"><br>
+        reset <br>  <!-- 현재 form 태그 안에 있는 input 태그들의 값을 초기화 하는 버튼, form 태그 안에서만 작성이 가능 -->
+        <input type="reset" value="reset 버튼 이름">
+    </form>
+</body>
+
+</html>

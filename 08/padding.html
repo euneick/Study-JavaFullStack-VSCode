@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다양하게 패딩 지정하기</title>
+
+    <style>
+        h1 {
+            display: inline-block;
+            border: 1px solid black;
+        }
+
+        #padding1 { padding: 20px 30px 40px 50px; }     /* 상 우 하 좌 순으로 값 지정 */
+        #padding2 { padding: 20px 30px; }               /* 상하 좌우 순으로 값 지정 */
+        #padding3 { padding: 20px; }                    /* 네 방향 모두 지정 */
+    </style>
+</head>
+
+<body>
+    <h1>레드향</h1>
+    <h1 id="padding1">레드향</h1>
+    <h1 id="padding2">레드향</h1>
+    <h1 id="padding3">레드향</h1>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        <input> 태그
+            - 다양한 입력할 수 있는 디자인을 보여주며, 사용자가 입력한 정보를 받을 때 사용하는 태그
+            - 문법
+                <input 속성="값" ...>
+            - type 속성
+                input 태그에 다양한 입력 디자인을 설정하는 속성
+                1. type="text"
+                    주로 아이디나 이름, 주소 등 한 줄짜리 일반 텍스트를 입력할 때 사용
+                2. type="password"
+                    화면에 노출되지 않게 사용자의 비밀번호를 입력할 때 사용
+                    ※ text 필드와 password 필드에 주로 사용하는 속성들
+                        - size
+                            text 필드와 password 필드에 입력한 데이터가 몇 글자를 보이게 할 것인지 지정하는 속성
+                            <input type="text" size="10">   ← 화면에 10글자만 보이게 설정
+                        - value
+                            text 필드가 화면에 표시 될 때 처음 값을 지정하는 속성
+                            password 필드에는 사용하지 않음
+                        - maxlength
+                            text 필드와 password 필드에 입력할 수 있는 최대 문자 수를 지정하는 속성
+                3. type="checkbox"
+                    여러 항목 중에서 1개 이상의 원하는 항목을 선택할 때 사용하는 속성
+                4. type="radio"
+                    여러 항목 중에서 1개의 항목을 선택할 때 사용하는 속성
+                    ※ checkbox 와 radio 필드에 주로 사용하는 속성들
+                        - value
+                            선택한 checkbox나 radio를 서버페이지에 알려 줄 때 넘겨 줄 값을 지정하는 속성
+                            영문이거나 숫자여야만 하며 필수 속성임
+                        - checked
+                            checkbox 또는 radio 속성의 여러 항목 중에서 기본으로 선택해 놓고 싶은 항목에 사용하는 속성
+                            속성값은 따로 없음
+    -->
+    <form action="main.jsp" method="get">
+        <fieldset>
+            <label>아이디 : <input type="text" id="user_id" size="10" value="admin" maxlength="5"></label>
+            <label>비밀번호 : <input type="password" id="user_pw" size="10"></label>
+            <input type="submit" value="로그인">
+        </fieldset>
+        <fieldset>
+            <legend>상품 선택</legend>
+            <p><b>주문할 상품을 선택해 주세요.</b></p>
+            <ul>
+                <li>
+                    <label>
+                        <input type="checkbox" value="s_3">선물용 3kg
+                        <input type="number">개
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" value="s_5">선물용 5kg
+                        <input type="number">개
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" value="f_3">가정용 3kg
+                        <input type="number">개
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" value="f_5">가정용 5kg
+                        <input type="number">개
+                    </label>
+                </li>
+            </ul>
+            <p><b>포장 선택</b></p>
+            <label><input type="radio" name="gift" value="yes">선물 포장</label>
+            <label><input type="radio" name="gift" value="no">선물 포장 안 함</label>
+        </fieldset>
+        <input type="submit">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 15px;
+
+            /*
+                display 속성
+                    - HTML요소의 박스모델을 정의하고 요소가 페이지에 어떻게 배치 될지 결정하는 속성
+                    - block
+                        요소를 block 레벨 요소로 설정
+                        항상 새로운 줄에서 시작하며, 가로 전체를 차지
+                    - inline
+                        요소를 inline 레벨 요소로 설정
+                        컨텐츠 영역의 내용만큼 공간을 차지
+                    - inline-block
+                        요소를 inline 레벨 요소로 설정하지만, block 레벨 요소처럼 너비와 높이를 지정 할 수 있음
+                    - none
+                        요소를 화면에 표시하지 않음
+                    - flex
+                        요소를 flex 컨테이너로 설정하여 자식요소들을 flex 아이템으로 배치
+                    - grid
+                        요소를 grid 컨테이너로 설정하여 자식요소들을 grid 아이템으로 배치
+                    - table
+                        요소를 테이블 컨테이너로 설정
+                    - table-row, table-cell, table-column .... 여러 종류가 있다
+            */
+            display: inline-block;      /* 해당 레벨 요소를 inline-block 레벨 요소로 변경 */
+
+            /*
+                border-radius 속성
+                    - 요소의 모서리 영역을 둥글게 설정
+                    - 문법
+                        border-radius: left-top right-top right-bottom left-bottom;
+            */
+            border-radius: 20px;    /* 네 방향 모두 20px로 일괄 지정 */
+        }
+
+        /* 
+            박스에 그림자 효과 넣기
+                - 문법
+                    box-shadow: +x +y 흐림정도 번짐정도 색상;
+        */
+
+        .box1 {
+            box-shadow: 2px -2px 5px 0px;
+        }
+
+        .box2 {
+            box-shadow: 5px 5px 15px 5px blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+
+</html>

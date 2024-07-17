@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        날짜 입력을 나타내는 type 속성
+            웹 디자인 화면에 달력을 넣기 위한 태그
+            - 문법
+                <input type="date" | "month" | "week">
+            - date
+                달력에서 날짜를 선택할 수 있음
+                필드에 "yyyy-mm-dd" 형식으로 표시됨
+            - month
+                달력에서 월을 선택할 수 있음
+                필드에 "yyyy-mm" 형식으로 표시됨
+            - week
+                달력에서 주를 선택할 수 있음
+                1월 첫째 주를 기준으로 몇 번빼 주인지 표시 됨
+
+        시간 입력을 나타내는 type 속성
+            - 문법
+                <input type="time" | "datetime" | "datetime-local">
+            - time
+                시간을 지정
+            - datetime 또는 datetime-local
+                날짜와 시간을 함께 지정
+
+        날짜, 시간 입력 필드도 숫자 입력 필드와 마찬가지로 min, max, step, value 속성으로 값을 컨트롤 할 수 있음
+
+    -->
+    <form action="">
+        <h1>날짜 지정하기</h1>
+        <input type="date">
+        <input type="month">
+        <input type="week">
+
+        <hr>
+
+        <h1>시간 지정하기</h1>
+        <input type="time">
+        <input type="datetime-local">
+
+        <hr>
+
+        <h1>범위 제한하기</h1>
+        <input type="date" min="2024-02-01" max="2024-02-15" value="2024-02-14">
+        <input type="time" value="">
+    </form>
+</body>
+
+</html>

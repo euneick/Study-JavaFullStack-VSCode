@@ -1,0 +1,25 @@
+#container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+table, th, td {
+    border: 1px solid #222222;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+}
+
+h1 {
+    color: rgba(136, 2, 2, 0.774);
+}
+
+h2 {
+    color: #2727b4;
+}
+
+li {
+    color: green;
+}

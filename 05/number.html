@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        number 속성
+            - 텍스트 필드로 직접 입력할 수 있지만 스핀박스로 숫자를 선택할 수 있음
+        range 속성
+            - 슬라이드 막대를 움직여 숫자를 입력할 수 있음
+
+        숫자 입력 필드에 사용하는 속성
+            - min
+                숫자의 최솟값 지정, 기본값 0
+            - max
+                숫자의 최댓값 지정, 기본값 100
+            - step
+                숫자 간격을 지정, 기본값 1
+            - value
+                필드에 표시할 초기값
+    -->
+    <form action="main.jsp" method="get">
+        <fieldset>
+            <label>아이디 : <input type="text" id="user_id" size="10" value="admin" maxlength="5"></label>
+            <label>비밀번호 : <input type="password" id="user_pw" size="10"></label>
+            <input type="submit" value="로그인">
+        </fieldset>
+        <fieldset>
+            <legend>상품 선택</legend>
+            <p><b>주문할 상품을 선택해 주세요.</b></p>
+            <ul>
+                <li>
+                    <label>
+                        <input type="checkbox" value="s_3">선물용 3kg
+                        <input type="number" min="0" max="5">개 (최대 5개)
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" value="s_5">선물용 5kg
+                        <input type="number" min="0" max="3" value="1">개 (최대 3개)
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" value="f_3">가정용 3kg
+                        <input type="range" min="0" max="5">개 (최대 5개)
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox" value="f_5">가정용 5kg
+                        <input type="range" min="0" max="3" value="1">개 (최대 3걔)
+                    </label>
+                </li>
+            </ul>
+            <p><b>포장 선택</b></p>
+            <label><input type="radio" name="gift" value="yes">선물 포장</label>
+            <label><input type="radio" name="gift" value="no">선물 포장 안 함</label>
+        </fieldset>
+        <input type="submit">
+    </form>
+</body>
+
+</html>

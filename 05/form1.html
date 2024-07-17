@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        <form></form> 태그
+            - 입력한 정보를 서버페이지로 전달을 요청하는 태그
+            1. action 속성
+                form 태그 내부의 input태그들에 의해 입력받은 데이터들을 전달할 서버페이지의 주소를 작성하는 속성
+            2. method 속성
+                사용자가 입력한 내용을 서버페이지로 어떻게 넘겨줄 것인지 지정하는 속성
+                method 속성 값을 작성하지 않으면 get 전송방식이 default
+                속성값은 get 또는 post
+                - get
+                    256 ~ 4096 byte까지만 전달 가능
+                    주소표시줄에 사용자가 입력한 내용이 그대로 드러남
+                - post
+                    입력한 내용의 길이에 제한이 없음
+                    get과는 다르게 입력한 내용이 드러나지 않음
+            3. name 속성
+                JavaScript로 form을 제어할 때 사용할 form의 이름을 지정
+            4. target 속성
+                action 속성에서 지정한 서버페이지를 현재 창이 아닌 다른 창에서 열도록 지정하는 속성
+            5. autocomplete 속성
+                form 태그 내부의 자식태그에 데이터를 입력 할 때 한번이라도 입력한 적이 있는 내용을 자동으로 표시해 주는 속성
+                autocomplete의 default는 on
+
+        <fieldset></fieldset> 태그
+            하나의 form 태그 안에서 여러 구역을 나누어 표시 할 때 사용하는 태그
+            - 문법
+                <fieldset 속성="값">
+                    ...
+                </fieldset>
+        
+        <legend></legend> 태그
+            fieldset 태그로 묶은 그룹에 제목을 부여하는 태그
+            - 문법
+                <fieldset>
+                    <legend>그룹 이름</legend>
+                </fieldset>
+
+        <label></label> 태그
+            한 줄 텍스트를 입력 받을 수 있는 input 태그 앞에 텍스트를 표시 할 영역을 지정하는 태그
+            - 문법
+                1. label 태그 안에 input 태그 작성
+                    <label>레이블명<input></label>
+                2. label 태그 밖에 input 태그 작성
+                    <label for="id명">레이블명</label>
+                    <input id="id명">
+                
+    -->
+
+    <h1>레드향 주문하기</h1>
+    <form action="a.jsp" method="get" autocomplete="on">
+        <fieldset>
+            <legend>상품 선택</legend>
+            <label>아이디(6자이상) <input type="text"></label>
+        </fieldset>
+        <fieldset>
+            <legend>배송 정보</legend>
+            <label for="user-id">아이디(6자이상) </label>
+            <input type="text" id="user-id">
+        </fieldset>
+
+        <input type="button" value="일반 버튼" onclick="alert('warning');"><br>
+
+        <!-- type="submit"속성의 input 태그, type="image" 속성의 input 태그, button 태그는 submit의 역할을 한다 -->
+        <input type="submit" value="전송 버튼"><br>
+        <input type="image" src="../04/images/link.png"><br>
+        <button>버튼 태그</button><br>  <!-- type 속성값을 지정하지 않으면 submit 역할을 함 -->
+
+        <input type="reset" value="초기화 버튼"><br>
+    </form>
+</body>
+
+</html>

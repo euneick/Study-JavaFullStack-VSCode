@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p {
+            border: 1px solid black;
+            width: 600px;
+            padding: 10px;
+            margin: 10px auto;
+        }
+
+        /*
+            줄 간격 조절
+            p { font-size: 12px line-height: 24px; }        - 직접 크기 지정
+            p { font-size: 12px line-height: 2.0; }         - 글자크기가 12px 이므로 이의 2.0배만큼 지정
+            p { font-size: 12px line-height: 200%; }        - 글자크기가 12px 이므로 이의 200%만큼 지정
+
+            * 모두 같은 결과 출력
+        */
+        
+        .small-line { line-height: 0.7; }       /* 글자 크기의 0.7배 만큼 줄 간격 설정 */
+        .big-line { line-height: 2.5; }         /* 글자 크기의 2.5배 만큼 줄 간격 설정 */
+    </style>
+</head>
+
+<body>
+    <p>껍질에 붉은 빛이 돌아 레드향이라 불린다. 레드향은 한라봉과 귤을 교배한 것으로 일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+    <p class="small-line">껍질에 붉은 빛이 돌아 레드향이라 불린다. 레드향은 한라봉과 귤을 교배한 것으로 일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+    <p class="big-line">껍질에 붉은 빛이 돌아 레드향이라 불린다. 레드향은 한라봉과 귤을 교배한 것으로 일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+</body>
+
+</html>

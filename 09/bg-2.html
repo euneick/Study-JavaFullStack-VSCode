@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin-left: -30px;
+        }
+
+        /* 
+            background-position
+                - 배경이미지의 위치값을 지정
+                - 문법
+                    background-position: 수평위치 수직위치
+                     * 수평위치     - left | center | right | 백분율 | 값
+                     * 수직위치     - top | center | bottom | 백분율 | 값
+        */
+        li {
+            background-image: url('images/book-icon.png');
+            background-repeat: no-repeat;
+            background-position: left center;
+            padding-left: 50px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>이지스 퍼블리싱</h1>
+    <ul>
+        <li>회사소개</li>
+        <li>도서</li>
+        <li>자료실</li>
+        <li>질문답변</li>
+        <li>동영상강의</li>
+    </ul>
+</body>
+
+</html>

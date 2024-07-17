@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수평 내비게이션 만들기</title>
+
+    <style>
+        * { box-sizing: border-box; }   /* 모든 요소에 테두리까지 포함한 너비값 지정 */
+
+        /* 
+            태그 선택자들 사이의 공백
+                - 태그1 태그2 { }
+                    태그1의 자식태그들 중 태그2를 선택
+        */
+        nav ul { list-style: none; }        /* nav 태그의 자식태그들 중 ul 태그 선택 */
+        nav ul li {
+            display: inline-block;
+            padding: 20px;
+            margin: 0 20px;
+            border: 1px solid #222;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>menu 1</li>
+            <li>menu 2</li>
+            <li>menu 3</li>
+            <li>menu 4</li>
+        </ul>
+    </nav>
+</body>
+
+</html>

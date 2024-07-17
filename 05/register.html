@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+</head>
+
+<body>
+    <table border="1px" align="center">
+        <tr>
+            <td colspan="2">회원가입</td>
+        </tr>
+        <tr>
+            <td>*이름</td>
+            <td><input type="text" name="uname" id="uname"></td>
+        </tr>
+        <tr>
+            <td>*ID</td>
+            <td>
+                <input type="text" name="uid" id="uid">
+                <input type="button" name="checkid" value="유효성확인">
+            </td>
+        </tr>
+        <tr>
+            <td>*비밀번호</td>
+            <td><input type="password" name="upwd" id="upwd"></td>
+        </tr>
+        <tr>
+            <td>*비밀번호확인</td>
+            <td><input type="password" name="upwd_confirm" id="upwd_confirm"></td>
+        </tr>
+        <tr>
+            <td>*직업</td>
+            <td>
+                <select name="ujob" id="ujob">
+                    <option selected>직업명</option>
+                    <option value="etc">기타</option>
+                    <option value="business">회사원</option>
+                    <option value="student">학생</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>*성별</td>
+            <td>
+                <input type="radio" name="gender" value="male"> 남자
+                <input type="radio" name="gender" value="female"> 여자
+            </td>
+        </tr>
+        <tr>
+            <td>*취미</td>
+            <td>
+                <input type="checkbox" name="hobby" value="d1">독서
+                <input type="checkbox" name="hobby" value="d2">등산
+                <input type="checkbox" name="hobby" value="d3">낚시
+            </td>
+        </tr>
+        <tr>
+            <td>*가입동기</td>
+            <td>
+                <textarea name="motivation" cols="100" rows="20"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="가입">
+                <input type="reset" value="다시입력">
+            </td>
+        </tr>
+    </table>
+
+    <br><br><br>
+    
+    <form action="a.jsp" method="get">
+        <table border="1" align="center">
+            <tr>
+                <th colspan="2">회원가입</th>
+            </tr>
+            <tr>
+                <td>*이름</td>
+                <td><input type="text" id="user_name" name="name"></td>
+            </tr>
+            <tr>
+                <td>*ID</td>
+                <td>
+                    <input type="text" id="user_id" name="id">
+                    <button type="button">유효성확인</button>
+                </td>
+            </tr>
+            <tr>
+                <td>*비밀번호</td>
+                <td><input type="password" id="user_pwd" name="pwd"></td>
+            </tr>
+            <tr>
+                <td>*비밀번호확인</td>
+                <td><input type="password"></td>
+            </tr>
+            <tr>
+                <td>*직업</td>
+                <td>
+                    <select name="jop" id="user_jop">
+                        <option value="category">직업명</option>
+                        <option value="etc">기타</option>
+                        <option value="business">회사원</option>
+                        <option value="student">학생</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>*성별</td>
+                <td>
+                    <input type="radio" name="gender" value="male">남자
+                    <input type="radio" name="gender" value="female">여자
+                </td>
+            </tr>
+            <tr>
+                <td>*취미</td>
+                <td>
+                    <input type="checkbox" name="reading">독서
+                    <input type="checkbox" name="climbing">등산
+                    <input type="checkbox" name="fishing">낚시
+                </td>
+            </tr>
+            <tr>
+                <td>*가입동기</td>
+                <td>
+                    <textarea name="motivation" id="user_motivation" rows="20" cols="60" name=""></textarea>
+                </td>
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    <input type="submit" value="가입">
+                    <input type="reset" value="다시입력">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>웹 폰트 사용하기</title>
+    <style>
+        /*
+            웹 폰트가 준비되었다면 @font-face속성을 사용하여 웹 폰트를 정의 함
+
+            - 문법
+                @font-face {
+                    font-family: 글꼴이름;
+                    src: 글꼴파일명1, 글꼴파일명2, ...;
+                }
+                
+                * font-family 속성을 이용하여 새로운 글꼴 이름을 생성
+                    되도록 글꼴파일 이름과 같은 이름을 사용하는 것이 좋음
+                * scr 속성에는 사용 할 글꼴파일의 경로를 지정
+                    경로를 지정하기전에 local()문으로 시스템에 해당 글꼴이 있는지 먼저 확인
+                    시스템에 글꼴이 있으면 그대로 사용, 없다면 woff 포맷으로 글꼴을 다운로드
+
+                    ※ Internet Explorer 8 이하 버전에서는 eot 파일을 지원하므로
+                        woff파일보다 먼저 선언하는데 eot 파일에서는 포맷을 따로 지정하지 않음
+        */
+
+        /* Ostrich라는 웹 폰트를 이용한 예제 */
+        @font-face {
+            font-family: 'Ostrich';
+            /* 폰트 이름 */
+            src: local('Ostrich Sans'),
+                url('fonts/ostrich-sans-bold.woff') format('woff'),
+                url('fonts/ostrich-sans-bold.ttf') format('truetype'),
+                url('fonts/ostrich-sans-bold.svg') format('svg');
+        }
+
+        .wfont {
+            font-family: 'Ostrich', sans-serif;     /* 웹 폰트 지정 */
+        }
+
+        p {
+            font-size: 30px;    /* 글자 크기 */
+        }
+    </style>
+</head>
+
+<body>
+    <p>Using Default Fonts</p>
+    <p class="wfont">Using Web Fonts</p>
+</body>
+
+</html>

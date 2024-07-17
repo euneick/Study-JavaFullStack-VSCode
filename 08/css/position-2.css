@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;     /* 테두리 영역까지 포함하여 사이즈 설정 */
+    margin: 0;
+    padding: 0;
+}
+
+#contents {
+    background: url("../images/bg.jpg") no-repeat;
+    background-size: cover;     /* 배경 이미지를 영역 크기 전체에 맞춤 */
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+h1 {
+    color: #fff;
+    font-size: 120px;
+    text-shadow: 2px 3px 0 #000;
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+}

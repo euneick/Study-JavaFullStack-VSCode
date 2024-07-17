@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .desc {
+            border: 5px dotted #222;
+            background-color: pink;
+            width: 350px;
+            padding: 20px;
+            margin: 20px;
+            float: left;
+        }
+
+        #clip-border {
+            /* 테두리 영역까지 지정 */
+            background-clip: border-box;
+        }
+
+        #clip-padding {
+            /* 패딩 영역까지 지정 */
+            background-clip: padding-box;
+        }
+
+        #clip-content {
+            /* 컨텐츠 영역까지만 지정 */
+            background-clip: content-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="desc" id="clip-border">
+            <h1>레드향</h1>
+            <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+            <p>레드향은 <em>한라봉과 귤을 교배</em>한 것으로<br>일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+        </div>
+        <div class="desc" id="clip-padding">
+            <h1>레드향</h1>
+            <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+            <p>레드향은 <em>한라봉과 귤을 교배</em>한 것으로<br>일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+        </div>
+        <div class="desc" id="clip-content">
+            <h1>레드향</h1>
+            <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+            <p>레드향은 <em>한라봉과 귤을 교배</em>한 것으로<br>일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+h1 {
+    padding: 10px;              /* 안쪽 영역의 여백을 모두 10px만큼 띄움 */
+    background-color: #222;   /* 배경색 설정 */
+    color: #fff;              /* 텍스트 색상 설정 */
+}

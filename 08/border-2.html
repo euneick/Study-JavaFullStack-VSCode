@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            margin: 15px;
+            display: inline-block;
+            border-style: solid;
+        }
+
+        /* 
+            thin    - 얇은 두께, 약 1px
+            medium  - 일반 두께, 약 3px
+            thick   - 두꺼운 두께, 약 5px
+        */
+
+        /* 모든 방향 2px */
+        #box1 { border-width: 2px; }
+
+        /* top, bottom - thick 설정 // left, right -thin 설정 */
+        #box2 { border-width: thick thin; }
+
+        /* top - thick // right - thin // bottom - medium // left는 설정 값 없으니 맞은편 right와 같게 설정 */
+        #box3 { border-width: thick thin medium; }
+
+        /* top right bottom left 순으로 각각 설정 */
+        #box4 { border-width: 10px 5px 5px 10px; }
+    </style>
+</head>
+
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+</body>
+
+</html>

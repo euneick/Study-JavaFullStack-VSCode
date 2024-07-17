@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>thead tfoot tbody</title>
+    <style>
+        /* CSS 코드 작성하는 곳 */
+        /*
+            아래에 작성 해 놓은 table태그를 선택해 가져와서 스타일 설정
+            이때 태그명을 기술하고 중괄호를 넣어서 스타일을 설정 할 수 있다.
+        */
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            /* border: 테두리선의_굵기_값 테두리선의_종류 테두리선의_색상 */
+            border: 1px solid #ccc;
+            /* 텍스트 정렬 */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- table 태그는 표를 만들때 사용하는 태그 -->
+    <table>
+        <!-- thead tfoot tbody 순으로 입력 -->
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>상품명</th>
+                <th>수량</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>총 금액</td>
+                <td colspan="3">6,500원</td> <!-- 열 병합 -->
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>콜라</td>
+                <td>1개</td>
+                <td>1,500원</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>사이다</td>
+                <td>2개</td>
+                <td rowspan="2">1,000원</td> <!-- 행 병합 -->
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>탄산수</td>
+                <td>3개</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

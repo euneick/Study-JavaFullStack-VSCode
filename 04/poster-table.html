@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>표 태그 사용하기</title>
+
+    <style>
+        #container {
+            width: 50%;       /* 컨테이너 너비 */
+            background-color: pink;
+            margin: 0 auto;     /* 컨테이너 화면 중앙에 배치 */
+        }
+
+        table, th, td {
+            border: 1px solid #222;     /* 표 테두리 */
+            border-collapse: collapse;    /* 테두리 1줄만 표시 */
+        }
+
+        th, td {
+            padding: 10px;      /* 셀 안쪽의 여백(패딩) */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>먹거리</h2>
+        <table>
+            <tr>
+                <th>입축 천냥 국수</th>
+                <td>11:00 ~ 16:00</td>
+                <td>목관아 주차장</td>
+            </tr>
+            <tr>
+                <th>제주 향토 음식</th>
+                <td>10:30 ~ 17:00</td>
+                <td>관덕정 마당</td>
+            </tr>
+            <tr>
+                <th>입춘 주전부리</th>
+                <td>10:30 ~ 17:00</td>
+                <td>관덕정 마당</td>
+            </tr>
+            <tr>
+                <th>차 나눔</th>
+                <td>10:30 ~ 17:00</td>
+                <td>관덕정 마당</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
