@@ -60,6 +60,24 @@
         document.write("cat" || "dog", "<br>");
         document.write("cat" || false || "bird", "<br>");
         document.write("=====================================<br>");
+
+        let compareA = 2;
+        let compareB = 2;
+        let compareC = '2';
+
+        document.write(compareA === compareB, "<br>");      // 값과 자료형 모두 같다
+        document.write(compareB === compareC, "<br>");      // 값은 같지만 자료형이 다르다
+        document.write(compareB == compareC, "<br>");       // 자료형은 비교하지 않고 값은 같다
+
+        // 자바스크립트에선 두 피연산자의 값이 같은지, 자료형까지 같은지 따로 확인 할 수 있다.
+        // ==       - 자료형은 비교하지 않고 값만 비교
+        // ===      - 자료형과 값 모두 비교
+
+        document.write(compareA !== compareB, "<br>");
+        document.write(compareB !== compareC, "<br>");
+        document.write(compareB != compareC, "<br>");
+
+        // 그 외 < > <= >= 연산자는 동일함
     </script>
 </body>
 
