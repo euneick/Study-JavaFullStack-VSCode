@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>특정 속성값이 포함된 요소에 스타일 적용하기</title>
+
+    <style>        
+        /* 
+            속성 선택자 3
+                - 여러개의 속성 값 중에서 특정 속성 "값"이 포함되어 있는 요소를 선택
+                - 기호 : [ ~= ]
+                - 문법
+                    요소선택[속성명~=속성값] { }
+        */
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        li a {
+            padding: 5px 20px;
+            font-size: 14px;
+            color: blue;
+            text-decoration: none;
+        }
+
+        .flat {
+            background-color: #eee;
+            border: 1px solid #222;
+        }
+
+        [class ~= "button"] {
+            box-shadow: rgba(0, 0, 0, 0.4) 4px 4px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#" class="flat">메뉴 1</a></li>
+        <li><a href="#" class="flat">메뉴 2</a></li>
+        <li><a href="#" class="button">메뉴 3</a></li>
+        <li><a href="#" class="flat button">메뉴 4</a></li>
+    </ul>
+</body>
+
+</html>
