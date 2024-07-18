@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일 확장자에 따라 아이콘 다르게 표시하기</title>
+
+    <style>
+        /* 
+            속성 선택자 6
+                - 속성값이 지정한 속성값으로 끝나는 요소를 선택
+                - 기호 : [ $= ]
+                - 문법
+                    요소선택[속성명 $= 속성값] { }
+        */
+
+        ul {
+            list-style: square;
+        }
+
+        li a {
+            line-height: 30px;
+            font-size: 14px;
+            color: blue;
+            text-decoration: none;
+        }
+
+        a[href $= hwp] {
+            background: url(images/hwp_icon.gif) center right no-repeat;
+            padding-right: 25px;
+        }
+
+        a[href $= xls] {
+            background: url(images/excel_icon.gif) center right no-repeat;
+            padding-right: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>회사 소개 파일 내려받기</h3>
+    <ul>
+        <li><a href="intro.hwp">hwp 파일</a></li>
+        <li><a href="intro.xls">엑셀 파일</a></li>
+    </ul>
+</body>
+
+</html>
