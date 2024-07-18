@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성값의 사직 부분이 일치하는 요소에 스타일 적용하기</title>
+
+    <style>
+        /* 
+            속성 선택자 5
+                - 속성값이 정확하게 일치하지 않더라도 지정한 값으로 시작하면 선택
+                - 기호 : [ ^= ]
+                - 문법
+                    요소선택[속성명^=속성값] { }
+        */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        li a {
+            padding: 5px 20px;
+            font-size: 14px;
+            color: blue;
+            text-decoration: none;
+        }
+
+        a[title^=eng] {
+            background: url(images/us.png) no-repeat left center;
+        }
+
+        a[title^=jap] {
+            background: url(images/jp.png) no-repeat left center;
+        }
+
+        a[title^=ch] {
+            background: url(images/ch.png) no-repeat left center;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>외국어 서비스 : </li>
+        <li><a href="#" title="english">영어</a></li>
+        <li><a href="#" title="japanese">일본어</a></li>
+        <li><a href="#" title="chinese">중국어</a></li>
+    </ul>
+</body>
+
+</html>
