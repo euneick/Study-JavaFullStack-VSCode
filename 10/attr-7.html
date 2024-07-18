@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새 탭으로 열리는 링크에만 아이콘 추가하기</title>
+
+    <style>
+        /* 
+            속성 선택자 7
+                - 속성값이 지정한 속성값을 포함하는 요소를 선택
+                - 기호 : [ *= ]
+                - 문법
+                    요소선택[속성명 *= 속성값] { }
+        */
+
+        ul {
+            list-style: circle;
+        }
+
+        li {
+            padding: 5px 30px;
+        }
+
+        li a {
+            font-size: 16px;
+            text-decoration: none;
+            color: black;
+        }
+
+        a[href *= w3] {
+            background: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML5 참고 사이트</h1>
+    <p>(아래 링크 중에서 배경색이 파란색인 링크는 W3C 사이트로 연결됩니다.)</p>
+    <ul>
+        <li><a href="https://html.spec.whatwg.org/">HTML 표준안 사이트</a></li> <!-- 새 탭에서 열기 -->
+        <li><a href="https://caniuse.com/">HTML 지원 여부 체크</a></li>
+        <li><a href="https://www.w3.org/TR/css3-mediaqueries">미디어쿼리</a></li>
+    </ul>
+</body>
+
+</html>
