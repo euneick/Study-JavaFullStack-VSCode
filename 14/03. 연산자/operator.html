@@ -55,7 +55,10 @@
         // 자바스크립트에선 "", undefined, 0, null 은 모두 false로 판단함
         // 논리연산자가 반드시 논리값을 판단하는것이 아니고, 연산 결과에 따라 피연산자를 반환하는 특징이 있음
         document.write("cat" && "dog", "<br>");
-        document.write("cat" && "dog" && "bird", "<br>");
+        document.write("cat" && false && "bird", "<br>");
+        
+        document.write("cat" || "dog", "<br>");
+        document.write("cat" || false || "bird", "<br>");
         document.write("=====================================<br>");
     </script>
 </body>
