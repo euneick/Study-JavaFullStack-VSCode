@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 언어 처리방식 설정 -->
+    <meta charset="UTF-8">
+    <!--
+        반응형 웹 디자인을 지원하기 위한 viewprot를 설정하는 구문
+        content
+            width=device-width      - 너비를 디바이스의 너비와 같게 설정
+            initial-scale=1.0       - 초기 확대값 설정
+                                    - 이 설정을 해야만 모바일 장치에서 페이지가 올바르게 표시됨
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--
+        웹 페이지에 파비콘(웹 브라우저의 탭, 북마크, 즐겨찾기 등에 표시하는 아이콘) 설정
+        rel="icon"              - 링크의 관계를 아이콘으로 설정
+        href="favicon.ico"      - 경로 설정
+        type="image/x-icon"     - 파일의 MIME 타입(웹 브라우저로 응답할 데이터 유형)을 지정
+    -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!--
+        FontAwesome의 아이콘을 사용하기 위해 외부 스크립트를 불러옴
+            crossorigin="anonymous"     - 교차 출처 요청에 대한 CROSS 설정
+                                        - 외부 resource를 안전하게 불러오는데 사용
+    -->
+    <script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script>
+
+    <!-- 외부 css파일 연결 -->
+    <link rel="stylesheet" href="css/style.css">
+    <!--
+        외부 js파일 연결
+            defer       - 웹 브라우저가 HTML 문서를 완전히 parsing한 후에 읽어들이도록 설정
+    -->
+    <script defer src="js/ie.js"></script>
+</head>
+
+<body>
+</body>
+
+</html>
