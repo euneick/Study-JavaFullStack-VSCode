@@ -1,41 +1,49 @@
 ﻿<!DOCTYPE html>
 <html lang="ko">
-	<head>
-		<meta charset="UTF-8">
-		<title>Transform:translate</title>
-    <style>
-			#container {
-				width:800px;
-				height:200px;
-				margin:20px auto;
-			}
-			.origin {
-				width: 100px;
-				height: 100px;
-				border: 1px solid black;
-				float: left;
-				margin: 40px;
-			}
-			.origin > div {				
-				width:100px;
-				height:100px;
-				background-color:orange;
-			}
 
-		</style>
-	</head>
-	<body>		
-		<div id="container">
-			<div class="origin">
-				<div  id="movex"></div>		
-			</div>
-			<div class="origin">
-				<div id="movey"></div>	
-			</div>
-			<div class="origin">
-				<div id="movexy"></div>		
-			</div>
+<head>
+	<meta charset="UTF-8">
+	<title>Transform:translate</title>
+	<style>
+		#container {
+			width: 800px;
+			height: 200px;
+			margin: 20px auto;
+		}
+
+		.origin {
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+			float: left;
+			margin: 40px;
+		}
+
+		.origin>div {
+			width: 100px;
+			height: 100px;
+			background-color: orange;
+		}
+
+		#movex:hover { transform: translateX(50px); }
+		#movey:hover { transform: translateY(20px); }
+		#movexy:hover { transform: translate(10px, 20px); }
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<div class="origin">
+			<div id="movex"></div>
 		</div>
+		<div class="origin">
+			<div id="movey"></div>
 		</div>
-	</body>
+		<div class="origin">
+			<div id="movexy"></div>
+		</div>
+	</div>
+	</div>
+</body>
+
 </html>
