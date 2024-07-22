@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>profile 4</title>
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile 1</title>
+    <!-- 웹페이지 아이콘 설정 -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- 프로젝트 외부 CSS 시트 불러오기 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- 프로젝트 내부 CSS 시트 불러오기 -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- IE 브라우저 체크 스크립트 연결 -->
+    <script defer src="js/ie.js"></script>
 </head>
+
 <body class="member4">
-	<section>
-		<nav class="menu">
-			<a href="#"><i class="fas fa-bars"></i></a>
-			<a href="#"><i class="far fa-sticky-note"></i></a>
-		</nav>
+    <section class="wrap">
+        <!-- 상단 navigation 영역 -->
+        <nav class="menu">
+            <a href="#"><i class="fas fa-bars"></i></a>            <!-- 프로젝트 외부 CSS에 의해 아이콘으로 변환 -->
+            <a href="#"><i class="fas fa-sticky-note"></i></a>     <!-- 프로젝트 외부 CSS에 의해 아이콘으로 변환 -->
+        </nav>
 
-		<article class="profile">
-			<img src="img/member4.jpg" alt="프로필 이미지" >
+        <!-- 중상단 사진 및 이름 영역 -->
+        <article class="profile">
+            <img src="img/member4.jpg" alt="프로필 이미지">
+            <h1>DCODELAB</h1>
+            <h2>UI/UX INTERACTIVE DEVELOPER</h2>
+            <a href="#" class="btnView">VIEW MORE</a>
+        </article>
 
-			<h1>DCODELAB</h1>
-			<h2>UI/UX INTERACTIVE DEVELOPER</h2>
+        <!-- 중하단 list 영역 -->
+        <ul class="contact">
+            <li>
+                <i class="fab fa-facebook-f"></i>       <!-- 프로젝트 외부 CSS에 의해 아이콘으로 변환 -->
+                <span>Visit My Facebook page.</span>
+            </li>
+            <li>
+                <i class="fas fa-envelope"></i>         <!-- 프로젝트 외부 CSS에 의해 아이콘으로 변환 -->
+                <span>hadaboni80@naver.com</span>
+            </li>
+        </ul>
 
-			<a href="#" class="btnView">VIEW MORE</a>
-		</article>		
-
-		<ul class="contact">
-			<li>
-				<i class="fab fa-facebook-f"></i>
-				<span>Visit My Facebook page.</span>
-			</li>
-			<li>
-				<i class="fas fa-envelope"></i>
-				<span>hadaboni80@naver.com</span>
-			</li>			
-		</ul>
-
-		<nav class="others">
-			<a href="member1.html"></a>
-			<a href="member2.html"></a>
-			<a href="member3.html"></a>
-			<a href="member4.html" class="on"></a>
-		</nav>
-	</section>
+        <!-- 하단 navigation 영역 -->
+        <nav class="others">
+            <a href="member1.html"></a>
+            <a href="member2.html"></a>
+            <a href="member3.html"></a>
+            <a href="member4.html" class="on"></a>      <!-- 현재 html 문서에 해당하는 a링크에 class 속성값 부여 -->
+        </nav>
+    </section>
 </body>
+
 </html>
