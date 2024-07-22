@@ -1,44 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko"> <!-- 문서 언어 설정 -->
 
 <head>
-    <!-- 언어 처리방식 설정 -->
-    <meta charset="UTF-8">
-    <!--
-        반응형 웹 디자인을 지원하기 위한 viewprot를 설정하는 구문
-        content
-            width=device-width      - 너비를 디바이스의 너비와 같게 설정
-            initial-scale=1.0       - 초기 확대값 설정
-                                    - 이 설정을 해야만 모바일 장치에서 페이지가 올바르게 표시됨
-    -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <!--
-        웹 페이지에 파비콘(웹 브라우저의 탭, 북마크, 즐겨찾기 등에 표시하는 아이콘) 설정
-        rel="icon"              - 링크의 관계를 아이콘으로 설정
-        href="favicon.ico"      - 경로 설정
-        type="image/x-icon"     - 파일의 MIME 타입(웹 브라우저로 응답할 데이터 유형)을 지정
-    -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <!--
-        FontAwesome의 아이콘을 사용하기 위해 외부 스크립트를 불러옴
-            crossorigin="anonymous"     - 교차 출처 요청에 대한 CROSS 설정
-                                        - 외부 resource를 안전하게 불러오는데 사용
-    -->
-    <script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script>
-
-    <!-- 외부 css파일 연결 -->
-    <link rel="stylesheet" href="css/style.css">
-    <!--
-        외부 js파일 연결
-            defer       - 웹 브라우저가 HTML 문서를 완전히 parsing한 후에 읽어들이도록 설정
-    -->
-    <script defer src="js/ie.js"></script>
+	<meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형 웹 설정 -->
+	<title>profile 1</title> <!-- 페이지 제목 설정 -->
+	<link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- 파비콘 설정 -->
+	<script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script> <!-- FontAwesome 아이콘 불러오기 -->
+	<link rel="stylesheet" href="css/style.css"> <!-- 스타일시트 연결 -->
+	<script defer src="js/ie.js"></script> <!-- IE 브라우저 체크 스크립트 연결 -->
 </head>
+<body class="member1"> <!-- body 클래스 설정 -->
+	<section>
+		<nav class="menu"> <!-- 메뉴 네비게이션 -->
+			<a href="#"><i class="fas fa-bars"></i></a> <!-- 메뉴 아이콘 -->
+			<a href="#"><i class="far fa-sticky-note"></i></a> <!-- 노트 아이콘 -->
+		</nav>
 
-<body>
+		<article class="profile"> <!-- 프로필 섹션 -->
+			<img src="img/member1.jpg" alt="프로필 이미지" > <!-- 프로필 이미지 -->
+			<h1>DCODELAB</h1> <!-- 이름 -->
+			<h2>UI/UX INTERACTIVE DEVELOPER</h2> <!-- 직업 -->
+			<a href="#" class="btnView">VIEW MORE</a> <!-- 더보기 버튼 -->
+		</article>		
+
+		<ul class="contact"> <!-- 연락처 목록 -->
+			<li>
+				<i class="fab fa-facebook-f"></i> <!-- 페이스북 아이콘 -->
+				<span>Visit My Facebook page.</span> <!-- 설명 -->
+			</li>
+			<li>
+				<i class="fas fa-envelope "></i> <!-- 이메일 아이콘 -->
+				<span>hadaboni80@naver.com</span> <!-- 이메일 주소 -->
+			</li>			
+		</ul>
+
+		<nav class="others"> <!-- 다른 멤버 링크 -->
+			<a href="member1.html" class="on"></a> <!-- 현재 페이지 링크 -->
+			<a href="member2.html"></a> <!-- 멤버 2 링크 -->
+			<a href="member3.html"></a> <!-- 멤버 3 링크 -->
+			<a href="member4.html"></a> <!-- 멤버 4 링크 -->
+		</nav>
+	</section>
 </body>
-
 </html>

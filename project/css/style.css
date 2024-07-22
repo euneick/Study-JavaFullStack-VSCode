@@ -1,0 +1,226 @@
+@charset 'utf-8'; /* 문자 인코딩 설정 */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap"); /* 구글 폰트 불러오기 */
+
+/* 3단계 - CSS 초기화 */
+* {
+	margin: 0px; /* 모든 요소의 기본 여백 제거 */
+	padding: 0px; /* 모든 요소의 기본 패딩 제거 */
+	box-sizing: border-box; /* 박스 모델 설정 */
+}
+ul, ol {
+	list-style: none; /* 리스트 스타일 제거 */
+}
+a {
+	text-decoration: none; /* 링크의 밑줄 제거 */
+}
+
+/* 3단계 - 프로필 박스 만들기 */
+body {
+  background-color: #ebfaff; /* 배경색 설정 */
+} 
+
+section {
+	width: 340px; /* 섹션 너비 설정 */
+	padding: 30px; /* 섹션 내부 여백 설정 */
+	background-color: #fff; /* 섹션 배경색 설정 */
+	margin: 50px auto; /* 섹션 상하 여백과 중앙 정렬 */
+	box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1); /* 섀도우 효과 */
+	border-radius: 10px; /* 모서리 둥글게 설정 */
+}
+
+/* 4단계 - 상단 버튼 만들기 */
+section nav.menu {
+	width: 100%; /* 메뉴 너비 설정 */
+}
+section nav.menu::after {
+	content: ""; /* 가상 요소 생성 */
+	display: block; /* 블록 요소로 설정 */
+	clear: both; /* 플로트 해제 */
+}
+section nav.menu a {
+	font-size: 20px; /* 폰트 크기 설정 */
+	color: #666; /* 폰트 색상 설정 */
+}
+section nav.menu a:nth-of-type(1) {
+	float: left; /* 첫 번째 링크 왼쪽 정렬 */
+}
+section nav.menu a:nth-of-type(2) {
+	float: right; /* 두 번째 링크 오른쪽 정렬 */
+}
+
+/* 5단계 - 프로필 영역 만들기 */
+section article.profile {
+	width: 100%; /* 프로필 너비 설정 */
+	text-align: center; /* 텍스트 중앙 정렬 */
+}
+section article.profile img {
+	width: 200px; /* 이미지 너비 설정 */
+	height: 200px; /* 이미지 높이 설정 */
+	border-radius: 50%; /* 이미지 둥글게 설정 */
+	margin-bottom: 20px; /* 이미지 하단 여백 설정 */
+}
+
+section article.profile h1 {
+	font-weight: bold; /* 폰트 굵기 설정 */
+	font-size: 22px; /* 폰트 크기 설정 */
+	font-family: "arial"; /* 폰트 패밀리 설정 */
+	line-height: 1; /* 줄 간격 설정 */
+	color: #555; /* 폰트 색상 설정 */
+	margin-bottom: 5px; /* 하단 여백 설정 */
+}
+section article.profile h2 {
+	font-weight: normal; /* 폰트 굵기 설정 */
+	font-size: 12px; /* 폰트 크기 설정 */
+	font-family: "arial"; /* 폰트 패밀리 설정 */
+	color: #bbb; /* 폰트 색상 설정 */
+	margin-bottom: 30px; /* 하단 여백 설정 */
+}
+section a.btnView {
+	display: block; /* 블록 요소로 설정 */
+	width: 180px; /* 너비 설정 */
+	height: 32px; /* 높이 설정 */
+	margin: 0px auto 20px; /* 중앙 정렬 및 하단 여백 설정 */
+	background-color:#444; /* 배경색 설정 */
+	border-radius: 16px; /* 모서리 둥글게 설정 */
+	font-weight: bold; /* 폰트 굵기 설정 */
+	font-size: 10px; /* 폰트 크기 설정 */
+	font-family: "arial"; /* 폰트 패밀리 설정 */
+	color: #fff; /* 폰트 색상 설정 */
+	line-height: 32px; /* 줄 간격 설정 */
+	text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* 6단계 - 연락처 목록 만들기 */
+section ul.contact {
+	margin-bottom: 25px; /* 하단 여백 설정 */
+}
+section ul.contact li {
+	width: 100%; /* 리스트 아이템 너비 설정 */
+	padding: 10px 0px; /* 상하 패딩 설정 */
+	border-bottom: 1px solid #eee; /* 하단 테두리 설정 */
+}
+section ul.contact li:last-child {
+	border-bottom: none; /* 마지막 아이템 하단 테두리 제거 */
+}
+section ul.contact li i {
+	width: 20%; /* 아이콘 너비 설정 */
+	text-align: center; /* 텍스트 중앙 정렬 */
+	color: #555; /* 폰트 색상 설정 */
+	font-size: 15px; /* 폰트 크기 설정 */
+	text-shadow: 2px 2px 2px #ddd; /* 텍스트 그림자 설정 */
+}
+section ul.contact li span {
+	font-weight: normal; /* 폰트 굵기 설정 */
+	font-size: 11px; /* 폰트 크기 설정 */
+	font-family: "orbitron"; /* 폰트 패밀리 설정 */
+	color: #555; /* 폰트 색상 설정 */
+	letter-spacing: 1px; /* 글자 간격 설정 */
+}
+
+/* 7단계 - 멤버별 링크 만들기 */
+section nav.others {
+	width: 100%; /* 너비 설정 */
+	text-align: center; /* 텍스트 중앙 정렬 */
+}
+section nav.others a {
+	display: inline-block; /* 인라인 블록 요소로 설정 */
+	width: 30px; /* 너비 설정 */
+	height: 30px; /* 높이 설정 */
+	border-radius: 50%; /* 모서리 둥글게 설정 */
+	margin: 0px 10px; /* 좌우 여백 설정 */
+	opacity: 0.4; /* 불투명도 설정 */
+	filter: saturate(0.7); /* 채도 설정 */
+/*
+filter: saturate(0.7);의 의미
+
+	filter 속성을 사용하여 요소의 채도를 조정하는 데 사용됩니다. 
+	
+	saturate 함수는 요소의 채도를 조정합니다. 
+			채도는 색상의 강도 또는 선명도를 의미합니다. 
+			값이 높을수록 색상이 더 강렬하고 선명해지며, 
+			값이 낮을수록 색상이 더 흐릿해집니다.
+
+	문법  
+			filter: saturate(value);
+
+			value
+					채도의 강도를 나타내는 값입니다. 
+					이 값은 숫자 또는 백분율로 지정할 수 있습니다.
+
+			1은 기본 채도를 의미합니다.
+			0은 흑백을 의미합니다.
+			2는 기본 채도의 두 배를 의미합니다.
+			0.7은 기본 채도의 70%를 의미합니다.
+
+*/
+
+
+
+
+}
+section nav.others a.on {
+	opacity: 1; /* 불투명도 설정 */
+	filter: saturate(1); /* 채도 설정 */
+}
+section nav.others a:nth-of-type(1) {
+	background-color: #35e0f7; /* 배경색 설정 */
+	box-shadow: 5px 5px 10px rgba(74, 255, 255, 0.7); /* 섀도우 효과 */
+}
+section nav.others a:nth-of-type(2) {
+	background-color: #55f5cd; /* 배경색 설정 */
+	box-shadow: 5px 5px 10px rgba(85, 245, 178, 0.7); /* 섀도우 효과 */
+}
+section nav.others a:nth-of-type(3) {
+	background-color: #ff80df; /* 배경색 설정 */
+	box-shadow: 5px 5px 10px rgba(255, 128, 223, 0.7); /* 섀도우 효과 */
+}
+section nav.others a:nth-of-type(4) {
+	background-color: #a794fd; /* 배경색 설정 */
+	box-shadow: 5px 5px 10px rgba(167, 148, 253, 0.7); /* 섀도우 효과 */
+}
+
+/* 9단계 - 멤버별 프로필 완성하기 */
+/* member1 */
+body.member1 {
+	background-color: #ebfaff; /* 배경색 설정 */
+}
+body.member1 section article.profile img {
+	box-shadow: 5px 15px 30px rgba(173, 216, 230, 0.8); /* 섀도우 효과 */
+}
+body.member1 section a.btnView {
+	background: linear-gradient(45deg, #4affff, #35e0f7); /* 그라데이션 배경 설정 */
+	box-shadow: 5px 10px 20px rgba(0, 255, 255, 0.493); /* 섀도우 효과 */
+}
+/* member2 */
+body.member2 {
+	background-color: #edffeb; /* 배경색 설정 */
+}
+body.member2 section article.profile img {
+	box-shadow: 5px 15px 20px #bdccb783; /* 섀도우 효과 */
+}
+body.member2 section a.btnView {
+	background: linear-gradient(45deg, #a0ff9d, #55f5b2); /* 그라데이션 배경 설정 */
+    box-shadow: 5px 10px 20px rgba(33, 250, 105, 0.3); /* 섀도우 효과 */
+}
+/* member3 */
+body.member3 {
+	background-color: #fff3fd; /* 배경색 설정 */
+}
+body.member3 section article.profile img {
+	box-shadow: 5px 15px 20px  rgba(252, 99, 214, 0.2); /* 섀도우 효과 */
+}
+body.member3 section a.btnView {
+	background: linear-gradient(45deg, #ef74ff, #ff11c4); /* 그라데이션 배경 설정 */
+	box-shadow: 5px 10px 20px rgba(255, 17, 196, 0.357); /* 섀도우 효과 */
+}
+/* member4 */
+body.member4 {
+	background-color: #f5f0ff; /* 배경색 설정 */
+}
+body.member4 section article.profile img {
+	box-shadow: 5px 15px 20px rgba(183, 82, 250, 0.2); /* 섀도우 효과 */
+}
+body.member4 section a.btnView {
+	background: linear-gradient(45deg, #8e74ff, #a011ff); /* 그라데이션 배경 설정 */
+	box-shadow: 5px 10px 20px rgba(160, 17, 255, 0.4); /* 섀도우 효과 */
+}
