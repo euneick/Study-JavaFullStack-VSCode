@@ -35,3 +35,9 @@ varA = "hello world!";
 
 typeof varA === "string" ? console.log("문자 자료형") : console.log("문자 자료형이 아님");
 console.log(typeof varA === "string" ? "문자 자료형" : "문자 자료형이 아님");
+
+let num = 1;
+let result;
+
+result = num % 2 === 0 ? "짝수" : "홀수";
+console.log(result);
