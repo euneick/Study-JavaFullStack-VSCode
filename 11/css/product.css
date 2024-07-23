@@ -33,6 +33,7 @@ h1 {
 
 .prod-list .caption {
     position: absolute;     /* relative 값을 사용한 상위 요소를 기준으로 위치를 지정하여 배치 */
+     /* 시작 위치를 목표 위치에서 200px만큼 내리고 hover 했을 때 transform: translateY(-200px); 를 통해 다시 200px만큼 올림 */
     top: 200px;
     width: 300px;
     height: 200px;
