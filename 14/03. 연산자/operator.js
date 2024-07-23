@@ -41,3 +41,6 @@ let result;
 
 result = num % 2 === 0 ? "짝수" : "홀수";
 console.log(result);
+
+num = 10;
+console.log(num % 2 !== 0 ? "홀수" : "짝수");
