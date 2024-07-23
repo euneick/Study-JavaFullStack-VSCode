@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Animation</title>
 	<style>
-		#container{
-			width:500px;
-			margin:20px auto;
+		#container {
+			width: 500px;
+			margin: 20px auto;
 		}
-		.box{
+
+		.box {
 			width: 100px;
 			height: 100px;
-			float:left;
-			margin:50px;
+			float: left;
+			margin: 50px;
 		}
+
 		#box1 {
 			background-color: #4cff00;
 			border: 1px solid transparent;
-			animation-name: shape;  /* 애니메이션 지정 */ 
-			animation-duration: 3s;  /* 애니메이션 실행 시간 */
+			animation-name: shape; 		/* 애니메이션 지정 */
+			animation-duration: 3s; 	/* 애니메이션 실행 시간 */
 		}
+
 		#box2 {
 			background-color: #8f06b0;
 			border: 1px solid transparent;
-			animation-name: rotate;  /* 애니메이션 지정 */
-			animation-duration: 3s;  /* 애니메이션 실행 시간 */
+			animation-name: rotate; 	/* 애니메이션 지정 */
+			animation-duration: 3s; 	/* 애니메이션 실행 시간 */
 		}
 
-		@keyframes shape { /* shape 애니메이션 정의 */
+		/* shape 애니메이션 정의 */
+		@keyframes shape {
 			from {
-				border: 1px solid transparent;  /* 1px짜리 투명한 테두리 */
+				border: 1px solid transparent; 	/* 1px짜리 투명한 테두리 */
 			}
+
 			to {
-				border: 1px solid #000;  /* 검정색 테두리 */
-				border-radius: 50%;  /* 테두리를 둥글게 */
+				border: 1px solid #000; 	/* 검정색 테두리 */
+				border-radius: 50%; 		 /* 테두리를 둥글게 */
 			}
 		}
 
-		@keyframes rotate {  /* rotate 애니메이션 정의 */
-			from {
-				transform:rotate(0deg)  /* 시작은 0도에서 */
+		/* rotate 애니메이션 정의 */
+		@keyframes rotate {			
+			from {		
+				transform: rotate(0deg) 	/* 시작은 0도에서 */
 			}
+
 			to {
-				transform: rotate(45deg);  /* 45도까지 회전 */
+				transform: rotate(45deg); 	/* 45도까지 회전 */
 			}
 		}
 	</style>
@@ -54,4 +62,5 @@
 		<div class="box" id="box2"></div>
 	</div>
 </body>
+
 </html>
