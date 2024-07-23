@@ -44,3 +44,12 @@ console.log(result);
 
 num = 10;
 console.log(num % 2 !== 0 ? "홀수" : "짝수");
+
+const num1 = 10;
+const num2 = 20;
+const num3 = 15;
+
+console.log(num1 > num2 ?
+    num1 > num3 ? num1 : num3 :
+    num2 > num3 ? num2 : num3
+);
