@@ -28,8 +28,10 @@ console.log(typeof varA);
 console.log("=====================================");
 /*
     삼항 조건 연산자
+        - 문법
+            조건식 ? 참 일 경우 : 거짓 일 경우;
 */
-varA = "안녕하세요";
+varA = "hello world!";
 
 typeof varA === "string" ? console.log("문자 자료형") : console.log("문자 자료형이 아님");
 console.log(typeof varA === "string" ? "문자 자료형" : "문자 자료형이 아님");
