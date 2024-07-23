@@ -53,3 +53,16 @@ console.log(num1 > num2 ?
     num1 > num3 ? num1 : num3 :
     num2 > num3 ? num2 : num3
 );
+
+let currentFloor = 1;
+let button = '';
+
+button = 'up';
+let direction = button === 'up' ? 'up' : 'down';
+currentFloor = direction === 'up' ? currentFloor + 1 : currentFloor - 1;
+console.log(`엘레베이터가 ${direction === 'up' ? "올라갑니다" : "내려갑니다"}. 현재 층 : ${currentFloor}`);
+
+button = 'down';
+direction = button === 'up' ? 'up' : 'down';
+currentFloor = direction === 'up' ? currentFloor + 1 : currentFloor - 1;
+console.log(`엘레베이터가 ${direction === 'up' ? "올라갑니다" : "내려갑니다"}. 현재 층 : ${currentFloor}`);
