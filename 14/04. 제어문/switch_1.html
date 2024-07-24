@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            즐겨 이용하는 사이트 명을 입력받아
+            입력 받은 사이트를 자동으로 재요청해서 보여주는 예시
+        */
+
+        let site = prompt("네이버, 다음, 네이트, 구글 중 즐겨 이용하는 사이트 이름을 입력하세요.");
+        let url;
+
+        switch (site) {
+            case "네이버": url = "https://www.naver.com/"; break;
+            case "다음": url = "https://www.daum.net/"; break;
+            case "네이트": url = "https://www.nate.com/"; break;
+            case "구글": url = "https://www.google.com/"; break;
+            default: alert("잘못 입력했습니다.");
+        }
+
+        if (url !== undefined) location.href = url;
+    </script>
+</body>
+
+</html>
