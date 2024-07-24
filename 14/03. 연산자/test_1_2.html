@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            promot를 이용 4분기 판매량을 입력
+            전 분기 평균 판매량 보다 판매량이 높거나 같을 경우에는 
+            "판매량이 평균 이상입니다." 라고 출력
+            낮을 경우에는 "판매량이 평균 미달입니다."라고 화면에 출력
+
+            분기별 판매량
+            1분기       1,200
+            2분기       1,300
+            3분기       1,000
+        */
+
+        let quater1 = 1200;
+        let quater2 = 1300;
+        let quater3 = 1000;
+        let quater4 = prompt("4분기 판매량을 입력하세요.");
+
+        let average = (quater1 + quater2 + quater3) / 3;
+        document.write(quater4 > average ? "판매량이 평균 이상입니다." : "판매량이 평균 미달입니다.");
+    </script>
+</body>
+
+</html>
