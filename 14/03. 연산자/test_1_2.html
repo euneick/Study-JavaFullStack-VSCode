@@ -25,10 +25,10 @@
         let quater1 = 1200;
         let quater2 = 1300;
         let quater3 = 1000;
-        let quater4 = prompt("4분기 판매량을 입력하세요.");
+        let quater4 = parseInt(prompt("4분기 판매량을 입력하세요."));
 
         let average = (quater1 + quater2 + quater3) / 3;
-        document.write(quater4 > average ? "판매량이 평균 이상입니다." : "판매량이 평균 미달입니다.");
+        document.write(quater4 >= average ? "판매량이 평균 이상입니다." : "판매량이 평균 미달입니다.");
     </script>
 </body>
 
