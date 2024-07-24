@@ -54,6 +54,8 @@ console.log(num1 > num2 ?
     num2 > num3 ? num2 : num3
 );
 
+console.log("\n");
+
 let currentFloor = 1;
 let button = '';
 
