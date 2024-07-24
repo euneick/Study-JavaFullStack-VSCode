@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /* if_elseif_else_1.html 에 있는 문제를 switch 구문으로 구현 */
+        /*
+        switch (parseInt(prompt("현재 월을 입력하세요."))) {
+            case 3:
+            case 4:
+            case 5: document.write("햇살 가득한 봄이네요!");
+                break;
+            case 6:
+            case 7:
+            case 8: document.write("여행가기 좋은 여름이네요!");
+                break;
+            case 9:
+            case 10:
+            case 11: document.write("독서의 계절 가을이네요!");
+                break;
+            default: document.write("스키의 계절 겨울이네요!");
+        }
+        */
+        switch (Math.floor(prompt("현재 월을 입력하세요.") / 3)) {
+            case 1: document.write("햇살 가득한 봄이네요!"); break;
+            case 2: document.write("여행가기 좋은 여름이네요!"); break;
+            case 3: document.write("독서의 계절 가을이네요!"); break;
+            default: document.write("스키의 계절 겨울이네요!");
+        }
+
+    </script>
+</body>
+
+</html>
