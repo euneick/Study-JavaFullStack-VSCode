@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 { text-align: center; }
+
+        /* 
+            모바일 기본 viewport
+                * iPhone 6/7/8/X/XS     - 375px
+                * iPhone 6+/7+/8+/XR    - 414px
+                * Galaxy S8/S9          - 360px
+                * Galaxy S8+/S9+        - 412px
+
+            위 값들은 모바일 기기의 해상도와 크기에 따라 다를 수 있음
+            일반적으로 320px ~ 414px 의 값을 가짐
+        */
+        #vw {
+            /* 
+                현재 viewport 너비의 5%만큼 너비를 설정
+            */
+            font-size: 5vw;
+        }
+
+        #px {
+            font-size: 96px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="vw">Hello world!</h1>
+    <h1 id="px">Hello world!</h1>
+</body>
+
+</html>
