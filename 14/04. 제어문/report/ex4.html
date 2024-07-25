@@ -17,12 +17,13 @@
 
 
         // 사용자에게 첫 번째 숫자를 입력받아 변수 num1에 저장하세요.
-        let num1 = parseInt(prompt("첫 번째 숫자를 입력하세요."));
         // 사용자에게 연산자(+, -, *, /)를 입력받아 변수 operator에 저장하세요.
-        let operator = prompt("연산자(+, -, *, /)를 입력하세요");
         // 사용자에게 두 번째 숫자를 입력받아 변수 num2에 저장하세요.
-        let num2 = parseInt(prompt("두 번째 숫자를 입력하세요."));
         // 연산 결과를 저장할 변수 result를 선언하세요.
+
+        let num1 = parseInt(prompt("첫 번째 숫자를 입력하세요."));
+        let operator = prompt("연산자(+, -, *, /)를 입력하세요");
+        let num2 = parseInt(prompt("두 번째 숫자를 입력하세요."));
         let result;
 
         //switch 문을 사용하여 operator의 값에 따라 num1과 num2의 연산 결과를 result에 저장하세요. 
@@ -30,46 +31,16 @@
         //아래에 주석구문 밑에 코드를 작성 하세요.
         // switch 문을 사용하여 operator의 값에 따라 num1과 num2의 연산 결과를 result에 저장하세요.
         switch (operator) {
-            // operator가 "+"일 경우
-            case "+":
-                // num1과 num2를 더한 값을 result에 저장
-                result = num1 + num2;
-                // switch 문 종료
-                break;
-
-            // operator가 "-"일 경우
-            case "-":
-                // num1에서 num2를 뺀 값을 result에 저장
-                result = num1 - num2;
-                // switch 문 종료
-                break;
-
-            // operator가 "*"일 경우
-            case "*":
-                // num1과 num2를 곱한 값을 result에 저장
-                result = num1 * num2;
-                // switch 문 종료
-                break;
-
-            // operator가  "/"일 경우
+            case "+": result = num1 + num2; break;
+            case "-": result = num1 - num2; break;
+            case "*": result = num1 * num2; break;
             case "/":
-                // num2가 0이 아닐 경우
-                if (num2 !== 0)
-                    // num1을 num2로 나눈 값을 result에 저장
-                    result = num1 / num2;
-                // num2가 0일 경우
-                else
-                    // "0으로 나눌 수 없습니다." 오류 메시지를 result에 저장
-                    result = "0으로 나눌 수 없습니다.";
-                // switch 문 종료
+                if (num2 !== 0) result = num1 / num2;
+                else result = "0으로 나눌 수 없습니다.";
                 break;
-            // 위의 조건에 해당하지 않는 경우
-            default:
-                // 오류 메시지를 result에 저장
-                result = "잘못된 연산자를 입력했습니다.";
+            default: result = "잘못된 연산자를 입력했습니다.";
         }
 
-        // document.write를 사용하여 결과를 출력하세요.
         document.write("결과: " + result);
 
     </script>
