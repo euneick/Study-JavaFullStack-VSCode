@@ -24,7 +24,8 @@
         if (mon >= 3 && mon <= 5) msg = "봄";
         else if (mon >= 6 && mon <= 8) msg = "여름";
         else if (mon >= 9 && mon <= 11) msg = "가을";
-        else msg = "겨울";
+        else if (mon === 12 || mon === 1 || mon === 2) msg = "겨울";
+        else msg = "잘못 된 값을 입력했습니다.";
 
         document.write(msg);
     </script>
