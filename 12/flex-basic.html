@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*
+            flexable layout 으로 1차원 layout 설계
+             * 플렉스 박스 flex box
+                - layout을 효과적인 1차원 방식으로 설계 할 수 있도록 고안된 스타일 속성 작성 방법
+                 ※ 1차원 방식 - 가로 또는 세로 중 한 방향으로만 layout을 설계하는 방식
+        */
+        .flex-container {
+            background-color: #c4c4c4;
+            border: 1px solid black;
+            width: 300px;
+            height: 200px;
+            /*
+                diplay 속성
+                    - 모든 flexable layout은 display 속성값을 flex나 inline-flex로 지정해서 시작
+                     * display: flex;
+                        - 적용된 모든 항목요소의 다음 요소들이 항상 줄바꿈 됨
+                        - container 안의 모든 flex item을 블록 레벨 요소로 배치
+                     * display: inline-flex;
+                        - 다음 요소가 주변에 배치 됨
+                        - container 안의 모든 flex item을 인라인 레벨 요소로 배치
+                    - display 속성이 지정된 요소는 flex container가 되고, 자식요소는 flex item이 됨
+                    - 플렉스 항목이 원래 가지고 있는 레벨 요소는 무시 됨
+            */
+            display: flex;
+
+            /*
+                flex-direction 속성
+                    - flexable layout의 주축 방향을 결정
+                     * flex-direction: row;             - 주축방향을 왼쪽에서 오른쪽으로 지정, default
+                     * flex-direction: row-reverse;     - 주축방향을 오른쪽에서 왼쪽으로 지정
+                     * flex-direction: column;          - 주축방향을 윗쪽에서 아래쪽으로 지정
+                     * flex-direction: column-reverse;  - 주축방향을 아래쪽에서 윗쪽으로 지정
+            */
+            flex-direction: column;
+
+            /*
+                flex-wrap 속성
+                    - flex conatainer의 너비보다 많은 flex item이 있을 경우 줄 바꿈을 어떻게 처리할지 결정
+                     * flex-wrap: nowrap;           - flex item이 flex container의 영역을 벗어나도 무시, default
+                     * flex-wrap: wrap;             - flex item이 flex container의 영역을 벗어나면 줄 바꿈
+                     * flex-wrap: wrap-reverse;     - flex item이 flex contaiter의 영역을 벗어나면 역방향으로 줄 바꿈
+            */
+            flex-wrap: nowrap;
+
+            /*
+                flex-flow 속성
+                    - flex-direction속성과 flex-wrap속성을 한번에 사용할 수 있는 단축 속성
+                     * flex-flow: column nowrap;     - flex-direction속성을 column으로, flex-wrap속성을 nowrap으로 설정
+                     * flex-direction속성값과 flex-wrap속성값을 다양하게 조합
+            */
+            flex-flow: row wrap;
+
+            /*
+                flexable layout의 정렬 속성
+                    1. justify-content
+                        - 주축 방향의 정렬 방법
+                         * justify-content: flex-start;     - 주축 방향의 시작을 기준으로 정렬
+                         * justify-content: flex-end;       - 주축 방향의 끝을 기준으로 정렬
+                         * justify-content: center;         - 주축 방향의 중심을 기준으로 정렬
+                         * justify-content: space-between;  - flex item의 주축 방향의 간격을 균일하도록 정렬
+                         * justify-content: space-around;   - flex item의 둘레가 균일하도록 정렬
+                         * justify-content: space-evenly;   - flex item의 사이와 양 끝 간격이 균일하도록 정렬
+            */
+            justify-content: space-evenly;
+        }
+
+        .flex-item {
+            border: 1px solid black;
+            background-color: #ff5252;
+            color: white;
+            width: 80px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        플렉스 컨테이너 (부모 요소)
+            - dispaly 속성값으로 flex나 inline-flex가 적용된 요소
+    -->
+    <div class="flex-container">
+        <!-- 플렉스 항목 (아이템) (자식요소) -->
+        <div class="flex-item">item-1</div>
+        <div class="flex-item">item-2</div>
+        <div class="flex-item">item-3</div>
+        <div class="flex-item">item-4</div>
+        <div class="flex-item">item-5</div>
+        <div class="flex-item">item-6</div>
+        <div class="flex-item">item-7</div>
+        <div class="flex-item">item-8</div>
+    </div>
+</body>
+
+</html>
