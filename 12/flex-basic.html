@@ -40,7 +40,7 @@
                      * flex-direction: column;          - 주축방향을 윗쪽에서 아래쪽으로 지정
                      * flex-direction: column-reverse;  - 주축방향을 아래쪽에서 윗쪽으로 지정
             */
-            flex-direction: column;
+            /* flex-direction: column; */
 
             /*
                 flex-wrap 속성
@@ -49,7 +49,7 @@
                      * flex-wrap: wrap;             - flex item이 flex container의 영역을 벗어나면 줄 바꿈
                      * flex-wrap: wrap-reverse;     - flex item이 flex contaiter의 영역을 벗어나면 역방향으로 줄 바꿈
             */
-            flex-wrap: nowrap;
+            /* flex-wrap: nowrap; */
 
             /*
                 flex-flow 속성
@@ -57,26 +57,62 @@
                      * flex-flow: column nowrap;     - flex-direction속성을 column으로, flex-wrap속성을 nowrap으로 설정
                      * flex-direction속성값과 flex-wrap속성값을 다양하게 조합
             */
-            flex-flow: row wrap;
+            /* flex-flow: row wrap; */
 
             /*
                 flexable layout의 정렬 속성
                     1. justify-content
                         - 주축 방향의 정렬 방법
-                         * justify-content: flex-start;     - 주축 방향의 시작을 기준으로 정렬
+                         * justify-content: flex-start;     - 주축 방향의 시작을 기준으로 정렬, default
                          * justify-content: flex-end;       - 주축 방향의 끝을 기준으로 정렬
                          * justify-content: center;         - 주축 방향의 중심을 기준으로 정렬
                          * justify-content: space-between;  - flex item의 주축 방향의 간격을 균일하도록 정렬
                          * justify-content: space-around;   - flex item의 둘레가 균일하도록 정렬
                          * justify-content: space-evenly;   - flex item의 사이와 양 끝 간격이 균일하도록 정렬
+
+                    2. align-items
+                        - 교차축 방향의 정렬 방법
+                         * align-items: stretch;            - 교차축 방향으로 flex item의 너비나 높이가 늘어나게 하는 값, default
+                         * align-items: flex-start;         - 교차축 방향의 시작점을 기준으로 정렬
+                         * align-items: flex-end;           - 교차축 방향의 끝점을 기준으로 정렬
+                         * align-items: center;             - 교차축 방향의 중앙을 기준으로 정렬
+                         * align-items: baseline;           - flex item의 baseline을 기준으로 정렬
+
+                     ※ align-items 의 default값이 stretch이므로, display속성에 flex나 inline-flex값만 적용해도
+                        flex item이 flex container의 높이만큼 가득차게 늘어난다.
+                    
+                    3. align-content
+                        - 교차축 방향의 정렬 방법
+                        - flex-wrap 속성에 의해 flex item이 여러 줄로 표시될 때 사용
+                    
+                    4. align-self
+                        - flex item을 한 번에 정렬하지 않고, 각각 정렬 할 때 사용
             */
-            justify-content: space-evenly;
+            /* justify-content: space-evenly;
+            align-items: center;
+            align-content: center; */
+        }
+
+        .flex-item:nth-child(1) {
+            align-self: flex-start;
+        }
+
+        .flex-item:nth-child(2) {
+            align-self: flex-end;
+        }
+
+        .flex-item:nth-child(3) {
+            align-self: center;
+        }
+
+        .flex-item:nth-child(4) {
+            align-self: baseline;
         }
 
         .flex-item {
-            border: 1px solid black;
             background-color: #ff5252;
             color: white;
+            border: 1px solid black;
             width: 80px;
             height: 50px;
             line-height: 50px;
@@ -96,10 +132,6 @@
         <div class="flex-item">item-2</div>
         <div class="flex-item">item-3</div>
         <div class="flex-item">item-4</div>
-        <div class="flex-item">item-5</div>
-        <div class="flex-item">item-6</div>
-        <div class="flex-item">item-7</div>
-        <div class="flex-item">item-8</div>
     </div>
 </body>
 
