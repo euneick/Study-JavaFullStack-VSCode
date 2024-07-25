@@ -22,7 +22,8 @@
 
         let age = parseInt(prompt("나이를 입력하세요."));
         let msg = (age >= 0 && age <= 12) ? "어린이용 영화 추천" :
-            (age >= 13 && age <= 17) ? "청소년용 영화 추천" : "성인용 영화 추천";
+            (age >= 13 && age <= 17) ? "청소년용 영화 추천" : 
+            (age >= 18) ? "성인용 영화 추천" : "잘못 된 값을 입력했습니다.";
 
         document.write(msg);
     </script>
