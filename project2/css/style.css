@@ -149,3 +149,71 @@ figure .inner a:hover {
     background-color: white;
     color: #555;
 }
+
+/* section 영역 */
+
+section {
+    width: 100%;
+    padding: 200px 0px;
+}
+
+section .inner {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+section .inner .wrap {
+    width: 100%;
+}
+
+section .inner h1 {
+    font: bold 24px/1 "arial";
+    color: #555;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+section .inner .wrap article {
+    width: 280px;
+    float: left;
+    margin-right: 20px;
+}
+
+section .inner .wrap article:last-child {
+    margin-right: 0px;
+}
+
+section .inner .wrap::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+section .inner .wrap article .pic {
+    width: 100%;
+    height: 120px;
+    background: #333;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+section .inner .wrap article .pic img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+section .inner .wrap article h2 {
+    margin-bottom: 10px;
+}
+
+section .inner .wrap article h2 a {
+    font: bold 16px/1 "arial";
+    color: #555;
+}
+
+section .inner .wrap article p {
+    font: 14px/1.4 "arial";
+    color: #777;
+}
