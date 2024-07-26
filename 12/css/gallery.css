@@ -7,6 +7,12 @@ body {
     font-size: 16px;
 }
 
+#wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+}
+
 .card {
     background-color: #fff;
     box-shadow: 0px 1px 5px #222;
