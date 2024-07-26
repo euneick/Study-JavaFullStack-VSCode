@@ -36,3 +36,21 @@ header .inner h1 a {
     font: bold 24px/1 "arial";
     color: #444;
 }
+
+header .inner .util {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+header .inner .util li {
+    float: left;
+}
+
+header .inner .util li a {
+    /* a태그를 블럭요소로 변경하여 클릭 영역을 확대 */
+    display: block;
+    font: 12px/1 "arial";
+    color: #999;
+    padding: 0px 10px;
+}
