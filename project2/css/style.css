@@ -2,7 +2,8 @@
 
 /* 웹 페이지 시작 시 초기화 */
 * {
+    /* 요소의 크기를 border, padding을 포함하여 계산하도록 하여 예측 가능하게끔 설정 */
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
 }
