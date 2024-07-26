@@ -13,3 +13,15 @@ ul, ol { list-style: none; }
 a {
     text-decoration: none;
 }
+
+header {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+header .inner {
+    width: 1180px;
+    height: 120px;
+    margin: 0px auto;
+    position: relative;
+}
