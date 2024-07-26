@@ -14,6 +14,8 @@ a {
     text-decoration: none;
 }
 
+/* header 영역 */
+
 header {
     width: 100%;
     border-bottom: 1px solid #ddd;
@@ -76,4 +78,20 @@ header .inner #gnb li a {
 header .inner #gnb li a:hover {
     background-color: #555;
     color: white;
+}
+
+/* figure 영역 */
+/* 
+    사용자 브라우저에 상관없이 한 화면에 header, figure 영역이 모두 보이도록하고, 배경 동영상을 무한 반복 하게끔
+
+    calc() 함수 - CSS자체에서 산술연산하는 함수
+        브라우저의 높이값을 100vh로 설정하고 header의 고정 픽셀을 빼는건 어렵지만 calc()함수를 이용하면 css가 자동으로 처리해줌
+        매개변수에 값 및 연산자 사이를 띄어쓰기로 구분해야 연산 오류를 방지 할 수 있음
+*/
+figure {
+    width: 100%;
+    height: calc(100vh - 120px);
+    background-color: black;
+    position: relative;
+    overflow: hidden;
 }
