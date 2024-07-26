@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정하여 다양한 문자 지원 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- IE 호환성 설정으로 최신 브라우저 모드 사용 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형 웹을 위한 뷰포트 설정 -->
+  <title>grid-template-areas</title> <!-- 페이지 제목 설정 -->
+  <link rel="stylesheet" href="./css/grid-basic.css"> <!-- 외부 CSS 파일 연결: grid-basic.css -->
+  <style>
+    /* 그리드 컨테이너의 스타일을 정의합니다. */
+    .grid-container{
+      display:grid; /* 그리드 레이아웃 사용 */
+      grid-template-areas: 
+      "header header header" /* 헤더 영역: 3개의 열을 차지하여 중앙에 배치 */
+      "sidebar content content" /* 사이드바와 콘텐츠 영역: 사이드바는 1열, 콘텐츠는 2열 차지 */
+      "footer footer footer"; /* 푸터 영역: 3개의 열을 차지하여 하단에 배치 */
+      gap: 10px; /* 그리드 아이템 간의 간격 설정: 10px */
+    }
+    /* 각 영역의 스타일을 정의합니다. */
+    #header{
+      grid-area:header; /* 헤더 영역 지정 */
+      display:flex; /* 플렉스 박스 사용으로 아이템 배치 조정 */
+      justify-content:space-between; /* 아이템 간의 간격 조정: 양쪽 끝으로 배치 */
+      align-items:center; /* 수직 정렬: 중앙 정렬 */
+      padding:20px; /* 패딩: 20px으로 여백 설정 */
+    }
+    #sidebar{
+      grid-area:sidebar; /* 사이드바 영역 지정 */
+      display:flex; /* 플렉스 박스 사용 */
+      flex-direction:column; /* 세로 방향 정렬 */
+      align-items:center; /* 수평 중앙 정렬 */
+      gap: 50px; /* 아이템 간의 간격: 50px */
+    }
+    #content{
+      grid-area:content; /* 콘텐츠 영역 지정 */
+      display:flex; /* 플렉스 박스 사용 */
+      flex-direction:column; /* 세로 방향 정렬 */
+      align-items:center; /* 수평 중앙 정렬 */
+      gap: 10px; /* 아이템 간의 간격: 10px */
+    }
+    #footer{
+      grid-area:footer; /* 푸터 영역 지정 */
+      display:flex; /* 플렉스 박스 사용 */
+      justify-content:space-between; /* 아이템 간의 간격 조정: 양쪽 끝으로 배치 */
+      align-items:center; /* 수직 정렬: 중앙 정렬 */
+      padding:20px; /* 패딩: 20px으로 여백 설정 */
+    }
+    /* 유튜브 비디오의 스타일을 정의합니다. */
+    .youtube-video{
+      width: 100%; /* 너비 100%로 설정하여 반응형 비디오 구현 */
+      aspect-ratio: 16 / 9; /* 비율 설정: 16:9로 비디오 비율 유지 */
+    }
+    /* 그리드 아이템 내 링크의 스타일을 정의합니다. */
+    .grid-item a {
+      display: block; /* 블록 요소로 설정: 링크가 전체 영역을 차지 */
+      padding: 10px; /* 패딩: 10px으로 여백 설정 */
+      margin: 5px 0; /* 마진: 위아래 5px으로 간격 설정 */
+      background-color: #ff5252; /* 배경 색상: 빨간색으로 설정하여 강조 */
+      color: white; /* 글자 색상: 흰색으로 설정하여 가독성 높임 */
+      text-align: center; /* 텍스트 중앙 정렬 */
+      border-radius: 5px; /* 모서리 둥글게: 5px으로 부드러운 느낌 제공 */
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container"> <!-- 그리드 컨테이너 시작 -->
+    <div id="header" class="grid-item"> <!-- 헤더 영역 -->
+      <a href="#">Home</a> <!-- 홈 링크 -->
+      <a href="#">About</a> <!-- 소개 링크 -->
+      <a href="#">Contact</a> <!-- 연락처 링크 -->
+      <a href="#">Cart</a> <!-- 장바구니 링크 -->
+    </div>
+    <div id="sidebar" class="grid-item"> <!-- 사이드바 영역 -->
+      <a href="#">Women</a> <!-- 여성 링크 -->
+      <a href="#">Men</a> <!-- 남성 링크 -->
+      <a href="#">Kids</a> <!-- 아동 링크 -->
+      <a href="#">Accessories</a> <!-- 액세서리 링크 -->
+    </div>
+    <div id="content" class="grid-item"> <!-- 콘텐츠 영역 -->
+      <iframe class="youtube-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe> <!-- 유튜브 비디오 1 -->
+      <iframe class="youtube-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe> <!-- 유튜브 비디오 2 -->
+      <iframe class="youtube-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe> <!-- 유튜브 비디오 3 -->
+    </div>
+    <div id="footer" class="grid-item"> <!-- 푸터 영역 -->
+      <p>Company Address: 123 Main St, City, Country</p> <!-- 회사 주소 -->
+      <p>Email: info@company.com</p> <!-- 이메일 주소 -->
+      <p>FAX: 123-456-7890</p> <!-- 팩스 번호 -->
+      <p>Phone: 123-456-7890</p> <!-- 전화 번호 -->
+      <p>Business Registration Number: 1234567890</p> <!-- 사업자 등록 번호 -->
+    </div>
+  </div> <!-- 그리드 컨테이너 끝 -->
+</body>
+</html>
