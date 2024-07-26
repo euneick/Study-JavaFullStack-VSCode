@@ -8,7 +8,10 @@
     padding: 0px;
 }
 
-ul, ol { list-style: none; }
+ul,
+ol {
+    list-style: none;
+}
 
 a {
     text-decoration: none;
@@ -109,4 +112,40 @@ figure video {
     top: 0px;
     left: 0px;
     opacity: 0.3;
+}
+
+figure .inner {
+    width: 1180px;
+    margin: 0px auto;
+    position: relative;
+}
+
+figure .inner h1 {
+    font: normal 120px/1 "arial";
+    color: white;
+    margin-bottom: 20px;
+}
+
+figure .inner p {
+    font: 16px/1.4 "arial";
+    color: #888;
+    margin-bottom: 60px;
+}
+
+figure .inner a {
+    /* 블록 레벨 요소로 바꾸고 너비값을 400px, 높이값을 30px로 지정하여 클릭 영역 확대 */
+    display: block;
+    width: 400px;
+    height: 30px;
+    border: 1px solid #bbb;
+    font: bold 11px/30px "arial";
+    color: white;
+    text-align: center;
+    letter-spacing: 5px;
+    transition: all 0.5s;
+}
+
+figure .inner a:hover {
+    background-color: white;
+    color: #555;
 }
