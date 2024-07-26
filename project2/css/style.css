@@ -54,3 +54,26 @@ header .inner .util li a {
     color: #999;
     padding: 0px 10px;
 }
+
+header .inner #gnb {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+header .inner #gnb li {
+    float: left;
+}
+
+header .inner #gnb li a {
+    display: block;
+    font: bold 15px/1 "arial";
+    color: #555;
+    padding: 20px 40px;
+    transition: all 0.5s;
+}
+
+header .inner #gnb li a:hover {
+    background-color: #555;
+    color: white;
+}
