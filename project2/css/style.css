@@ -25,3 +25,14 @@ header .inner {
     margin: 0px auto;
     position: relative;
 }
+
+header .inner h1 {
+    position: absolute;
+    left: 0px;
+    bottom: 15px;
+}
+
+header .inner h1 a {
+    font: bold 24px/1 "arial";
+    color: #444;
+}
