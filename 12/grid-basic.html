@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*
+            Grid Layout
+                - 행(row)과 열(column)을 갖는 2차원 방식으로 layout을 설계
+             * Grid Gap         - Grid Sell 간의 간격
+             * Grid Item        - Grid Sell 안의 contents 영역
+             * Grid Line        - Grid의 행과 열을 그리는 선을 읨
+             * Grid Number      - Grid Line에 붙는 번호
+             * Grid Container   - Grid Layout의 전체 내용을 담고 있는 최상위 부모요소
+        */
+        .grid-container {
+            border: 1px solid black;
+            width: 500px;
+            /*
+                Grid Layout으로 설정
+                 * display: grid;           - grid item을 블록레벨 요소로 배치
+                 * display: inline-grid;    - grid item을 블록레벨 요소로 배치
+            */
+            display: grid;
+
+            /*
+                grid-template-columns, grid-template-rows
+                    - 행과 열의 크기와 개수를 지정하는 속성
+                    - 문법
+                        grid-template-columns: 1열 값, 2열 값, ... ;
+                        grid-template-rows: 1행 값, 2행 값, ... ;
+
+                    - 속성 값이 반복될 때 repeat함수로 줄여 쓸 수 있음
+                        grid-template-columns: repaet(열 개수, 셀 크기);
+                        grid-template-rows: repaet(행 개수, 셀 크기);
+                      ※ auto-fill, auto-fit 속성값으로 자동으로 column개수를 조절 할 수 있음
+                            auto-fill       - 열의 최소 너비만 표시하고 남는 공간은 그대로 둠
+                            auto-fit        - 남는 공간 없이 꽉 채워서 열을 표시
+
+                    - minmax() 함수로 셀 크기를 최소값, 최대값으로 지정하여 유연하게 변경 할 수 있음
+                        grid-template-columns: minmax(열 최소값, 열 최대값);
+                        grid-template-rows: minmax(행 최소값, 행 최대값);
+                      ※ auto 속성 값을 사용할 수 있음
+            */
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 150px 150px 150px;
+            grid-template-columns: repeat(3, 160px);
+            /* 열을 3칸으로 설정하고 각각 100px로 설정 */
+            grid-template-rows: repeat(3, 150px);
+            /* 행을 3칸으로 설정하고 각각 150px로 설정 */
+
+            /*
+                grid-gap
+                    - 각 셀 사이의 간격을 지정하는 속성
+                    - 문법
+                        grid-gap: 행_간격 열_간격;
+                    - grid-gap 속성이 아닌 gap 속성 사용. 각 간격 속성 값 설정은 동일
+            */
+            /* grid-gap: 20px 30px; */
+            gap: 20px 10px;
+
+            /* 
+                align-items
+                    - 각 셀의 높이가 item보다 클 때 item을 각 셀의 세로 방향으로 정렬 할 수 있음
+                 * align-items: stretch;            - grid item이 grid sell을 꽉 채우도록 크기를 늘림, default
+                 * align-items: start;              - grid item을 grid sell의 맨 위에 배치
+                 * align-items: center;             - grid item을 grid sell의 세로 중앙에 배치
+                 * align-items: end;                - grid item을 grid sell의 맨 아래에 배치
+
+                align-self 
+                
+            */
+            align-items: start;
+
+            /* 
+                justify-items
+                    - grid item을 각 grid sell의 가로 방향으로 정렬하는 속성
+                    - 사용 할 수 있는 속성 값은 align-items의 속성 값과 동일
+            */
+            justify-items: end;
+
+            /* 
+                place-items
+                    - align-items 속성과 justify-items 속성을 동시에 설정 할 수 있는 속성
+                    - 문법
+                        place-items: 가로_세로_동시_정렬방법;
+                        place-items: 세로_정렬방법 가로_정렬방법;
+
+                place-self
+                    - align-self 속성과 justify-self 속성을 동시에 설정 할 수 있는 속성
+                    - self 속성들은 nth-child 같은 구조 가상클래스 선택자를 이용하여 개별로 적용해야 한다
+            */
+            place-items: center;
+        }
+
+        .grid-item:nth-child(3) {
+            place-self: stretch center;
+        }
+
+        .grid-item {
+            background-color: #ff5252;
+            color: white;
+        }
+
+        .grid-item:nth-child(2n) {
+            background-color: #bf5e5e;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 그리드 컨테이너(부모요소) -->
+    <div class="grid-container">
+        <!-- 그리드 아이템 -->
+        <div class="grid-item">item-1</div>
+        <div class="grid-item">item-2</div>
+        <div class="grid-item">item-3</div>
+        <div class="grid-item">item-4</div>
+        <div class="grid-item">item-5</div>
+        <div class="grid-item">item-6</div>
+        <div class="grid-item">item-7</div>
+        <div class="grid-item">item-8</div>
+    </div>
+</body>
+
+</html>
