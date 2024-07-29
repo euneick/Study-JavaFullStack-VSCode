@@ -1,0 +1,68 @@
+header {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+header .contents {
+    width: 1180px;
+    height: 120px;
+    margin: 0px auto;
+    position: relative;
+}
+
+/* #region Logo Text */
+header .contents h1 {
+    position: absolute;
+    left: 0px;
+    bottom: 15px;
+}
+
+header .contents h1 a {
+    font: bold 24px/1 "arial";
+    color: #444;
+}
+/* #endregion */
+
+/* #region Navigation Area */
+header .contents .nav {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+header .contents .nav li {
+    float: left;
+}
+
+header .contents .nav li a {
+    display: block;
+    font: bold 15px/1 "arial";
+    color: #444;
+    padding: 20px 40px;
+    transition: all 0.5s;
+}
+
+header .contents .nav li a:hover {
+    background-color: #444;
+    color: white;
+}
+/* #endregion */
+
+/* #region Utility Area */
+header .contents .util {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+header .contents .util li {
+    float: left;
+}
+
+header .contents .util li a {
+    display: block;
+    font: 12px/1 "arial";
+    color: #999;
+    padding: 0px 10px;
+}
+/* #endregion */

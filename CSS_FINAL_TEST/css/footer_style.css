@@ -1,0 +1,65 @@
+footer {
+    width: 100%;
+    background-color: #333;
+    padding: 100px 0px;
+    border-top: 1px solid #888;
+}
+
+footer .contents {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+/* #region Upper Area */
+footer .contents .upper {
+    width: 100%;
+    border-bottom: 1px solid #777;
+    padding-bottom: 20px;
+}
+
+footer .contents .upper h1 {
+    float: left;
+    font: bold 24px/1 "arial";
+    color: #666;
+}
+
+footer .contents .upper ul {
+    float: right;
+}
+
+footer .contents .upper ul li {
+    float: left;
+    margin-left: 20px;
+}
+
+footer .contents .upper ul li a {
+    font: bold 14px/1 "arial";
+    color: #666;
+}
+
+footer .contents .upper::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/* #endregion */
+
+/* #region Lower Area */
+footer .contents .lower {
+	width: 100%;
+	padding-top: 20px;
+}
+
+footer .contents .lower address {
+	width: 100%;
+	font: 12px/1.3 "arial";
+	color: #777;
+	margin-bottom: 20px;
+}
+
+footer .contents .lower p {
+	width: 100%;
+	font: 12px/1 "arial";
+	color: #777;
+}
+/* #endregion */
