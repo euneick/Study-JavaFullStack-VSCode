@@ -53,6 +53,7 @@ nav {
 
 #topMenu > li {
     float: left;
+    position: relative;
 }
 
 #topMenu > li > a {
@@ -70,6 +71,34 @@ nav {
 #topMenu > li > a:hover {
     color: #000;
     text-shadow: 0 -1px #07c;
+}
+
+#topMenu > li > ul {
+    display: none;      /* 서브메뉴를 처음에는 감춤 */
+    position: absolute;
+    width: 160px;
+    background-color: rgba(255, 255, 255, 0.6);
+    left: 20px;
+    margin: 0;
+}
+
+#topMenu > li > ul  > li{
+    padding: 10px 10px 10px 30px;
+}
+
+#topMenu > li > ul  > li > a{
+    font-size: 14px;
+    padding: 10px;
+    color: #000;
+}
+
+#topMenu > li:hover > ul {
+    display: block;     /* 리스트가 hover 되면 display를 표시 */
+    z-index: 10;
+}
+
+#topMenu > li  > ul > li > a:hover {
+    color: #f00;
 }
 /* #endregion */
 
