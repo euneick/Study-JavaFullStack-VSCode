@@ -21,11 +21,11 @@
         document.write("<hr>");
         sum = 0;
         document.write("<h3>while문 사용</h3>");
-        let i = 1;
-        while (i <= 10) {
-            if (i % 2 === 0) { i++; continue; }
+        let i = 0;
+        while (i++ < 10) {
+            if (i % 2 === 0) continue;
             document.write(`${i} `);
-            sum += i++;
+            sum += i;
         }
         document.write(`<br>1부터 10까지 숫자 중 홀수의 합은 <b>${sum}</b>입니다.`);
     </script>
