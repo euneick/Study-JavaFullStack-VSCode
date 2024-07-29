@@ -283,6 +283,7 @@ footer {
 #bottomMenu {
     width: 100%;
     height: 20px;
+    position: relative;
 }
 
 #bottomMenu ul {
@@ -303,6 +304,27 @@ footer {
 #bottomMenu ul li a:visited {
     font-size: 15px;
     color: #666;
+}
+
+#sns {
+    position: absolute;
+    right: 0;
+}
+
+#sns ul li {
+    border: none;
+    padding: 5px;
+}
+
+#company {
+    clear: left;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+p {
+    font-size: 14px;
+    color: #aaa;
 }
 
 /* #endregion */
