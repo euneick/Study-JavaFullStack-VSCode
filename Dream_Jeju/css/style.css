@@ -162,7 +162,31 @@ button:focus {
     float: left;
     width: 600px;
     height: 100%;
-    background-color: violet;
+}
+
+#tabMenu input[type="radio"] {
+    display: none;
+}
+
+#tabMenu label {
+    display: inline-block;
+    margin: 0 0;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #aaa;
+    border: 1px solid transparent;
+}
+
+#tabMenu label:hover {
+    color: #222;
+    cursor: pointer;
+}
+
+#tabMenu input:checked + label {
+    color: #b00;
+    border: 1px solid #ddd;
+    background-color: #eee;
 }
 
 #links {
