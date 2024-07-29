@@ -51,12 +51,12 @@ nav {
     height: 60px;
 }
 
-#topMenu > li {
+#topMenu>li {
     float: left;
     position: relative;
 }
 
-#topMenu > li > a {
+#topMenu>li>a {
     display: block;
     color: #fff;
     font-weight: 600;
@@ -64,17 +64,18 @@ nav {
     padding: 20px 60px;
 }
 
-#topMenu > li > a > span {
+#topMenu>li>a>span {
     font-size: 0.5em;
 }
 
-#topMenu > li > a:hover {
+#topMenu>li>a:hover {
     color: #000;
     text-shadow: 0 -1px #07c;
 }
 
-#topMenu > li > ul {
-    display: none;      /* 서브메뉴를 처음에는 감춤 */
+#topMenu>li>ul {
+    display: none;
+    /* 서브메뉴를 처음에는 감춤 */
     position: absolute;
     width: 160px;
     background-color: rgba(255, 255, 255, 0.6);
@@ -82,24 +83,26 @@ nav {
     margin: 0;
 }
 
-#topMenu > li > ul  > li{
+#topMenu>li>ul>li {
     padding: 10px 10px 10px 30px;
 }
 
-#topMenu > li > ul  > li > a{
+#topMenu>li>ul>li>a {
     font-size: 14px;
     padding: 10px;
     color: #000;
 }
 
-#topMenu > li:hover > ul {
-    display: block;     /* 리스트가 hover 되면 display를 표시 */
+#topMenu>li:hover>ul {
+    display: block;
+    /* 리스트가 hover 되면 display를 표시 */
     z-index: 10;
 }
 
-#topMenu > li  > ul > li > a:hover {
+#topMenu>li>ul>li>a:hover {
     color: #f00;
 }
+
 /* #endregion */
 
 /* #region slide show area */
@@ -115,7 +118,7 @@ nav {
     position: absolute;
 }
 
-#slides > img {
+#slides>img {
     width: 100%;
     float: left;
 }
@@ -144,12 +147,14 @@ button:hover {
     background-color: #222;
     color: #fff;
     opacity: 0.6;
-    cursor: pointer;        /* 마우스 포인터 모양 변경 */
+    cursor: pointer;
+    /* 마우스 포인터 모양 변경 */
 }
 
 button:focus {
     outline: 0;
 }
+
 /* #endregion */
 
 /* #region contents area */
@@ -183,7 +188,7 @@ button:focus {
     cursor: pointer;
 }
 
-#tabMenu input:checked + label {
+#tabMenu input:checked+label {
     color: #b00;
     border: 1px solid #ddd;
     background-color: #eee;
@@ -196,7 +201,7 @@ button:focus {
 }
 
 .tabContent h2 {
-    display:  none;
+    display: none;
 }
 
 #notice ul {
@@ -213,12 +218,18 @@ button:focus {
     display: inline;
 }
 
+#tab1:checked~#notice,
+#tab2:checked~#gallery {
+    display: block;
+}
+
 #links {
     float: right;
     width: 600px;
     height: 100%;
     background-color: skyblue;
 }
+
 /* #endregion */
 
 /* #region footer area */
@@ -227,4 +238,5 @@ footer {
     height: 100px;
     background-color: gray;
 }
+
 /* #endregion */
