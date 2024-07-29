@@ -28,3 +28,16 @@ function nextSlide() {
 
     showSlide(current);
 }
+
+// 이미지가 시간에 따라 바뀌게 하는 구문
+// function showSlide() {
+//     for (let i = 0; i < slides.length; i++) {
+//         slides[i].style.display = "none";
+//     }
+
+//     current++;
+
+//     if (current > slides.length) current = 1;
+//     slides[current - 1].style.display = "block";
+//     setTimeout(showSlide, 2000);
+// }
