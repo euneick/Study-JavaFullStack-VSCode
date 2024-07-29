@@ -189,6 +189,30 @@ button:focus {
     background-color: #eee;
 }
 
+.tabContent {
+    display: none;
+    padding: 20px 0 0;
+    border-top: 1px solid #ddd;
+}
+
+.tabContent h2 {
+    display:  none;
+}
+
+#notice ul {
+    list-style: disc;
+    margin-left: 30px;
+}
+
+#notice ul li {
+    font-size: 16px;
+    line-height: 2.5;
+}
+
+#gallery ul li {
+    display: inline;
+}
+
 #links {
     float: right;
     width: 600px;
