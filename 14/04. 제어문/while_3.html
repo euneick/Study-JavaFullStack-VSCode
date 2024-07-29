@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>while 반복문을 사용한 팩토리얼 계산</h1>
+
+    <script>
+        let value = prompt("팩토리얼을 계산할 숫자를 입력하세요.");
+        let message = "";
+
+        if (value) {
+            let nFact = 1;
+            let i = 1;
+
+            while (i <= value) {
+                nFact *= i;
+
+                i++;
+            }
+
+            message = `${value}! = ${nFact}`;
+        }
+        else {
+            message = "잘못된 값을 입력 했습니다.";
+        }
+
+        document.write("<h2>" + message + "</h2>");
+    </script>
+</body>
+
+</html>
