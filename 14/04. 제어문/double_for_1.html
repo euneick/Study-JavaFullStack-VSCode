@@ -9,10 +9,58 @@
     <style>
         div {
             display: inline-block;
+            width: 100px;
             padding: 0px 20px 30px 20px;
             margin: 15px;
             border: 1px solid #ccc;
+            text-align: center;
             line-height: 2;
+        }
+
+        div span:nth-child(1) {
+            display: block;
+        }
+
+        div span:nth-child(2) {
+            display: none;
+        }
+
+        div span:nth-child(3) {
+            display: none;
+        }
+
+        div:hover {
+            background-color: black;
+            color: white;
+        }
+
+        div:hover span:nth-child(1) {
+            display: none;
+        }
+
+        div:hover span:nth-child(2) {
+            display: block;
+        }
+
+        div:hover span:nth-child(3) {
+            display: none;
+        }
+
+        div:active {
+            background-color: gray;
+            color: white;
+        }
+
+        div:active span:nth-child(1) {
+            display: none;
+        }
+
+        div:active span:nth-child(2) {
+            display: none;
+        }
+
+        div:active span:nth-child(3) {
+            display: block;
         }
 
         div h3 {
@@ -27,10 +75,28 @@
     <script>
         for (let i = 1; i < 10; i++) {
             document.write("<div>");
+
+            document.write("<span>");
             document.write(`<h3>${i}단</h3>`);
             for (let j = 1; j < 10; j++) {
                 document.write(`${i} x ${j} = ${i * j}<br>`);
             }
+            document.write("</span>");
+
+            document.write("<span>");
+            document.write(`<h3>${i + 10}단</h3>`);
+            for (let j = 1; j < 10; j++) {
+                document.write(`${i + 10} x ${j} = ${(i + 10) * j}<br>`);
+            }
+            document.write("</span>");
+
+            document.write("<span>");
+            document.write(`<h3>${i + 20}단</h3>`);
+            for (let j = 1; j < 10; j++) {
+                document.write(`${i + 20} x ${j} = ${(i + 20) * j}<br>`);
+            }
+            document.write("</span>");
+
             document.write("</div>");
         }
     </script>
