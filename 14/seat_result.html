@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자리 배치도</title>
+
+    <style>
+        table, td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        a:visited {
+            color: black;
+        }
+
+        td:hover{
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>자리 배치도</h1>
+
+    <script>
+        let visitors = parseInt(prompt("입장객은 몇 명인가요?"));
+        let colNum = parseInt(prompt("한 줄에 몇 명씩 앉습니까?"));
+        let rowNum = Math.ceil(visitors / colNum);
+
+        document.write("<table>");
+        for (let i = 0; i < rowNum; i++) {
+            document.write("<tr>");
+            for (let j = 0; j < colNum; j++) {
+                let seatNo = i * colNum + j + 1;
+                
+                if (seatNo > visitors) break;
+
+                document.write(`<td onClick="location.href='#'">좌석 ${seatNo}</td>`);
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+
+</html>
