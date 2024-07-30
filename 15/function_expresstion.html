@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 표현법</title>
+</head>
+
+<body>
+    <h1>여러가지 함수 표현 방법</h1>
+
+    <script>
+        document.write("<h2>일반 함수</h2>")
+        function PrintGugudan() {
+            for (let i = 1; i < 10; i++) {
+                document.write(`2 x ${i} = ${2 * i} <br>`);
+            }
+        }
+        PrintGugudan();
+
+        document.write("<hr>");
+
+        document.write("<h2>네이밍 함수</h2>")
+        const namingGugudan = function Naming() {
+            for (let i = 1; i < 10; i++) {
+                document.write(`3 x ${i} = ${3 * i} <br>`);
+            }
+        };
+
+        namingGugudan();
+
+        document.write("<hr>");
+
+        document.write("<h2>익명 함수</h2>")
+        const anonymousGugudan = function () {
+            for (let i = 1; i < 10; i++) {
+                document.write(`4 x ${i} = ${4 * i} <br>`);
+            }
+        };
+
+        anonymousGugudan();
+
+        document.write("<hr>");
+
+        document.write("<h2>람다식 표현</h2>")
+        const lambdaGugudan = () => {
+            for (let i = 1; i < 10; i++) {
+                document.write(`5 x ${i} = ${5 * i} <br>`);
+            }
+        };
+
+        lambdaGugudan();
+    </script>
+</body>
+
+</html>
