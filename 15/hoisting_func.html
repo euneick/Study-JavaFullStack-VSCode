@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        PrintHello1();       // 함수가 호이스팅되어 호출 가능
+
+        function PrintHello1() {
+            document.write("Hello Wolrd! 1<br>");
+        }
+
+        PrintHello2();      // 함수표현식으로 선언된 함수는 호이스팅 불가
+        const PrintHello2 = function() {
+            document.write("Hello Wolrd! 2<br>");
+        }
+
+        PrintHello3();      // 람다식으로 표현된 함수도 호이스팅 불가
+        const PrintHello3 = () => {
+            document.write("Hello Wolrd! 3<br>");
+        }
+    </script>
+</body>
+
+</html>
