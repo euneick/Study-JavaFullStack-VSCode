@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let valA = 10;
+        const valB = 20;
+
+        function Func() {
+            let valA = 50;
+            const valB = 70;
+
+            document.write(`함수 내부 A : ${valA}<br>`);
+            document.write(`함수 내부 B : ${valB}<br>`);
+        }
+
+        Func();
+
+        document.write(`함수 외부 A : ${valA}<br>`);
+        document.write(`함수 외부 B : ${valB}<br>`);
+    </script>
+</body>
+
+</html>
