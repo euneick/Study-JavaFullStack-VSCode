@@ -1,0 +1,27 @@
+ * 내장 객체
+    - String
+    - Date
+    - Array
+    - Math
+
+ * 브라우저 객체 모델 (Browser Object Model, BOM)
+    - window
+        창 정보를 제공하는 객체
+        알림창을 나타내는 함수 alert() 
+            window.alert()
+        사용자로부터 문자열을 받는 함수 prompt()
+            window.prompt()
+    - screen
+        모니터 해상도 정보를 제공하는 객체
+    - location
+        웹브라우저 주소창에 입력되는 정보를 제공하는 객체
+    - history
+        한번 요청했던 이전페이지나 다음페이지를 요청 시 사용하는 객체
+    - 그 외 다수
+
+ * 문서 객체 모델 (Document Object Model, DOM)
+    - HTML태그들을 문서객체라고 표현함
+        <h1> h1태그 </h1>           ← h1 문서 객체
+        <div> div영역태그 </div>    ← div 문서 객체
+
+* 사용자 정의 객체
