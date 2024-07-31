@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            1분 퀴즈
+            다음 코드를 실행하면 출력될 변수 result의 값을 고르세요.
+
+            const result = (function(a, b){
+                function init(){
+                    return doSum(a, b);
+                }
+
+                function doSum(a, b){
+                    return a + b;
+                }
+                    
+                return init();
+            })(10, 20);
+            console.log(result);
+
+            ① undefined
+            ② null
+            ③ 50
+            ④ 30
+            ⑤ SyntaxError
+        */
+        // 셀프 체크 문제
+        // 1. 원의 넓이를 구하는 공식은 (반지름) × (반지름) × (원주율)입니다. 원주율은 3.14라고 했을 때, 
+        //    원의 반지름을 이용해 원의 넓이를 반환하는 함수를 만들어 보세요.
+        let radius = 10;
+
+        function CircleArea(radius) {
+            return radius * radius * 3.14;
+        }
+
+        document.write(`반지름 : ${radius}, 원의 넓이 : ${CircleArea(radius)}<br>`);
+
+
+        // 2. 매개변수로 배열을 전달받아 배열의 요소 중에서 가장 큰 수를 찾아 반환하는 함수를 만들어 보세요. 
+        //    이때, 배열 안의 데이터는 모두 0보다 큰 정수라고 가정합니다.
+        let array = [4, 56, 25, 26, 3, 14];
+
+        function MaxValue(values) {
+            let max = 0;
+            for (let i = 0; i < values.length; i++) {
+                if (values[i] > max) max = values[i];
+            }
+
+            return max;
+        }
+
+        document.write(`전달 받는 배열 중 가장 큰 값 : ${MaxValue(array)}<br>`);
+
+        // 3. 체질량 지수(BMI)를 계산하는 공식은 몸무게를 키(m)의 제곱으로 나눈 값입니다. 
+        //    사용자에게 키(cm)와 몸무게(kg)에 해당하는 값을 전달받아 체질량 지수를 계산합니다. 
+        //    체질량 지수가 26점 이상이면 비만, 24~25점은 과체중, 
+        //    18.5~23점은 정상, 18.5점 미만은 저체중을 반환하는 함수를 만들어 보세요.
+
+        // 힌트)	
+        //      키는 cm 단위로 전달받기 때문에 m 단위로 변환하기 위해 100으로 나눕니다.
+        //      이후 문제에 주어진 BMI 공식에 따라 키를 제곱하고 이 값으로 몸무게를 나누어서 BMI를 구합니다. 
+        //      마지막으로 조건문을 사용해 조건(BMI 점수)에 따른 결과를 반환하게 작성하면 됩니다.
+
+        let heightCM = parseInt(prompt("키를 입력하세요.(cm)"));
+        let weight = parseInt(prompt("몸무게를 입력하세요."));
+        let heightM = heightCM / 100;
+
+        console.log(heightM);
+
+        function CheckBMI(weight, height) {
+            let bmi = weight / (height * height);
+            console.log(bmi);
+            if (bmi >= 26) return "비만";
+            else if (bmi >= 24 && bmi < 26) return "과체중";
+            else if (bmi >= 18.5 && bmi < 24) return "정상";
+            else if (bmi < 18.5) return "저체중";
+            else return null;
+        }
+
+        let msg = CheckBMI(weight, heightM);
+        document.write(msg === null ? "잘못된 값을 입력했습니다.<br>" :
+            `당신의 BMI는 ${msg}입니다. <br>`
+        );
+    </script>
+</body>
+
+</html>
