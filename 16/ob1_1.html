@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            Literal 방식으로 객체 생성하기
+                property와 method 구현은 json 표기법을 따라가면 될 듯
+        */
+
+        let car = {
+            // Object Property
+            color: "red",
+            model: "Sonata",
+
+            // Object Method
+            printProperty: function () {
+                document.write(`차종 : ${this.model}<br>색상 : ${this.color}<br>`);
+            },
+            drive: function () {
+                document.write("주행시작");
+            }
+        };
+
+        document.write(typeof car, "<br>");
+        car.printProperty();
+        car.drive();
+    </script>
+</body>
+
+</html>
