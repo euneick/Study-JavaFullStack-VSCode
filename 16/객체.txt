@@ -27,3 +27,5 @@
 * 사용자 정의 객체
     - new Object()로 생성           참고) ob1.html
     - Literal 방식으로 생성         참고) ob1_1.html
+
+    ※ Literal방식이 더 직관적이고 간결하며, 성능이 상대적으로 더 빠르므로 Literal방식으로 객체를 생성하는 것을 지향
