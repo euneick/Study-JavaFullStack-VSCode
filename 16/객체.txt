@@ -25,3 +25,5 @@
         <div> div영역태그 </div>    ← div 문서 객체
 
 * 사용자 정의 객체
+    - new Object()로 생성           참고) ob1.html
+    - Literal 방식으로 생성         참고) ob1_1.html
