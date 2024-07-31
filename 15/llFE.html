@@ -18,9 +18,13 @@
                         실행구문;
                     })();
         */
-        (function(){
+        (function () {
             document.write("Hello world!<br>");
         })();
+
+        (function (n1, n2) {
+            document.write(`n1 + n2 = ${n1 + n2}<br>`);
+        })(10, 20);
     </script>
 </body>
 
