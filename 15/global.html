@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 전역 스코프 영역 (전역 변수로 이해하면 될 듯)
+        let valA = 10;
+
+        function Sum() {
+            // 지역 스코프 영역 (지역 변수로 이해하면 될 듯)
+            document.write(`함수 내부 : ${valA}<br>`);
+        }
+
+        Sum();
+
+        document.write(`함수 외부 : ${valA}<br>`);
+    </script>
+</body>
+
+</html>
