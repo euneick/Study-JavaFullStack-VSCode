@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let tv = new Object();
+
+        // Object Property
+        tv.width = "30cm";
+        tv.height = "25cm";
+        tv.weight = "20kg";
+        tv.color = "white";
+
+        // Object Method
+        tv.printProperties = function () {
+            document.write(`너비 : ${this.width}<br>
+                높이 : ${this.height}<br>
+                무게 : ${this.weight}<br>
+                색상 : ${this.color}<br>`);
+        };
+
+        tv.turnOn = function () {
+            document.write("전원 켜기<br>");
+        };
+
+        tv.printProperties();
+        tv.turnOn();
+    </script>
+</body>
+
+</html>
