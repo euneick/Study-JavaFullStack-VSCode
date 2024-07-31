@@ -22,7 +22,7 @@
                 function doSum(a, b){
                     return a + b;
                 }
-                    
+
                 return init();
             })(10, 20);
             console.log(result);
@@ -74,11 +74,8 @@
         let weight = parseInt(prompt("몸무게를 입력하세요."));
         let heightM = heightCM / 100;
 
-        console.log(heightM);
-
         function CheckBMI(weight, height) {
             let bmi = weight / (height * height);
-            console.log(bmi);
             if (bmi >= 26) return "비만";
             else if (bmi >= 24 && bmi < 26) return "과체중";
             else if (bmi >= 18.5 && bmi < 24) return "정상";
