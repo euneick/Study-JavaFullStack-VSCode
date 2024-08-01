@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+
+	<script type="text/javascript">
+		document.write("<h1>컴퓨터가 랜덤으로 내는 가위, 바위, 보 중 하나 맞추기</h1>")
+
+		let t = window.prompt("가위, 바위, 보 중에서 하나 입력하시오", "가위");
+		let tNum;
+
+		switch (t) {
+			case "가위": tNum = 1; break;
+			case "바위": tNum = 2; break;
+			case "보": tNum = 3; break;
+			default:
+				window.alert("잘못 작성하셨습니다.");
+				location.reload();		// 현재 페이지 재요청
+		}
+
+		/*
+			Math.random()
+				0 이상 1 미만의 수를 랜덤으로 반환하는 함수
+		*/
+
+		let com = Math.ceil(Math.random() * 3);
+		document.write("<img src=images/math_img_" + com + ".jpg alt=가위,바위,보>");
+
+		if (tNum === com) window.alert('맞췄습니다. 축하합니다.');
+		else if (tNum !== com) alert("틀렸네요! 다음기회에 도전 하세요!!");
+	</script>
+</body>
+
+</html>
