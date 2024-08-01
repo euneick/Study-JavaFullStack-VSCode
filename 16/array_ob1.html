@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            JavaScript에서 배열의 특징
+             * 메모리의 크기가 동적으로 할당된다.
+             * 하나의 배열 안에 다양한 자료형이 공존 할 수 있다.
+             * 메모리의 공간이 연속적이지 않을 수 있다.
+             * 결론) 타 언어의 배열의 특징을 흉내 낸 별도의 객체라고 볼 수 있다.
+             * 배열객체 생성 방법
+                - 객체 생성자 사용
+                    let array = new Array(값1, "값2", ...);
+                    주의) 생성자의 매개변수에 값 1개만 전달 시 그 숫자의 크기만큼 배열이 할당 됨
+                     * let array = new Array(3);        - 총 3칸의 배열 공간을 할당
+                - 리터럴 표기법
+                    let array = [값1, "값2", ...];
+             ※ 생성자를 이용한 배열 생성 방법은 혼동이 올 수 있고 직관적이지 않으므로 "리터럴 표기법"을 지향
+        */
+        let arr = [10, 20, 30];
+
+        function printArray(array) {
+            document.write(`배열 array의 길이 : ${array.length}<br>`);
+            for (let i = 0; i < array.length; i++)
+                document.write(`배열 array의 ${i}번째 값 : ${array[i]}<br>`);
+        }
+
+        printArray(arr);
+
+        /*
+            Array 객체가 제공하는 Methods
+             * push()       - 배열 메모리의 맨 뒤에 값을 추가
+             * pop()        - 배열 메모리의 맨 뒤의 값을 추출
+             * unshift()    - 배열 메모리의 맨 앞에 값을 추가
+             * shift()      - 배열 메모리의 맨 앞의 값을 추출
+        */
+        document.write("<hr><h3>push(50)</h3>");
+        arr.push(50);
+        printArray(arr);
+        
+        document.write("<hr><h3>pop()</h3>");
+        let popValue = arr.pop();
+        printArray(arr);
+        document.write(`popValue : ${popValue}<br>`);
+        
+        document.write("<hr><h3>unshift(5)</h3>");
+        arr.unshift(5);
+        printArray(arr);
+        
+        document.write("<hr><h3>shift()</h3>");
+        let shiftValue = arr.shift();
+        printArray(arr);
+        document.write(`shiftValue : ${shiftValue}<br>`);
+    </script>
+</body>
+
+</html>
