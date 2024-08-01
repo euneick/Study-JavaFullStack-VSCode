@@ -79,6 +79,13 @@
                     * p2    - index
                     * p3    - array[]
                  * 원본 배열은 그대로 보존하고, 새로운 배열을 할당하는 특징이 있음
+             * find()
+                -  각 배열의 요소에 접근하여 콜백함수를 통해 조건을 비교하고 조건식이 참이면 해당 요소를 반환하는 함수
+                 * 조건을 만족하는 요소가 여러 개 일 때 인덱스가 낮은 요소를 반환
+             * slice()
+                - 배열에 저장된 일부 요소를 추출하여 새로운 배열로 만들어 반환
+                - 자르기 시작할 위치를 매개변수로 전달, 음수로 전달 시 뒷쪽부터 slice
+                 * 매개변수의 양수 음수와 상관없이 자르기 방향은 항상 오른쪽
         */
         document.write("<hr><h1>Non-Destructive Methods</h1><h3>forEach() - anonymous function</h3>");
         arr.forEach(function (p1, p2, p3) {
@@ -91,9 +98,10 @@
         });
 
         document.write("<hr><h3>map()</h3>");
-        let arr2 = arr.map((p1) => {
-            return p1 * 10;
-        });
+        // let arr2 = arr.map((p1) => {
+        //     return p1 * 10;
+        // });
+        let arr2 = arr.map(p1 => p1 * 10);
         document.write("<h4>원본 배열 데이터</h4>");
         printArray(arr);
         document.write("<h4>map() 함수에 의해 새로 만들어진 배열 데이터</h4>");
@@ -102,9 +110,24 @@
         document.write("<h4>콜백함수 내부에서 사용할 객체를 map() 함수의 두번째 매개변수로 전달</h4>");
         let context = { value: 20 };
         let arr3 = arr.map(function (p1) {      // 익명함수가 아닌 람다식으로 표현하면 결과가 달라짐
-            return p1 * this.value;             // this 키워드 호출 시 arr 배열객체가 아닌 두번째 매개변수로 전달받은 context 객체를 참조함
+            return p1 + this.value;             // this 키워드 호출 시 arr 배열객체가 아닌 두번째 매개변수로 전달받은 context 객체를 참조함
         }, context);
         printArray(arr3);
+
+        document.write("<hr><h3>find()</h3>");
+        // let foundedValue = arr.find((p1) => {
+        //     return p1 >= 15;
+        // })
+        let foundedValue = arr.find(p1 => p1 >= 15);
+        document.write(foundedValue);
+
+        document.write("<hr><h3>slice(1)</h3>");
+        let slicedArr = arr.slice(1);
+        printArray(slicedArr);
+
+        document.write("<h3>slice(-2)</h3>");
+        let slicedArr2 = arr.slice(-2);
+        printArray(slicedArr2);
     </script>
 </body>
 
