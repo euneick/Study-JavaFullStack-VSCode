@@ -72,8 +72,13 @@
                     * p3    - array[]
                  * 매개변수 p2, p3 은 생략 가능하며, p1은 반드시 작성해야 함
         */
-        document.write("<hr><h1>Non-Destructive Methods</h1><h3>forEach()</h3>");
+        document.write("<hr><h1>Non-Destructive Methods</h1><h3>forEach() - anonymous function</h3>");
         arr.forEach(function (p1, p2 ,p3) {
+            document.write(`배열의 현재 값 : ${p1} // 배열의 현재 인덱스 : ${p2} // 배열 전체 출력 : ${p3}<br>`);
+        });
+        
+        document.write("<hr><h3>forEach() - lambda expresstion</h3>");
+        arr.forEach((p1, p2 ,p3) => {
             document.write(`배열의 현재 값 : ${p1} // 배열의 현재 인덱스 : ${p2} // 배열 전체 출력 : ${p3}<br>`);
         });
     </script>
