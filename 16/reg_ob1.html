@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let str = "Html Css Jquery";
+
+        // let 변수 = /패턴/검색옵션;           // 검색옵션 생략 가능
+        let reg1 = /css/;
+        let result_1 = reg1.test(str);
+        document.write(result_1, "<br>");
+
+        let reg2 = /css/i;          // 검색 옵션 i - 찾는 문자가 영문일 경우 대, 소문자를 구분하지 않음
+        let result_2 = reg2.test(str);
+        document.write(result_2, "<br>");
+    </script>
+</body>
+
+</html>
