@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const lastNumberLength = 4;
+
+        let name = prompt("Please input your name");
+        let tel = prompt("Please input your phone number");
+
+        let upperName = name.toUpperCase();
+        document.write(`name : ${upperName}<br>`);
+
+        let secretTel = tel.substring(0, tel.length - lastNumberLength);
+        secretTel = secretTel.concat("****");
+
+        document.write(`tel : ${secretTel}<br>`);
+    </script>
+</body>
+
+</html>
