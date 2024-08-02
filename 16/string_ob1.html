@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체의 Methods</title>
+</head>
+
+<body>
+    <h1>String 객체의 Methods</h1>
+    <script>
+        let str = "web he she";
+        document.write(`str : ${str}<br>`);
+
+        /*
+            charAt(pos: number): string
+                - 문자열에서 index 번호에 해당하는 문자를 반환
+        */
+        document.write("<hr>");
+        document.write("<h3>charAt(2)</h3>");
+        document.write(`${str.charAt(2)}<br>`);
+
+        /*
+            indexOf(searchString: string, position?: number): number
+                - 문자열의 왼쪽부터 searchString과 비교하여 먼저 일치하는 부분의 index를 반환, 없으면 -1을 반환
+                - position 입력 시 position의 위치에 해당하는 index부터 오른쪽으로 검색을 시작
+        */
+        document.write("<hr>");
+        document.write('<h3>indexOf("he")</h3>');
+        document.write(`${str.indexOf("he")}<br>`);
+        document.write('<h3>indexOf("he", 5)</h3>');
+        document.write(`${str.indexOf("he", 5)}<br>`);
+
+        /*
+            lastIndexOf(searchString: string, position?: number): number
+                - 문자열의 오른쪽부터 searchString과 비교하여 먼저 일치하는 부분의 index를 반환, 없으면 -1을 반환
+                - position 입력 시 position의 위치에 해당하는 index부터 왼쪽으로 검색을 시작
+        */
+        document.write("<hr>");
+        document.write('<h3>lastIndexOf("he")</h3>');
+        document.write(`${str.lastIndexOf("he")}<br>`);
+        document.write('<h3>lastIndexOf("he", 7)</h3>');
+        document.write(`${str.lastIndexOf("he", 7)}<br>`);
+
+        /*
+            match(regexp: string | RegExp): RegExpMatchArray
+                - 문자열의 왼쪽부터 regexp과 비교하여 먼저 일치하는 부분의 string을 반환, 없으면 null을 반환
+        */
+        document.write("<hr>");
+        document.write('<h3>match("boy")</h3>');
+        document.write(`${str.match("boy")}<br>`);
+        document.write('<h3>match("he")</h3>');
+        document.write(`${str.match("he")}<br>`);
+
+        /*
+            replace(searchValue: string | RegExp, replaceValue: string): string
+                - 문자열의 왼쪽부터 searchValue과 비교하여 먼저 일치하는 문자열을 replaceValue로 치환
+                - 치환한 문자열을 다시 원본 문자열에 저장하는 것이 아닌 새로운 문자열을 반환함
+        */
+        document.write("<hr>");
+        document.write('<h3>replace("web", "html")</h3>');
+        let replacedStr = str.replace("web", "html");
+        document.write(`str : ${str}<br>replacedStr : ${replacedStr}<br>`);
+
+        /*
+            search(regexp: string | RegExp): number
+                - 문자열의 왼쪽부터 regexp와 비교하여 먼저 일치하는 부분의 index를 반환, 없으면 -1을 반환
+                - indexOf()와는 다르게 색인 시작위치를 지정 할 수 없으며, 정규식을 이용할 수 있음
+        */
+        document.write("<hr>");
+        document.write('<h3>search("he")</h3>');
+        document.write(`${str.search("he")}<br>`);
+
+        /*
+            slice(start?: number, end?: number): string
+                - 문자열의 start index부터 end - 1 index까지의 문자열을 추출하여 반환
+                - 매개변수를 start만 전달 시 start index부터 마지막까지 추출하여 반환
+                - start > end 일 경우 빈 문자열 ""을 반환
+                - 매개변수를 음수로 전달 할 경우 문자열의 오른쪽에서부터 검색 시작
+        */
+        document.write("<hr>");
+        document.write('<h3>slice(2, 5)</h3>');
+        let slicedStr = str.slice(2, 5);
+        document.write(`str : ${str}<br>slicedStr : ${slicedStr}<br>`);
+        document.write('<h3>slice(5, 2)</h3>');
+        slicedStr = str.slice(5, 2);
+        document.write(`str : ${str}<br>slicedStr : ${slicedStr}<br>`);
+        document.write('<h3>slice(2, -2)</h3>');
+        slicedStr = str.slice(2, -2);
+        document.write(`str : ${str}<br>slicedStr : ${slicedStr}<br>`);
+
+        /*
+            substring(start: number, end?: number): string
+                - 문자열의 start index부터 end - 1 index까지의 문자열을 추출하여 반환
+                - start > end 일 경우 start와 end의 값을 바꿔 적용
+                - 매개변수를 음수로 전달 할 경우 해당 매개변수를 0으로 간주하여 검색 시작
+        */
+        document.write("<hr>");
+        document.write('<h3>substring(2, 5)</h3>');
+        let substringStr = str.substring(2, 5);
+        document.write(`str : ${str}<br>substringStr : ${substringStr}<br>`);
+        document.write('<h3>substring(5, 2)</h3>');
+        substringStr = str.substring(5, 2);
+        document.write(`str : ${str}<br>substringStr : ${substringStr}<br>`);
+        document.write('<h3>substring(-2, 2)</h3>');
+        substringStr = str.substring(-2, 2);
+        document.write(`str : ${str}<br>substringStr : ${substringStr}<br>`);
+
+        /*
+            substr(from: number, length?: number): string
+                - 문자열의 from index부터 length 의 수 만큼 문자열을 추출하여 반환
+                - 매개변수 1개만 전달 시 from index 부터 끝까지 문자열을 추출하여 반환
+                - from 변수를 음수로 전달 시 오른쪽부터 검색 시작
+                - end 변수를 음수로 전달 시 빈 문자열 "" 반환
+        */
+        document.write("<hr>");
+        document.write('<h3>substr(2, 6)</h3>');
+        let substr = str.substr(2, 6);
+        document.write(`str : ${str}<br>substr : ${substr}<br>`);
+        document.write('<h3>substr(-6, 4)</h3>');
+        substr = str.substr(-6, 4);
+        document.write(`str : ${str}<br>substr : ${substr}<br>`);
+
+        /*
+            split(separator: string | RegExp, limit?: number): string[]
+                - 문자열을 separator 기준으로 나누고, 나눠진 문자열을 문자열 배열로 생성하여 반환
+                - limit 매개변수 전달 시 매개변수의 개수 만큼 배열을 생성하여 반환
+        */
+        document.write("<hr>");
+        document.write('<h3>split(" ")</h3>');
+        let splitStrings = str.split(" ");
+        document.write(`str : ${str}<br>`);
+        for (let i = 0; i < splitStrings.length; i++)
+            document.write(`splitStrings[${i}] : ${splitStrings[i]}<br>`);
+
+        document.write('<h3>split(" ", 2)</h3>');
+        splitStrings = str.split(" ", 2);
+        document.write(`str : ${str}<br>`);
+        for (let i = 0; i < splitStrings.length; i++)
+            document.write(`splitStrings[${i}] : ${splitStrings[i]}<br>`);
+    </script>
+</body>
+
+</html>
