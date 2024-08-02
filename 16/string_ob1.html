@@ -19,7 +19,7 @@
         */
         document.write("<hr>");
         document.write("<h3>charAt(2)</h3>");
-        document.write(`${str.charAt(2)}<br>`);
+        document.write(`str : ${str}<br>result : ${str.charAt(2)}<br>`);
 
         /*
             indexOf(searchString: string, position?: number): number
@@ -28,9 +28,9 @@
         */
         document.write("<hr>");
         document.write('<h3>indexOf("he")</h3>');
-        document.write(`${str.indexOf("he")}<br>`);
+        document.write(`str : ${str}<br>result : ${str.indexOf("he")}<br>`);
         document.write('<h3>indexOf("he", 5)</h3>');
-        document.write(`${str.indexOf("he", 5)}<br>`);
+        document.write(`str : ${str}<br>result : ${str.indexOf("he", 5)}<br>`);
 
         /*
             lastIndexOf(searchString: string, position?: number): number
@@ -39,9 +39,9 @@
         */
         document.write("<hr>");
         document.write('<h3>lastIndexOf("he")</h3>');
-        document.write(`${str.lastIndexOf("he")}<br>`);
+        document.write(`str : ${str}<br>result : ${str.lastIndexOf("he")}<br>`);
         document.write('<h3>lastIndexOf("he", 7)</h3>');
-        document.write(`${str.lastIndexOf("he", 7)}<br>`);
+        document.write(`str : ${str}<br>result : ${str.lastIndexOf("he", 7)}<br>`);
 
         /*
             match(regexp: string | RegExp): RegExpMatchArray
@@ -49,9 +49,9 @@
         */
         document.write("<hr>");
         document.write('<h3>match("boy")</h3>');
-        document.write(`${str.match("boy")}<br>`);
+        document.write(`str : ${str}<br>result : ${str.match("boy")}<br>`);
         document.write('<h3>match("he")</h3>');
-        document.write(`${str.match("he")}<br>`);
+        document.write(`str : ${str}<br>result : ${str.match("he")}<br>`);
 
         /*
             replace(searchValue: string | RegExp, replaceValue: string): string
@@ -61,7 +61,7 @@
         document.write("<hr>");
         document.write('<h3>replace("web", "html")</h3>');
         let replacedStr = str.replace("web", "html");
-        document.write(`str : ${str}<br>replacedStr : ${replacedStr}<br>`);
+        document.write(`str : ${str}<br>result : ${replacedStr}<br>`);
 
         /*
             search(regexp: string | RegExp): number
@@ -70,7 +70,7 @@
         */
         document.write("<hr>");
         document.write('<h3>search("he")</h3>');
-        document.write(`${str.search("he")}<br>`);
+        document.write(`str : ${str}<br>result : ${str.search("he")}<br>`);
 
         /*
             slice(start?: number, end?: number): string
@@ -82,13 +82,13 @@
         document.write("<hr>");
         document.write('<h3>slice(2, 5)</h3>');
         let slicedStr = str.slice(2, 5);
-        document.write(`str : ${str}<br>slicedStr : ${slicedStr}<br>`);
+        document.write(`str : ${str}<br>result : ${slicedStr}<br>`);
         document.write('<h3>slice(5, 2)</h3>');
         slicedStr = str.slice(5, 2);
-        document.write(`str : ${str}<br>slicedStr : ${slicedStr}<br>`);
+        document.write(`str : ${str}<br>result : ${slicedStr}<br>`);
         document.write('<h3>slice(2, -2)</h3>');
         slicedStr = str.slice(2, -2);
-        document.write(`str : ${str}<br>slicedStr : ${slicedStr}<br>`);
+        document.write(`str : ${str}<br>result : ${slicedStr}<br>`);
 
         /*
             substring(start: number, end?: number): string
@@ -99,13 +99,13 @@
         document.write("<hr>");
         document.write('<h3>substring(2, 5)</h3>');
         let substringStr = str.substring(2, 5);
-        document.write(`str : ${str}<br>substringStr : ${substringStr}<br>`);
+        document.write(`str : ${str}<br>result : ${substringStr}<br>`);
         document.write('<h3>substring(5, 2)</h3>');
         substringStr = str.substring(5, 2);
-        document.write(`str : ${str}<br>substringStr : ${substringStr}<br>`);
+        document.write(`str : ${str}<br>result : ${substringStr}<br>`);
         document.write('<h3>substring(-2, 2)</h3>');
         substringStr = str.substring(-2, 2);
-        document.write(`str : ${str}<br>substringStr : ${substringStr}<br>`);
+        document.write(`str : ${str}<br>result : ${substringStr}<br>`);
 
         /*
             substr(from: number, length?: number): string
@@ -117,10 +117,10 @@
         document.write("<hr>");
         document.write('<h3>substr(2, 6)</h3>');
         let substr = str.substr(2, 6);
-        document.write(`str : ${str}<br>substr : ${substr}<br>`);
+        document.write(`str : ${str}<br>result : ${substr}<br>`);
         document.write('<h3>substr(-6, 4)</h3>');
         substr = str.substr(-6, 4);
-        document.write(`str : ${str}<br>substr : ${substr}<br>`);
+        document.write(`str : ${str}<br>result : ${substr}<br>`);
 
         /*
             split(separator: string | RegExp, limit?: number): string[]
@@ -130,15 +130,75 @@
         document.write("<hr>");
         document.write('<h3>split(" ")</h3>');
         let splitStrings = str.split(" ");
-        document.write(`str : ${str}<br>`);
+        document.write(`str : ${str}<br>result<br>`);
         for (let i = 0; i < splitStrings.length; i++)
             document.write(`splitStrings[${i}] : ${splitStrings[i]}<br>`);
 
         document.write('<h3>split(" ", 2)</h3>');
         splitStrings = str.split(" ", 2);
-        document.write(`str : ${str}<br>`);
+        document.write(`str : ${str}<br>result<br>`);
         for (let i = 0; i < splitStrings.length; i++)
             document.write(`splitStrings[${i}] : ${splitStrings[i]}<br>`);
+
+        /*
+            toLowerCase(): string
+                - 문자열의 모든 영문 대문자를 소문자로 변환하여 반환
+            toUpperCase(): string
+                - 문자열의 모든 영문 소문자를 대문자로 변환하여 반환
+        */
+        str = "Web He She";
+        document.write("<hr>");
+        document.write('<h3>toLowerCase()</h3>');
+        let toLowerCaseStr = str.toLowerCase();
+        document.write(`str : ${str}<br>result : ${toLowerCaseStr}<br>`);
+        document.write('<h3>toUpperCase()</h3>');
+        let toUpperCaseStr = str.toUpperCase();
+        document.write(`str : ${str}<br>result : ${toUpperCaseStr}<br>`);
+
+        /*
+            length: number
+                - 문자열의 길이를 반환하는 속성
+        */
+        document.write("<hr>");
+        document.write("<h3>length</h3>");
+        document.write(`str : ${str}<br>result : ${str.length}<br>`);
+
+        /*
+            concat(...strings: string[]): string
+                - 문자열에 strings을 결합시켜 반환
+        */
+        document.write("<hr>");
+        document.write('<h3>concat(" hello")</h3>');
+        let concatedStr = str.concat(" hello");
+        document.write(`str : ${str}<br>result : ${concatedStr}<br>`);
+
+        /*
+            charCodeAt(index: number): number
+                - 문자열에서 index 위치의 문자의 ASCII code 값을 10진수로 반환
+        */
+        document.write("<hr>");
+        document.write('<h3>charCodeAt(2)</h3>');
+        document.write(`str : ${str}<br>result : ${str.charCodeAt(2)}<br>`);
+
+        /*
+            String.fromCharCode(...codes: number[]): string
+                - codes 숫자에 해당하는 ASCII code 값을 문자로 변환하여 모두 결합한 뒤 문자열 반환
+        */
+        document.write("<hr>");
+        document.write('<h3>String.fromCharCode(97, 98, 65, 66)</h3>');
+        document.write(`result : ${String.fromCharCode(97, 98, 65, 66)}<br>`);
+
+        /*
+            trim(): string
+                - 문자열의 앞 뒤에 공백을 모두 제거한 문자열을 반환
+                - 문자열 중간에 위치한 공백은 제거하지 않음
+        */
+        str = "    hello world!    ";
+        document.write("<hr>");
+        document.write("<h3>trim()</h3>");
+        let trimedStr = str.trim();
+        document.write(`str : ${str}<br>str.length : ${str.length}<br>
+            result : ${trimedStr}<br>trimedStr.length : ${trimedStr.length}<br>`);      //HTML에서 문자열 앞 뒤의 공백을 인식하지 않기에 문자열 길이로 확인
     </script>
 </body>
 
