@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let userEmail = prompt("이메일을 입력하세요.");
+        let arrUrl = [".co.kr", ".com", ".net", ".or.kr", ".go.kr"];
+
+        let check = false;
+        let check2 = false;
+
+        check = userEmail.includes("@");
+        for (let i = 0; i < arrUrl.length; i++) {
+            if (userEmail.includes(arrUrl[i])) {
+                check2 = true;
+                break;
+            }
+        }
+
+        if (check && check2) document.write(userEmail);
+        else {
+            alert("이메일 형식이 잘못되었습니다.");
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>
