@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체의 methods 응용</title>
+</head>
+
+<body>
+
+    <script>
+        let pw = "124";
+
+        if (pw.length < 4) document.write("비밀번호는 최소 4자리 이상 입력해주세요.<br>");
+
+        let email = "test!naver.com";
+
+        if (!email.includes("@")) document.write("올바른 이메일 형식이 아닙니다.<br>");
+
+        if (email.indexOf("@") === -1) document.write("올바른 이메일 형식이 아닙니다.<br>");
+
+        email = email.replace("!", "@");
+
+        if (email.includes("@")) document.write("올바른 이메일 형식입니다.<br>");
+    </script>
+</body>
+
+</html>
