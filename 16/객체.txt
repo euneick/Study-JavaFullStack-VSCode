@@ -48,11 +48,22 @@
     - 그 외 다수
 
  * 문서 객체 모델 (Document Object Model, DOM)
-    - HTML태그들을 문서객체라고 표현함
-        <h1> h1태그 </h1>           ← h1 문서 객체
-        <div> div영역태그 </div>    ← div 문서 객체
+    - DO (Document Obejct)
+        Document    - HTML 문서
+        Obejct      - 객체
+        - HTML 문서의 모든 구성요소 (<html></html>, <body></body> 등등)
+    - DOM
+        - HTML문서 내부에 작성된 DO의 구조를 객체화한 모델구조 (DOM 트리)
+    
+    - 노드 타입
+     * 문서 노드 (Node.DOCUMENT_NODE)       - 최상위 document 객체의 노드 타입
+     * 요소 노드 (Node.ELEMENT_NODE)        - h1, p 태그와 같은 요소의 노드 타입
+     * 속성 노드 (Node.ATTRIBUTE_NODE)      - href, src와 같은 속성의 노드 타입
+     * 텍스트 노드 (Node.TEXT_NODE)         - 텍스트에 해당하는 노드 타입
+     * 주석 노드 (Node.COMMENT_NONDE)       - 주석에 해당하는 노드 타입
 
-* 사용자 정의 객체
+
+ * 사용자 정의 객체
     - new Object()로 생성           참고) ob1.html
     - Literal 방식으로 생성         참고) ob1_1.html
 
