@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        setInterval(() => {
+            let date = new Date();
+
+            // date.getMonth() 함수는 현재 월의 -1 값이 반환되므로 +1 연산을 통해 값을 맞춰야 한다.
+            document.write(`${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일 
+                ${date.getHours()}시 ${date.getMinutes()}분 ${date.getSeconds()}초<br>`);
+        }, 1000);
+    </script>
+</body>
+
+</html>
