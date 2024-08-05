@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="printInfo();">버튼</button>
+
+    <script>
+        function printInfo() {
+            document.write(`웹 브라우저 창 너비 : ${window.innerWidth}<br>`);
+            document.write(`웹 브라우저 창 높이 : ${window.innerHeight}<br>`);
+            document.write(`웹 브라우저 창 윗쪽 면과 모니터 사이의 간격 : ${window.screenTop}, ${window.screenY}<br>`);
+            document.write(`웹 브라우저 창 왼쪽 면과 모니터 사이의 간격 : ${window.screenLeft}, ${window.screenX}<br>`);
+            document.write(`스크롤바가 위치한 가로 위치값 : ${window.scrollX}<br>`);
+            document.write(`스크롤바가 위치한 세로 위치값 : ${window.scrollY}<br>`);
+        }
+    </script>
+</body>
+
+</html>
