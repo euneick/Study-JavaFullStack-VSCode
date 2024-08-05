@@ -10,10 +10,18 @@
 <body>
     <p id="title">Hello, <span style="display: none;">Javascript!</span></p>
 
+    <p id="textContent"></p>
+    <p id="innerText"></p>
+    <p id="innerHTML"></p>
+
     <script>
         console.log(document.getElementById("title").textContent);
         console.log(document.getElementById("title").innerText);
         console.log(document.getElementById("title").innerHTML);
+
+        document.querySelector("#textContent").textContent = `<strong>textContent</strong> 속성`;
+        document.querySelector("#innerText").textContent = `<strong>innerText</strong> 속성`;
+        document.querySelector("#innerHTML").textContent = `<strong>innerHTML</strong> 속성`;
     </script>
 </body>
 
