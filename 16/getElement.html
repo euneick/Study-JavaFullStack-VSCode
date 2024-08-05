@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 현재 html 객체에 작성된 DO 중에서 첫 번째로 작성된 <!DOCTYPE html> 노드를 선택해서 반환
+        let result1 = document.firstChild;
+        console.log(result1);
+
+        // 현재 html 객체에 작성된 DO 중에서 첫 번째로 작성된 <html>요소노드를 선택해서 반환
+        let result2 = document.firstElementChild;
+        console.log(result2);
+
+        // 모든 첫 자식 노드들을 NodeList에 담아 NodeList를 반환
+        let result3 = document.childNodes;
+        console.log(result3);
+
+        // document의 자식노드들 중 1번째 자식노드의 첫 번째 자식요소노드를 선택
+        let result4 = document.childNodes[1].firstElementChild;
+        console.log(result4);
+    </script>
+</body>
+
+</html>

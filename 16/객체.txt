@@ -62,6 +62,26 @@
      * 텍스트 노드 (Node.TEXT_NODE)         - 텍스트에 해당하는 노드 타입
      * 주석 노드 (Node.COMMENT_NONDE)       - 주석에 해당하는 노드 타입
 
+    - 노드 선택
+     * 속성으로 노드 선택하기
+        - document 최상위 객체는 dom 트리를 탐색하면서 원하는 노드를 선택 할 수 있는 속성들을 제공함
+         * 모든 노드 탐색
+            parentNode          - 부모 노드를 반환
+            childNodes          - 모든 자식 노드를 반환
+            firstChild          - 첫 번째 자식 노드를 반환
+            lastChild           - 마지막 자식 노드를 반환
+            previousSibling     - 이전 형제 노드를 반환
+            nextSibling         - 다음 형제 노드를 반환
+         * 요소 노드 탐색
+            parentElement           - 부모 요소 노드를 반환
+            children                - 모든 자식 요소 노드를 반환
+            firstElementChild       - 첫 번째 자식 요소 노드를 반환
+            lastElementChild        - 마지막 자식 요소 노드를 반환
+            previousElementSibling  - 이전 요소 노드를 반환
+            nextElementSibling      - 다음 요소 노드를 반환
+            
+     * 메소드로 노드 선택하기
+
 
  * 사용자 정의 객체
     - new Object()로 생성           참고) ob1.html
