@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .red-color {
+            color: red;
+        }
+
+        .fz20 {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="text">text</p>
+
+    <script>
+        /*
+            Js로도 class 속성을 조작해 style을 적용 할 수 있음
+             * classList.add(...tokens: string[])
+                - class 속성 추가
+             * classList.remove(...tokens: string[])
+                - class 속성 제거
+             * classList.toggle(token: string, force?: boolean): boolean
+                - 추가와 삭제 반복
+        */
+        let pEl = document.querySelector("#text");
+
+        // pEl.classList.add("red-color");
+        // pEl.classList.add("fz20");
+        pEl.classList.add("red-color", "fz20");
+        pEl.classList.remove("red-color", "fz20");
+
+        // 1초마다 toggle 메소드 실행
+        setInterval(() => {
+            pEl.classList.toggle("red-color");
+        }, 1000);
+    </script>
+</body>
+
+</html>
