@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            window.confirm(message?: string): boolean
+                message         - 질문 내용
+        */
+        let result = window.confirm("정말로 이 파일을 삭제하시겠습니까?");
+
+        if (result) document.write("파일이 삭제됨<br>");
+        else document.write("파일이 삭제되지 않음<br>");
+
+        /*
+            window.alert(message?: any)
+                message         - 알림 내용
+        */
+        window.alert("경고!");
+
+        /*
+            window.prompt(message?: string, _default?: string): string | null
+                message         - 질문 내용
+                _default        - 기본적으로 나타낼 문자열
+        */
+        let result2 = window.prompt("정수 입력", "0");
+        document.write(`${result2}<br>`);
+    </script>
+</body>
+
+</html>
