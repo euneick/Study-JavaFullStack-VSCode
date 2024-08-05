@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="onHref()">location.href</button>
+    <button onclick="onRefresh()">location.reload</button>
+
+    <script>
+        document.write(location.href + "<br>");
+
+        function onHref() {
+            // herf 속성에 재요청할 URL을 저장하면 자동으로 해당 URL을 재요청 함.
+            location.href = "https://www.naver.com";
+        }
+
+        function onRefresh() {
+            // 화면 새로고침
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>
