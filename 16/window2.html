@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="popUp();">팝업창 열기</button>
+
+    <script>
+        /*
+            window.open(url?:string | URL, target?: string, features?: string): WindowProxy
+                - url           - 오픈 할 경로
+                - target        - 새 창의 이름
+                - features      - 새 창의 옵션
+
+            window.close()
+        */
+        function popUp() {
+            window.open("popup.html", "팝업창 제목", "width=350, height=400, left=50, top=10");
+        }
+    </script>
+</body>
+
+</html>

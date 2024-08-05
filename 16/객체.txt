@@ -13,6 +13,7 @@
          * window.alert()           - 알림창을 나타내는 함수
          * window.prompt()          - 사용자로부터 문자열을 받는 함수
          * window.open()            - URL 페이지를 새 창으로 나타내는 함수
+         * window.close()           - 창을 닫는 함수
             
     - screen
         모니터 해상도 정보를 제공하는 객체
