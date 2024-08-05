@@ -20,8 +20,23 @@
             
     - screen
         모니터 해상도 정보를 제공하는 객체
+         * screen.width             - 화면의 너비값을 반환하는 속성
+         * screen.height            - 화면의 높이값을 반환하는 속성
+         * screen.availWidth        - 작업표시줄을 제외한 화면의 너비값을 반환하는 속성
+         * screen.availHeight       - 작업표시줄을 제외한 화면의 높이값을 반환하는 속성
+         * screen.colorDepth        - 모니터가 표현 가능한 색상 bit를 반환하는 속성
+
     - location
         웹브라우저 주소창에 입력되는 정보를 제공하는 객체
+         * location.href            - 주소 영역의 참조 주소를 설정하거나 URL을 반환하는 속성
+         * location.hash            - URL의 해시값을 반환하는 속성
+         * location.hostname        - URL의 호스트 이름을 설정하거나 반환하는 속성
+         * location.host            - URL의 호스트 이름과 포트 번호를 반환하는 속성
+         * location.protocol        - URL의 프로토콜을 반환하는 속성
+         * location.search          - URL의 쿼리를 반환하는 속성
+
+         * location.reload()        - 브라우저를 새로고침하는 함수
+
     - history
         한번 요청했던 이전페이지나 다음페이지를 요청 시 사용하는 객체
     - 그 외 다수
