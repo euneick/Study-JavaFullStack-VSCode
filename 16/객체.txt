@@ -81,6 +81,11 @@
             nextElementSibling      - 다음 요소 노드를 반환
             
      * 메소드로 노드 선택하기
+        - 속성값과 태그명 사용하기 - get method
+            getElementById(id 속성 값)              - id 속성값과 일치하는 요소 노드를 1개만 선택
+            getElementsByClassName(class 속성 값)    - class 속성값과 일치하는 요소 노드 모두를 선택
+            getElementsByTagName(태그명)             - 태그명과 일치하는 요소 노드 모두를 선택
+        - css 선택자 사용하기 - query method
 
 
  * 사용자 정의 객체
