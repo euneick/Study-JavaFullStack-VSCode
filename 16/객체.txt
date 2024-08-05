@@ -7,13 +7,15 @@
  * 브라우저 객체 모델 (Browser Object Model, BOM)
     - window
         창 정보를 제공하는 객체
-         * window.innerWidth        - 웹 브라우저의 너비값을 반환하는 속성
-         * window.innerHeight       - 웹 브라우저의 높이값을 반환하는 속성
+         * window.innerWidth            - 웹 브라우저의 너비값을 반환하는 속성
+         * window.innerHeight           - 웹 브라우저의 높이값을 반환하는 속성
 
-         * window.alert()           - 알림창을 나타내는 함수
-         * window.prompt()          - 사용자로부터 문자열을 받는 함수
-         * window.open()            - URL 페이지를 새 창으로 나타내는 함수
-         * window.close()           - 창을 닫는 함수
+         * window.alert()               - 알림창을 나타내는 함수
+         * window.prompt()              - 사용자로부터 문자열을 받는 함수
+         * window.open()                - URL 페이지를 새 창으로 나타내는 함수
+         * window.close()               - 창을 닫는 함수
+         * window.setInterval()         - 일정한 시간 간격으로 실행문을 반복하는 함수
+         * window.clearInterval()       - setInterval()로 인해 자동으로 반복되는 메소드를 취소하는 함수
             
     - screen
         모니터 해상도 정보를 제공하는 객체

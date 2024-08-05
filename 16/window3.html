@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            window.setInterval(handler: TimeHandler, timeout?: number, ...arguments: any[]): number
+                handler     - 실행 코드
+                timeout     - 시간 간격(ms)
+
+            window.clearInterval(id: number | undefined): void
+        */
+        let i = 0;
+        let auto = window.setInterval("console.log(i++)", 3000);        
+    </script>
+
+    <button onclick="window.clearInterval(auto)">정지 버튼</button>
+</body>
+
+</html>
