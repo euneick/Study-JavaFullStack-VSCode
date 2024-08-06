@@ -66,10 +66,6 @@
             text-align: center;
         }
     </style>
-
-    <script type="text/javascript">
-        
-    </script>
 </head>
 
 <body>
@@ -103,22 +99,39 @@
                     <td>250000</td>
                     <td>
                         <!-- 옵션 체크박스에 클릭할 때 마다 car()에 저장된 일련의 실행문을 실행합니다. -->
-                        <input type="checkbox" name="opt1" id="opt1" value="250000" onclick="car();" />
+                        <input type="checkbox" name="opt1" id="opt1" value="250000" onclick="processCarCost();" />
                     </td>
                 </tr>
                 <tr>
                     <td><label for="opt2">내비게이션</label></td>
                     <td>250000</td>
-                    <td><input type="checkbox" name="opt2" id="opt2" value="250000" onclick="car();" /></td>
+                    <td><input type="checkbox" name="opt2" id="opt2" value="250000" onclick="processCarCost();" /></td>
                 </tr>
                 <tr>
                     <td><label for="opt3">선루프</label></td>
                     <td>440000</td>
-                    <td><input type="checkbox" name="opt3" id="opt3" value="440000" onclick="car();" /></td>
+                    <td><input type="checkbox" name="opt3" id="opt3" value="440000" onclick="processCarCost();" /></td>
                 </tr>
             </tbody>
         </table>
-    </div>
+    </div>    
+
+    <script type="text/javascript">       
+       let inputEl = document.getElementById("total");
+
+        function processCarCost() {
+            // defaultValue - value 속성을 통해 부여된 기본 값을 String으로 반환하는 속성
+            let basicCost = Number(inputEl.defaultValue);
+
+            for (let i = 1; i <= 3; i++) {
+                let chkObj = document.getElementById("opt" + i);
+
+                if (chkObj.checked) basicCost += Number(chkObj.value);
+            }
+
+            inputEl.value = basicCost;
+        }
+    </script>
 </body>
 
 </html>
