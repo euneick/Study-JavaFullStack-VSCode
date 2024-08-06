@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#" name="frm1">
+        <label for="uname">이름</label>
+        <input type="text" id="uname" name="uname" value="홍길동">
+
+        <label for="age">나이</label>
+        <input type="text" id="age" name="age" value="">
+
+        <select name="gender" id="gender">
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select>
+
+        <button type="submit">전송</button>
+    </form>
+
+    <script>
+        const _HTMLFormControlsCollection = document.frm1.elements;
+        console.log(_HTMLFormControlsCollection);
+        const unameEl = _HTMLFormControlsCollection[0];     // 리스트의 인덱스로 선택
+        console.log(unameEl);
+
+        const ageEl = _HTMLFormControlsCollection['age'];   // 리스트 내 요소의 name속성으로 선택
+        console.log(ageEl);
+
+        const genderEl = document.frm1.gender;              // 요소의 name 속성으로 선택
+        console.log(genderEl);
+
+        const submitEl = document.forms[0][3];
+        console.log(submitEl);
+    </script>
+</body>
+
+</html>
