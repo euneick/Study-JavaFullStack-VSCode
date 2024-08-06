@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="#" class="fz20">link</a>
+
+    <script>
+        const aEl = document.querySelector("a");
+
+        // class 속성값 fz20을 보존하면서 red-color 값 추가
+        aEl.classList.add("red-color");
+
+        // class 속성은 보존하고 값만 삭제
+        aEl.classList.remove("fz20");
+
+        // class 속성과 값을 같이 삭제
+        aEl.removeAttribute("class");
+    </script>
+</body>
+
+</html>
