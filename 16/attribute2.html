@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .red-color {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.naver.com" data-link="네이버">네이버</a>
+
+    <script>
+        /*
+            getAttribute, setAttribute 메소드는 모든 속성의 상위 메소드
+            classList속성이나 dataset속성으로 하는 조작을 모두 할 수 있음
+        */
+        const aEl = document.querySelector("a");
+
+        aEl.setAttribute("data-link", "네이버2");
+        aEl.setAttribute("class", "red-color");       // 속성이 없을 땐 새로 생성
+    </script>
+</body>
+
+</html>
