@@ -114,6 +114,16 @@
                 getAttribute()      - 속성값을 가져오는 함수
                 setAttribute()      - 속성값을 설정하는 함수
                 removeAttribute()   - 속성을 삭제하는 함수
+    
+    - 노드 추가/삭제하기
+         * 노드 추가하기
+            createElement()         - 요소 노드를 생성하는 함수
+            createTextNode()        - 텍스트 노드를 생성하는 함수
+            createAttribute()       - 속성 노드를 생성하는 함수
+
+            <기준노드>.appendChilde(<자식노드>)     - 기준 노드에 자식 노드를 연결
+            <기준노드>.setAttributeNode(<속성노드>) - 기준 노드에 속성 노드를 연결
+         * 노드 삭제하기
 
  * 사용자 정의 객체
     - new Object()로 생성           참고) ob1.html
