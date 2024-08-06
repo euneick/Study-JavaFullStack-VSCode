@@ -126,6 +126,11 @@
          * 노드 삭제하기
             <부모노드>.removeChild(<자식노드>)      - 부모노드 내의 자식노드를 삭제
 
+    - 폼 조작하기
+        - form 태그 선택하기
+             * forms 속성 사용하기
+                document.forms      - 모든 form 태그의 노드 정보를 HTMLCollection 객체에 담아 반환하는 속성
+
  * 사용자 정의 객체
     - new Object()로 생성           참고) ob1.html
     - Literal 방식으로 생성         참고) ob1_1.html
