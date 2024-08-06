@@ -110,6 +110,10 @@
             - data-* 속성은 HTML에서 사용할 수 있는 속성 외에 사용자가 원하는 속성을 추가할 수 있게 한 사용자 정의 속성
             - JavaScript의 dataset 속성을 사용해 조작할 수 있음
          * 메소드로 속성 조작하기
+            - 모든 속성을 전체적으로 조작
+                getAttribute()      - 속성값을 가져오는 함수
+                setAttribute()      - 속성값을 설정하는 함수
+                removeAttribute()   - 속성을 삭제하는 함수
 
  * 사용자 정의 객체
     - new Object()로 생성           참고) ob1.html

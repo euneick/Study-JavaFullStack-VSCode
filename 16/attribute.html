@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://www.naver.com">네이버</a>
+    <br>
+    <h1 id="hi">Hi!</h1>
+    <br>
+    <p class="p1" id="p2">Hello!</p>
+    <br>
+    <h2 class="red-color" id="h">Hello World!</h2>
+
+    <script>
+        const h2El = document.querySelector(".red-color");
+        h2El.removeAttribute("id");         // id 속성 삭제
+
+        const pEls = document.getElementsByTagName("p");     // NodeList 반환
+        pEls[0].setAttribute("id", "p1");   // id 속성 값을 p1로 set
+
+        const h1El = document.getElementById("hi");
+        console.log(h1El.getAttribute("id"));
+    </script>
+</body>
+
+</html>
