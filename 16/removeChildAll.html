@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>text 1</p>
+    <a href="https://www.naver.com">네이버</a>
+    <a href="https://www.google.com">구글</a>
+
+    <script>
+        const childNodes = document.body.childNodes;
+
+        let arr = Array.from(childNodes);   // childNodes는 NodeList라는 유사배열이므로 Array.from() 함수를 통해 배열로 전환
+
+        arr.forEach((node) => {
+            // if (node.nodeName === "a")    nodeName은 모두 대문자로 표시 됨
+            if (node.nodeName === "A")
+                node.parentNode.removeChild(node);
+        });
+    </script>
+</body>
+
+</html>
