@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button data-cnt="10">가방 구매</button>
+    <button data-cnt="0">신발 구매</button>
+
+    <script>
+        let buttonEls = document.querySelectorAll("button");
+        console.log(buttonEls);
+        buttonEls.forEach((el) => {
+            console.log(el.dataset);
+            console.log(el.dataset.cnt);
+            el.dataset.cnt = 50;
+            console.log(el.dataset.cnt);
+        });
+    </script>
+</body>
+
+</html>
