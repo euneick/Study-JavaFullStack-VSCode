@@ -54,7 +54,30 @@
     </table>
 
     <script>
+        let dataEl = document.getElementById("data");
+        let checkEqual = false;
 
+        function processCalculator(item) {
+            let expression = dataEl.value;
+
+            if (item === 'clear') {
+                checkEqual = false;
+                expression = "";
+            }
+            else if (item === '=') {
+                checkEqual = true;
+                expression = eval(expression);
+            }
+            else {
+                if (checkEqual) {
+                    checkEqual = false;
+                    expression = "";
+                }
+                expression += item;
+            }
+
+            dataEl.value = expression;
+        }
     </script>
 </body>
 
