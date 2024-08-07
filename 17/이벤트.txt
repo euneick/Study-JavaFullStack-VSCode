@@ -32,3 +32,9 @@ Event의 종류
       * focus           - 폼 요소를 선택하여 포커싱 했을 때
       * reset           - 폼이 리셋 되었을 때
       * submit          - submit 버튼을 눌렀을 때
+
+Event 처리하기
+   - 이벤트 처리기 (Event Handler) : 이벤트가 발생하면 그에 따른 연결 동작을 처리하는 함수
+    * 방법 1. HTML 태그에 'on이벤트명' 속성을 직접 작성
+    * 방법 2. 'on이벤트명' 속성과 익명함수 또는 람다식을 활용
+    * 방법 3. addEventListener() 함수 활용
