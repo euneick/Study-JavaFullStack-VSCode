@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="parent" style="padding: 20px; background-color: lightblue;">
+        Parent
+        <div id="child" style="padding: 20px; background-color: lightcoral;">
+            Child
+        </div>
+    </div>
+
+    <script>
+        // 캡처링 단계에서 이벤트 처리
+        document.getElementById("parent").addEventListener("click", () => {
+            alert("Parent capturing");
+        }, true);
+
+        // 버블링 단계에서 이벤트 처리
+        document.getElementById("child").addEventListener("click", () => {
+            alert("Child bubbling");
+        }, false);
+    </script>
+</body>
+
+</html>
