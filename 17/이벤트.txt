@@ -20,3 +20,7 @@ Event의 종류
      * mouseout         - HTML 요소 밖으로 마우스포인터를 옮길 때
 
  * Keyboard Event
+    - 특정 키를 조작할 때 발생하는 이벤트
+     * keydown          - 키를 누르는 동안 이벤트 발생
+     * keyup            - 키를 눌렀다가 뗐을 때 이벤트 발생
+     * keypress         - 키를 눌렀을 때 이벤트 발생
