@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 웹 브라우저가 현재 HTML 문서를 모두 로딩했을 때 실행할 함수 등록
+        window.onload = () => {
+            document.querySelector("h1").style.color = "red";
+        };
+
+        // script 구문이 body 영역보다 위에 있으므로 식별이 불가
+        document.querySelector("h1").style.color = "red";
+    </script>
+</head>
+
+<body>
+    <h1>Hello</h1>
+</body>
+
+</html>
