@@ -190,7 +190,10 @@
                 motivationErrorEl.innerText = "";
             }
 
-            if(checkRegisters.every(bool => bool)) alert("가입완료!");
+            let result = checkRegisters.every(bool => bool);
+            if (result) alert("가입완료!");
+
+            return result;
         }
     </script>
 </body>
