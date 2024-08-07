@@ -13,7 +13,7 @@
         window.onload = () => {
             document.getElementById("btn2").onclick = setBackgroundColor;
             document.getElementById("btn4").onmouseout = setBackgroundColor;
-            
+            document.getElementById("btn5").addEventListener("click", setBackgroundColor);
         };
 
         function setBackgroundColor() {
@@ -34,6 +34,9 @@
     </p>
     <p>
         <button id="btn4">버튼4</button>
+    </p>
+    <p>
+        <button id="btn5">버튼5</button>
     </p>
 </body>
 
