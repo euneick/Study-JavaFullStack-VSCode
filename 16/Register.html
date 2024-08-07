@@ -190,19 +190,9 @@
                 motivationErrorEl.innerText = "";
             }
 
-            let flag = false;
-            for (let i = 0; i < checkRegisters.length; i++) {
-                if (!checkRegisters[i]) {
-                    flag = true;
-                    break;
-                }
-            }
-            
-            if(!flag) alert("가입완료!");
+            if(checkRegisters.every(bool => bool)) alert("가입완료!");
         }
     </script>
-
-
 </body>
 
 </html>
