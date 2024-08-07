@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" align="center">
+        <tr>
+            <td colspan="2" align="center">회원가입</td>
+        </tr>
+        <tr>
+            <td>*이름</td>
+            <td><input type="text" name="uName" id="uName" /><span id="uNameError" class="error-message"></span></td>
+        </tr>
+        <tr>
+            <td>*ID</td>
+            <td><input type="text" name="uID" id="uID" /><span id="uIDError" class="error-message"></span></td>
+        </tr>
+        <tr>
+            <td>*비밀번호</td>
+            <td><input type="password" name="uPWD" id="uPWD" /><span id="uPWDError" class="error-message"></span></td>
+        </tr>
+        <tr>
+            <td>*비밀번호 확인</td>
+            <td><input type="password" name="uPWD_Confirm" id="uPWD_Confirm" /><span id="uPWDConfirmError"
+                    class="error-message"></span></td>
+        </tr>
+        <tr>
+            <td>*직업</td>
+            <td>
+                <select name="work" id="work">
+                    <option selected>직업명</option>
+                    <option value="기타">기타</option>
+                    <option value="회사원">회사원</option>
+                    <option value="학생">학생</option>
+                </select>
+                <span id="workError" class="error-message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>*성별</td>
+            <td>
+                남자<input type="radio" name="sex" id="s1" value="male" />
+                여자<input type="radio" name="sex" id="s2" value="female" />
+                <span id="sexError" class="error-message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>*취미</td>
+            <td>
+                <input type="checkbox" name="hobby" id="h1" value="독서" />독서
+                <input type="checkbox" name="hobby" id="h2" value="등산" />등산
+                <input type="checkbox" name="hobby" id="h3" value="낚시" />낚시
+                <span id="hobbyError" class="error-message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>*가입동기</td>
+            <td>
+                <textarea rows="20" cols="100" name="motivation"></textarea>
+                <span id="motivationError" class="error-message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <!-- <input type="button" value="가입" onclick="validateForm()" /> -->
+                <input type="button" value="가입" />
+            </td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        /*
+                 문제. 자바스크립트 문법을 사용하여 회원가입 폼의 유효성을 검사하는 코드입니다.
+                 위의  HTML태그 내용과 같은 회원가입 폼이 있다고 했을 때  자바스크립트 문법 만을 이용해서 
+                 모든 입력이 되었는지,  
+                 아이디를 3자 ~ 7자 사이로 입력했는지,  
+                 비밀번호를 4자 ~ 10자 사이로 입력했는지,  
+                 입력한 비밀번호와 비밀번호 확인의 데이터가 같은지, 
+                 직업을 선택했는지,  
+                 성별을 선택 또는 체크 했는지,  
+                 취미를 하나 이상 체크 했는지, 
+                 가입동기를 입력 했는지 유효성 검사 하는 코드를 전체 작성 해 주고  각 줄에 주석을 다시오.
+        */
+
+        let joinBtn = document.querySelector("input[type=button]");
+        joinBtn.addEventListener("click", () => {
+            if (validateForm()) {
+                alert("회원가입이 완료되었습니다.");
+            }
+        });
+
+        function validateForm() {
+            // 이름 확인
+            let uName = document.getElementById("uName").value;
+            if (uName === "") {
+                alert("이름을 입력해주세요.");
+                return false;
+            }
+
+            // 아이디 확인
+            let uId = document.getElementById("uID").value;
+            if (uId === "") {
+                alert("아이디를 입력해주세요.");
+                return false;
+            } else if (uId.length < 3 || uId.length > 7) {
+                alert("아이디를 3 ~ 7자로 입력해주세요.");
+                return false;
+            }
+
+            // 비밀번호 확인
+            let uPwd = document.querySelector("#uPWD").value;
+            if (uPwd === "" && (uPwd.length < 4 || uPwd.length > 10)) {
+                alert("비밀번호를 4 ~ 10자로 입력해주세요.")
+                return false;
+            }
+
+            // 비밀번호 재입력 확인
+            let uPwdConfirm = document.querySelector("input[name='uPWD_Confirm']").value;
+            if (uPwdConfirm !== uPwd) {
+                alert("비밀번호가 일치하지 않습니다.");
+                return false;
+            }
+
+            // 직업 선택 확인
+            let work = document.getElementById("work").value;
+            if (work === "직업명") {
+                alert("직업을 선택해주세요.");
+                return false;
+            }
+
+            // 성별 체크 확인
+            let sex1 = document.getElementById("s1").checked;
+            let sex2 = document.getElementById("s2").checked;
+            if (!sex1 && !sex2) {
+                alert("성별을 선택해주세요.");
+                return false;
+            }
+
+            // 취미 체크 확인
+            let hobby1 = document.getElementById("h1").chcecked;
+            let hobby2 = document.getElementById("h2").chcecked;
+            let hobby3 = document.getElementById("h3").chcecked;
+            if (!hobby1 && !hobby2 && !hobby3) {
+                alert("취미를 선택해주세요.");
+                return false;
+            }
+
+            // 가입동기 확인
+            let motivation = document.getElementsByName("motivation")[0].value;
+            if (motivation === "") {
+                alert("가입동기를 입력해주세요.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>
