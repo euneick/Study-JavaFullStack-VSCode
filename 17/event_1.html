@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let i = 0;
+        let color = ["white", "yellow", "aqua", "purple"];
+
+        window.onload = () => {
+            document.getElementById("btn2").onclick = setBackgroundColor;
+            document.getElementById("btn4").onmouseout = setBackgroundColor;
+            
+        };
+
+        function setBackgroundColor() {
+            document.body.style.backgroundColor = color[++i % color.length];
+        }
+    </script>
+</head>
+
+<body>
+    <p>
+        <button onclick="setBackgroundColor();">버튼1</button>
+    </p>
+    <p>
+        <button id="btn2">버튼2</button>
+    </p>
+    <p>
+        <button onmouseover="setBackgroundColor();">버튼3</button>
+    </p>
+    <p>
+        <button id="btn4">버튼4</button>
+    </p>
+</body>
+
+</html>
