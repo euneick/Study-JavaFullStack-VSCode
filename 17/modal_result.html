@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal-result.css">
+</head>
+
+<body>
+    <!-- 
+        모달 창 (Modal)
+            - 화면에 내용이 팝업 되면서 기타 내용은 블러 처리되어 팝업된 내용에만 집중할 수 있게 하는 창
+    -->
+    <button id="open">프로필 보기</button>
+
+    <div id="modal-box">
+        <div id="modal-contents">
+            <button id="close">&times;</button>
+            <h1 id="title">My Profile</h1>
+            <div id="profile">
+                <img src="images/pf.png" alt="도레미">
+                <div id="desc">
+                    <p class="user">이름 : 도레미</p>
+                    <p class="user">주소 : somewhere</p>
+                    <p class="user">연락처 : 1577-1577</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const open = document.getElementById("open");
+        const modalBox = document.getElementById("modal-box");
+        const close = document.getElementById("close");
+
+        open.addEventListener("click", () => {
+            modalBox.classList.add("active");
+        });
+
+        close.addEventListener("click", () => {
+            modalBox.classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>
