@@ -102,7 +102,7 @@
         for (let i = 0; i < 8; i++)
             checkVerifications.push(false);
 
-        // 이름 유효성 검사
+        // #region 이름 유효성 검사
         const inputName = document.getElementById("uName");
         const nameError = document.getElementById("name");
         function validateName() {
@@ -115,8 +115,9 @@
                 checkVerifications[0] = true;
             }
         }
+        // #endregion
 
-        // 아이디 유효성 검사
+        // #region 아이디 유효성 검사
         const inputId = document.getElementById("uID");
         const idError = document.getElementById("id");
         function validateID() {
@@ -133,8 +134,9 @@
                 checkVerifications[1] = true;
             }
         }
+        // #endregion
 
-        // 비밀번호 유효성 검사
+        // #region 비밀번호 유효성 검사
         const inputPwd = document.getElementById("uPWD");
         const pwdError = document.getElementById("pwd");
         function validatePassword() {
@@ -148,11 +150,12 @@
             }
             else {
                 pwdError.innerText = "";
-                checkVerifications[2] = true;                
+                checkVerifications[2] = true;
             }
         }
+        // #endregion
 
-        // 비밀번호 재입력 유효성 검사
+        // #region 비밀번호 재입력 유효성 검사
         const inputPwdConfirm = document.getElementById("uPWD_Confirm");
         const pwdConfirmError = document.getElementById("pwd_confirm");
         function validatePasswordConfirmation() {
@@ -165,8 +168,9 @@
                 checkVerifications[3] = true;
             }
         }
+        // #endregion
 
-        // 직업 선택 검사
+        // #region 직업 선택 검사
         const selectWork = document.getElementById("work");
         const workError = document.getElementById("work-error");
         function validateWork() {
@@ -179,8 +183,9 @@
                 checkVerifications[4] = true;
             }
         }
+        // #endregion
 
-        // 성별 선택 검사
+        // #region 성별 선택 검사
         const radioGenders = document.getElementsByName("sex");
         const genderError = document.getElementById("gender-error");
         function validateGender() {
@@ -193,8 +198,9 @@
                 checkVerifications[5] = true;
             }
         }
+        // #endregion
 
-        // 취미 선택 검사
+        // #region 취미 선택 검사
         const checkHobbies = document.getElementsByName("hobby");
         const hobbyError = document.getElementById("hobby-error");
         function validateHobby() {
@@ -212,8 +218,9 @@
                 checkVerifications[6] = false;
             }
         }
+        // #endregion
 
-        // 가입 동기 입력 검사
+        // #region 가입 동기 입력 검사
         const areaMotivation = document.getElementsByName("motivation")[0];
         const motivationError = document.getElementById("motivation-error");
         function validateTextArea() {
@@ -226,9 +233,10 @@
                 checkVerifications[7] = false;
             }
         }
+        // #endregion
 
         // 가입 버튼 클릭
-        function validateForm() {    
+        function validateForm() {
             if (checkVerifications.every(bool => bool))
                 alert("회원가입이 완료되었습니다.s");
         }
