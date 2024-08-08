@@ -96,8 +96,11 @@
     </table>
 
     <script type="text/javascript">
+        const verificationType = { NAME: 0, ID: 1, PWD: 2, PWD_CONFIRM: 3, JOB: 4, GENDER: 5, HOBBY: 6, MOTIVATION: 7 };
+        Object.freeze(verificationType);
+
         let checkVerifications = [];
-        for (let i = 0; i < 8; i++)
+        for (let i = 0; i < Object.keys(verificationType).length; i++)
             checkVerifications.push(false);
 
         // #region 이름 유효성 검사
@@ -109,11 +112,11 @@
         function validateName() {
             if (inputName.value.trim() === "") {
                 nameError.innerText = "이름을 입력해주세요."
-                checkVerifications[0] = false;
+                checkVerifications[verificationType.NAME] = false;
             }
             else {
                 nameError.innerText = ""
-                checkVerifications[0] = true;
+                checkVerifications[verificationType.NAME] = true;
             }
         }
         // #endregion
@@ -127,15 +130,15 @@
         function validateID() {
             if (inputId.value.trim() === "") {
                 idError.innerText = "아이디를 입력해주세요.";
-                checkVerifications[1] = false;
+                checkVerifications[verificationType.ID] = false;
             }
             else if (inputId.value.length < 3 || inputId.value.length > 7) {
                 idError.innerText = "3 ~ 7자로 입력해주세요.";
-                checkVerifications[1] = false;
+                checkVerifications[verificationType.ID] = false;
             }
             else {
                 idError.innerText = "";
-                checkVerifications[1] = true;
+                checkVerifications[verificationType.ID] = true;
             }
         }
         // #endregion
@@ -149,15 +152,15 @@
         function validatePassword() {
             if (inputPwd.value.trim() === "") {
                 pwdError.innerText = "비밀번호를 입력해주세요.";
-                checkVerifications[2] = false;
+                checkVerifications[verificationType.PWD] = false;
             }
             else if (inputPwd.value.length < 4 || inputPwd.value.length > 10) {
                 pwdError.innerText = "4 ~ 10자로 입력해주세요.";
-                checkVerifications[2] = false;
+                checkVerifications[verificationType.PWD] = false;
             }
             else {
                 pwdError.innerText = "";
-                checkVerifications[2] = true;
+                checkVerifications[verificationType.PWD] = true;
             }
         }
         // #endregion
@@ -171,15 +174,15 @@
         function validatePasswordConfirmation() {
             if (inputPwdConfirm.value.trim() === "") {
                 pwdConfirmError.innerText = "비밀번호 확인해주세요";
-                checkVerifications[3] = false;
+                checkVerifications[verificationType.PWD_CONFIRM] = false;
             }
             else if (inputPwdConfirm.value.trim() !== inputPwd.value.trim()) {
                 pwdConfirmError.innerText = "비밀번호가 다릅니다.";
-                checkVerifications[3] = false;
+                checkVerifications[verificationType.PWD_CONFIRM] = false;
             }
             else {
                 pwdConfirmError.innerText = "";
-                checkVerifications[3] = true;
+                checkVerifications[verificationType.PWD_CONFIRM] = true;
             }
         }
         // #endregion
@@ -193,11 +196,11 @@
         function validateWork() {
             if (selectWork.value === "직업명") {
                 workError.innerText = "직업을 선택해주세요.";
-                checkVerifications[4] = false;
+                checkVerifications[verificationType.JOB] = false;
             }
             else {
                 workError.innerText = "";
-                checkVerifications[4] = true;
+                checkVerifications[verificationType.JOB] = true;
             }
         }
         // #endregion
@@ -213,11 +216,11 @@
         function validateGender() {
             if (!radioGenders[0].checked && !radioGenders[1].checked) {
                 genderError.innerText = "성별을 체크해주세요.";
-                checkVerifications[5] = false;
+                checkVerifications[verificationType.GENDER] = false;
             }
             else {
                 genderError.innerText = "";
-                checkVerifications[5] = true;
+                checkVerifications[verificationType.GENDER] = true;
             }
         }
         // #endregion
@@ -238,11 +241,11 @@
 
             if (flag) {
                 hobbyError.innerText = "";
-                checkVerifications[6] = true;
+                checkVerifications[verificationType.HOBBY] = true;
             }
             else {
                 hobbyError.innerText = "취미를 하나 이상 체크해 주세요.";
-                checkVerifications[6] = false;
+                checkVerifications[verificationType.HOBBY] = false;
             }
         }
         // #endregion
@@ -257,11 +260,11 @@
             let lineCount = areaMotivation.value.split(/\r*\n/).length;
             if (lineCount >= 2) {
                 motivationError.innerText = "";
-                checkVerifications[7] = true;
+                checkVerifications[verificationType.MOTIVATION] = true;
             }
             else {
                 motivationError.innerText = "가입 동기를 두줄 이상 입력해주세요.";
-                checkVerifications[7] = false;
+                checkVerifications[verificationType.MOTIVATION] = false;
             }
         }
         // #endregion
@@ -269,7 +272,7 @@
         // 가입 버튼 클릭
         document.querySelector("#submit").addEventListener("click", () => {
             if (checkVerifications.every(bool => bool))
-                alert("회원가입이 완료되었습니다.s");
+                alert("회원가입이 완료되었습니다.");
         });
     </script>
 
