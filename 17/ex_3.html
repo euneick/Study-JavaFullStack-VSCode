@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 5%;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>사각형 내부를 클릭해 보세요</p>
+
+    <div id="box"></div>
+
+    <script>
+        const boxEl = document.querySelector("#box");
+
+        // e : 이벤트 객체
+        boxEl.addEventListener("mousemove", (e) => {
+            console.log(`클릭 이벤트 발생 위치 : ${e.pageX}, ${e.pageY}`);
+        });
+    </script>
+</body>
+
+</html>
