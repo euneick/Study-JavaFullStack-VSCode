@@ -27,36 +27,35 @@
         <tr>
             <td>*이름</td>
             <td>
-                <input type="text" name="uName" id="uName" onkeyup="validateName();" placeholder="김개똥" />
+                <input type="text" name="uName" id="uName" placeholder="김개똥" />
                 <span id="name">이름을 입력해주세요</span>
             </td>
         </tr>
         <tr>
             <td>*ID</td>
             <td>
-                <input type="text" name="uID" id="uID" onkeyup="validateID();" placeholder="admin" />
+                <input type="text" name="uID" id="uID" placeholder="admin" />
                 <span id="id">ID를 입력해주세요</span>
             </td>
         </tr>
         <tr>
             <td>*비밀번호</td>
             <td>
-                <input type="password" name="uPWD" id="uPWD" onkeyup="validatePassword();" placeholder="1234" />
+                <input type="password" name="uPWD" id="uPWD" placeholder="1234" />
                 <span id="pwd">비밀번호를 입력해주세요</span>
             </td>
         </tr>
         <tr>
             <td>*비밀번호 확인</td>
             <td>
-                <input type="password" name="uPWD_Confirm" id="uPWD_Confirm"
-                    onkeyup="validatePasswordConfirmation();" />
+                <input type="password" name="uPWD_Confirm" id="uPWD_Confirm" />
                 <span id="pwd_confirm">비밀번호 확인란 입력해주세요</span>
             </td>
         </tr>
         <tr>
             <td>*직업</td>
             <td>
-                <select name="work" id="work" onchange="validateWork()">
+                <select name="work" id="work">
                     <option value="직업명" selected>직업명</option>
                     <option value="기타">기타</option>
                     <option value="회사원">회사원</option>
@@ -68,30 +67,30 @@
         <tr>
             <td>*성별</td>
             <td>
-                남자<input type="radio" name="sex" id="s1" value="male" onchange="validateGender()" />
-                여자<input type="radio" name="sex" id="s2" value="female" onchange="validateGender()" />
+                남자<input type="radio" name="sex" id="s1" value="male"/>
+                여자<input type="radio" name="sex" id="s2" value="female"/>
                 <span id="gender-error">성별을 체크해 주세요</span>
             </td>
         </tr>
         <tr>
             <td>*취미</td>
             <td>
-                <input type="checkbox" name="hobby" id="h1" value="독서" onchange="validateHobby()" />독서
-                <input type="checkbox" name="hobby" id="h2" value="등산" onchange="validateHobby()" />등산
-                <input type="checkbox" name="hobby" id="h3" value="낚시" onchange="validateHobby()" />낚시
+                <input type="checkbox" name="hobby" id="h1" value="독서" />독서
+                <input type="checkbox" name="hobby" id="h2" value="등산" />등산
+                <input type="checkbox" name="hobby" id="h3" value="낚시" />낚시
                 <span id="hobby-error">취미를 하나이상 체크 해 주세요</span>
             </td>
         </tr>
         <tr>
             <td>*가입동기</td>
             <td>
-                <textarea rows="20" cols="100" name="motivation" onkeyup="validateTextArea()" placeholder="가입동기를 두줄 이상 입력 하시오."></textarea>
+                <textarea rows="20" cols="100" name="motivation" placeholder="가입동기를 두줄 이상 입력 하시오."></textarea>
                 <br><span id="motivation-error">가입 동기를 입력해주세요</span>
             </td>
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <input type="button" value="가입" onclick="validateForm()" />
+                <input type="button" value="가입" />
             </td>
         </tr>
     </table>
@@ -104,6 +103,9 @@
         // #region 이름 유효성 검사
         const inputName = document.getElementById("uName");
         const nameError = document.getElementById("name");
+
+        inputName.addEventListener("keyup", validateName);
+
         function validateName() {
             if (inputName.value.trim() === "") {
                 nameError.innerText = "이름을 입력해주세요."
@@ -119,6 +121,9 @@
         // #region 아이디 유효성 검사
         const inputId = document.getElementById("uID");
         const idError = document.getElementById("id");
+
+        inputId.addEventListener("keyup", validateID);
+
         function validateID() {
             if (inputId.value.trim() === "") {
                 idError.innerText = "아이디를 입력해주세요.";
@@ -138,6 +143,9 @@
         // #region 비밀번호 유효성 검사
         const inputPwd = document.getElementById("uPWD");
         const pwdError = document.getElementById("pwd");
+
+        inputPwd.addEventListener("keyup" , validatePassword);
+
         function validatePassword() {
             if (inputPwd.value.trim() === "") {
                 pwdError.innerText = "비밀번호를 입력해주세요.";
@@ -157,6 +165,9 @@
         // #region 비밀번호 재입력 유효성 검사
         const inputPwdConfirm = document.getElementById("uPWD_Confirm");
         const pwdConfirmError = document.getElementById("pwd_confirm");
+
+        inputPwdConfirm.addEventListener("keyup", validatePasswordConfirmation);
+
         function validatePasswordConfirmation() {
             if (inputPwdConfirm.value.trim() === "") {
                 pwdConfirmError.innerText = "비밀번호 확인해주세요";
@@ -176,6 +187,9 @@
         // #region 직업 선택 검사
         const selectWork = document.getElementById("work");
         const workError = document.getElementById("work-error");
+
+        selectWork.addEventListener("change", validateWork);
+
         function validateWork() {
             if (selectWork.value === "직업명") {
                 workError.innerText = "직업을 선택해주세요.";
@@ -191,6 +205,11 @@
         // #region 성별 선택 검사
         const radioGenders = document.getElementsByName("sex");
         const genderError = document.getElementById("gender-error");
+
+        radioGenders.forEach((element) => {
+            element.addEventListener("change", validateGender);
+        });
+
         function validateGender() {
             if (!radioGenders[0].checked && !radioGenders[1].checked) {
                 genderError.innerText = "성별을 체크해주세요.";
@@ -206,6 +225,11 @@
         // #region 취미 선택 검사
         const checkHobbies = document.getElementsByName("hobby");
         const hobbyError = document.getElementById("hobby-error");
+
+        checkHobbies.forEach((element) => {
+            element.addEventListener("change", validateHobby);
+        });
+
         function validateHobby() {
             let flag = false;
             checkHobbies.forEach((checkBox) => {
@@ -226,6 +250,9 @@
         // #region 가입 동기 입력 검사
         const areaMotivation = document.getElementsByName("motivation")[0];
         const motivationError = document.getElementById("motivation-error");
+
+        areaMotivation.addEventListener("keyup", validateTextArea);
+
         function validateTextArea() {
             let lineCount = areaMotivation.value.split(/\r*\n/).length;
             if (lineCount >= 2) {
