@@ -30,11 +30,13 @@
         const img = document.querySelector("img");
 
         img.addEventListener("mouseover", () => {
-            img.setAttribute("src", "images/pic-6.jpg");
+            // img.setAttribute("src", "images/pic-6.jpg");
+            img.src = "images/pic-6.jpg";
         });
 
         img.addEventListener("mouseout", () => {
-            img.setAttribute("src", "images/pic-1.jpg");
+            // img.setAttribute("src", "images/pic-1.jpg");
+            img.src = "images/pic-1.jpg";
         });
     </script>
 </body>
