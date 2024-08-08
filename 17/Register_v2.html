@@ -159,7 +159,11 @@
         const inputPwdConfirm = document.getElementById("uPWD_Confirm");
         const pwdConfirmError = document.getElementById("pwd_confirm");
         function validatePasswordConfirmation() {
-            if (inputPwdConfirm.value !== inputPwd.value) {
+            if (inputPwdConfirm.value.trim() === "") {
+                pwdConfirmError.innerText = "비밀번호 확인해주세요";
+                checkVerifications[3] = false;                
+            }
+            else if (inputPwdConfirm.value.trim() !== inputPwd.value.trim()) {
                 pwdConfirmError.innerText = "비밀번호가 다릅니다.";
                 checkVerifications[3] = false;
             }
