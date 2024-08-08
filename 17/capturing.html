@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/event.css">
+</head>
+
+<body>
+    BODY
+    <div>
+        DIV
+        <section>
+            SECTION
+            <p>
+                P
+            </p>
+        </section>
+    </div>
+
+    <script>
+        const elements = document.querySelectorAll("*");
+
+        for (let element of elements) {
+            element.addEventListener("click", (e) => {
+                console.log(`target : ${e.target.tagName}\ncurrentTarget : ${e.currentTarget.tagName}`);
+            }, true);       // addEventListener() 의 세 번째 매개변수에 true를 전달하면 이벤트 전달 방식이 캡쳐링으로 설정됨
+        }
+    </script>
+</body>
+
+</html>
