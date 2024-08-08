@@ -67,8 +67,8 @@
         <tr>
             <td>*성별</td>
             <td>
-                남자<input type="radio" name="sex" id="s1" value="male"/>
-                여자<input type="radio" name="sex" id="s2" value="female"/>
+                남자<input type="radio" name="sex" id="s1" value="male" />
+                여자<input type="radio" name="sex" id="s2" value="female" />
                 <span id="gender-error">성별을 체크해 주세요</span>
             </td>
         </tr>
@@ -90,7 +90,7 @@
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <input type="button" value="가입" />
+                <input type="button" value="가입" id="submit" />
             </td>
         </tr>
     </table>
@@ -144,7 +144,7 @@
         const inputPwd = document.getElementById("uPWD");
         const pwdError = document.getElementById("pwd");
 
-        inputPwd.addEventListener("keyup" , validatePassword);
+        inputPwd.addEventListener("keyup", validatePassword);
 
         function validatePassword() {
             if (inputPwd.value.trim() === "") {
@@ -171,7 +171,7 @@
         function validatePasswordConfirmation() {
             if (inputPwdConfirm.value.trim() === "") {
                 pwdConfirmError.innerText = "비밀번호 확인해주세요";
-                checkVerifications[3] = false;                
+                checkVerifications[3] = false;
             }
             else if (inputPwdConfirm.value.trim() !== inputPwd.value.trim()) {
                 pwdConfirmError.innerText = "비밀번호가 다릅니다.";
@@ -267,10 +267,10 @@
         // #endregion
 
         // 가입 버튼 클릭
-        function validateForm() {
+        document.querySelector("#submit").addEventListener("click", () => {
             if (checkVerifications.every(bool => bool))
                 alert("회원가입이 완료되었습니다.s");
-        }
+        });
     </script>
 
 
