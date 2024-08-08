@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>NodeList 살펴보기</h1>
+    <p>HTML</p>
+    <p>CSS</p>
+    <p>JAVASCRIPT</p>
+
+    <script>
+        let newP = document.createElement("p");
+        let textNode = document.createTextNode("Typescript");
+
+        newP.appendChild(textNode);
+        document.body.appendChild(newP);
+    </script>
+</body>
+
+</html>
