@@ -85,9 +85,8 @@
         <tr>
             <td>*가입동기</td>
             <td>
-                <textarea rows="20" cols="100" name="motivation" onkeyup="validateTextArea()"
-                    placeholder="가입동기를 두줄 이상 입력 하시오."></textarea>
-                <span id="motivation-error">가입 동기를 입력해주세요</span>
+                <textarea rows="20" cols="100" name="motivation" onkeyup="validateTextArea()" placeholder="가입동기를 두줄 이상 입력 하시오."></textarea>
+                <br><span id="motivation-error">가입 동기를 입력해주세요</span>
             </td>
         </tr>
         <tr>
@@ -228,7 +227,8 @@
         const areaMotivation = document.getElementsByName("motivation")[0];
         const motivationError = document.getElementById("motivation-error");
         function validateTextArea() {
-            if (areaMotivation.value.length >= areaMotivation.cols) {
+            let lineCount = areaMotivation.value.split(/\r*\n/).length;
+            if (lineCount >= 2) {
                 motivationError.innerText = "";
                 checkVerifications[7] = true;
             }
