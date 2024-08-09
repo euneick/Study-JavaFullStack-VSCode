@@ -13,18 +13,20 @@
         /*
             Javascript는 생성자 함수를 작성하면 자동으로 클래스를 정의한다.
             생성자 함수 작성 시 파스칼 표기법을 지향한다.
-
+            
             일반 함수 선언 방식대로 작성하되, 실행구문에서 this키워드를 사용하면 생성자함수로 해석하는듯?
+            클래스 내에서 변수를 사용하려면 this 키워드를 함께 사용해야 하는듯?
         */
         function Book(title, pages, done = false) {
             // Properties
             this.title = title;
             this.pages = pages;
             this.done = done;
+            this.author = "몰?루";
 
             // Methods
             this.printInfo = function () {
-                console.log(`제목 : ${title}, 총 페이지 : ${pages}, 정독 여부 : ${done}`);
+                console.log(`제목 : ${this.title}, 총 페이지 : ${this.pages}, 정독 여부 : ${this.done}, 작가 : ${this.author}`);
             }
         }
 
