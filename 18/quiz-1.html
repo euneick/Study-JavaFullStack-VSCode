@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>연습문제 1</title>
+    <link rel="stylesheet" href="css/quiz-1.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>참가자 명단</h1>
+        <form>
+            <ul id="userInput">
+                <li>
+                    <label for="username">이 름</label>
+                    <input type="text" id="username">
+                </li>
+                <li>
+                    <label for="major">전 공</label>
+                    <input type="text" id="major">
+                </li>
+            </ul>
+            <button id="regist">등록하기</button>
+        </form>
+
+        <table id="attendant">
+            <thead>
+                <tr>
+                    <th>이 름</th>
+                    <th>전 공</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        const inputNameEl = document.querySelector("#username");
+        const inputMajorEl = document.querySelector("#major");
+        const registBtnEl = document.querySelector("#container #regist");
+        const tbodyEl = document.querySelector("#attendant tbody");
+
+        registBtnEl.addEventListener("click", (e) => {
+            e.preventDefault();
+            
+            let newTrEl = document.createElement("tr");
+            // let newNameTdEl = document.createElement("td");
+            // newNameTdEl.innerText = `${inputNameEl.value}`;
+            // let newMajorTdEl = document.createElement("td");
+            // newMajorTdEl.innerText = `${inputMajorEl.value}`;
+
+            // newTrEl.appendChild(newNameTdEl);
+            // newTrEl.appendChild(newMajorTdEl);
+
+            newTrEl.innerHTML = `<td>${inputNameEl.value}</td><td>${inputMajorEl.value}</td>`;
+
+            tbodyEl.appendChild(newTrEl);
+
+            inputNameEl.value = "";
+            inputMajorEl.value = "";
+        });
+    </script>
+</body>
+
+</html>
