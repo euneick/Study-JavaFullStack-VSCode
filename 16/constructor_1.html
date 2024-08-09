@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            Javascript는 생성자 함수를 작성하면 자동으로 클래스를 정의한다.
+            생성자 함수 작성 시 파스칼 표기법을 지향한다.
+
+            일반 함수 선언 방식대로 작성하되, 실행구문에서 this키워드를 사용하면 생성자함수로 해석하는듯?
+        */
+        function Book(title, pages, done = false) {
+            // Properties
+            this.title = title;
+            this.pages = pages;
+            this.done = done;
+
+            // Methods
+            this.printInfo = function () {
+                console.log(`제목 : ${title}, 총 페이지 : ${pages}, 정독 여부 : ${done}`);
+            }
+        }
+
+        let book1 = new Book("웹 표준의 정석", 648);
+        let book2 = new Book("수학의 정석", 400, true);
+
+        book1.printInfo();
+        book2.printInfo();
+    </script>
+</body>
+
+</html>
