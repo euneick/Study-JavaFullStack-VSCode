@@ -21,7 +21,7 @@
                     <input type="text" id="major">
                 </li>
             </ul>
-            <button id="regist">등록하기</button>
+            <button>등록하기</button>
         </form>
 
         <table id="attendant">
@@ -36,29 +36,25 @@
     </div>
 
     <script>
-        const inputNameEl = document.querySelector("#username");
-        const inputMajorEl = document.querySelector("#major");
-        const registBtnEl = document.querySelector("#container #regist");
+        const inputTextEls = document.querySelectorAll("#userInput li input[type='text']");
+        const registBtnEl = document.querySelector("#userInput~button");
         const tbodyEl = document.querySelector("#attendant tbody");
 
         registBtnEl.addEventListener("click", (e) => {
             e.preventDefault();
-            
+
             let newTrEl = document.createElement("tr");
-            // let newNameTdEl = document.createElement("td");
-            // newNameTdEl.innerText = `${inputNameEl.value}`;
-            // let newMajorTdEl = document.createElement("td");
-            // newMajorTdEl.innerText = `${inputMajorEl.value}`;
 
-            // newTrEl.appendChild(newNameTdEl);
-            // newTrEl.appendChild(newMajorTdEl);
+            for (let element of inputTextEls) {
+                let newTdEl = document.createElement("td");
+                newTdEl.innerText = element.value;
 
-            newTrEl.innerHTML = `<td>${inputNameEl.value}</td><td>${inputMajorEl.value}</td>`;
+                newTrEl.appendChild(newTdEl);
+            }
 
             tbodyEl.appendChild(newTrEl);
 
-            inputNameEl.value = "";
-            inputMajorEl.value = "";
+            for (let element of inputTextEls) element.value = "";
         });
     </script>
 </body>
