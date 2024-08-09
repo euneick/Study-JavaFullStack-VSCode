@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+
+    <link rel="stylesheet" href="css/bookList.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Book List</h1>
+        <form>
+            <ul id="bookInfo">
+                <li>
+                    <label for="title">제 목</label>
+                    <input type="text" id="title">
+                </li>
+                <li>
+                    <label for="author">저 자</label>
+                    <input type="text" id="author">
+                </li>
+            </ul>
+
+            <button type="reset">취소하기</button>
+            <button id="save">저장하기</button>
+        </form>
+
+        <ul id="bookList"></ul>
+    </div>
+
+    <script>
+        const inputTitleEl = document.querySelector("#title");
+        const inputAuthorEl = document.querySelector("#author");
+        const saveButtonEl = document.querySelector("#save");
+        const bookListEl = document.querySelector("#bookList");
+
+        saveButtonEl.addEventListener("click", (e) => {
+            // form 요소의 submit 동작을 차단
+            // 코드의 맨 위에 작성을 해야 아래줄의 코드가 작동함
+            e.preventDefault();
+
+            const newLiElement = document.createElement("li");
+
+            newLiElement.innerHTML = `${inputTitleEl.value} - ${inputAuthorEl.value} <span class="delButton">삭제</span>`;
+            bookListEl.appendChild(newLiElement);
+
+            inputTitleEl.value = "";
+            inputAuthorEl.value = "";
+
+            const deleteBtnEls = document.querySelectorAll(".delButton");
+            for (let element of deleteBtnEls) {
+                element.addEventListener("click", function() {
+                    // this.parentNode.parentNode.removeChild(this.parentNode);
+
+                    let list = this.parentNode;
+                    list.parentNode.removeChild(list);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
