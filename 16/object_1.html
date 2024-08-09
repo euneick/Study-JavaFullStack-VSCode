@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const book1 = {
+            title: "웹 표준의 정석",
+            pages: 648
+        }
+
+        console.log(book1.title);
+
+        book1.title = "웹 표준의 정석 2";
+        console.log(book1.title);
+
+        book1["title"] = "웹 표준의 정석";
+        console.log(book1.title);
+    </script>
+</body>
+
+</html>
