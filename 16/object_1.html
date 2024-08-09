@@ -12,16 +12,25 @@
     <script>
         const book1 = {
             title: "웹 표준의 정석",
-            pages: 648
+            "pages": 648
         }
 
-        console.log(book1.title);
+        console.log(book1);
 
         book1.title = "웹 표준의 정석 2";
-        console.log(book1.title);
+        console.log(book1);
 
         book1["title"] = "웹 표준의 정석";
-        console.log(book1.title);
+        console.log(book1);
+
+        console.log(book1.pages);
+        console.log(book1["pages"]);
+
+        let book2 = {};
+        book2.title = "Javascript";
+        console.log(book2);
+        book2.pages = 500;
+        console.log(book2);
     </script>
 </body>
 
