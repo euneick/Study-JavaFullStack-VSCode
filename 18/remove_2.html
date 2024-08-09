@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드 삭제하기</title>
+</head>
+
+<body>
+    <h1>Web Programming</h1>
+    <ul id="items">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JAVASCRIPT</li>
+    </ul>
+
+    <script>
+        /*
+            parentNode      - 현재 노드의 부모 노드를 반환하는 속성
+            removeChild()   - 현재 노드의 자식 노드를 삭제하는 메소드
+
+            this         - 이벤트가 발생한 요소를 선택하는 예약어
+                주의) 람다식에서 this를 사용 할 경우 상위스코프의 'this' 를 참조하게 되므로 의도대로 작동하지 않음
+        */
+        const liEls = document.querySelectorAll("li");
+
+        for (let element of liEls) {
+            element.addEventListener("click", function() {
+                // this.parentNode.removeChild(this);
+                this.remove(this);
+            });
+        }
+    </script>
+</body>
+
+</html>
