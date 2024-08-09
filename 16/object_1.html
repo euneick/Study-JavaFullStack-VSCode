@@ -52,6 +52,13 @@
             }
         };
         console.log(student.score.average());
+
+        let student2 = student;         // 얕은 복사 발생
+
+        student2.score.history = 50;
+
+        console.log(student.score.history);
+        console.log(student2.score.history);
     </script>
 </body>
 
