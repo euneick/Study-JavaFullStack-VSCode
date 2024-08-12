@@ -54,8 +54,15 @@
         calculateBtnEl.addEventListener("click", (e) => {
             e.preventDefault();
 
-            let cylinder = new Cylinder(inputDiameterEl.value, inputHeightEl.value);
-            resultEl.innerHTML = `원기둥의 부피는 ${cylinder.getVolume()}m<sup>3</sup>입니다.`;
+            let diameterValue = inputDiameterEl.value;
+            let heightValue = inputHeightEl.value;
+
+            if (diameterValue === "" || heightValue === "") resultEl.innerText = "지름값과 높이값을 입력해주세요.";
+            else if (isNaN(parseInt(diameterValue)) || isNaN(parseInt(heightValue))) resultEl.innerText = "올바른 값을 입력해주세요.";
+            else {
+                let cylinder = new Cylinder(parseInt(diameterValue), parseInt(heightValue));
+                resultEl.innerHTML = `원기둥의 부피는 ${cylinder.getVolume()}m<sup>3</sup>입니다.`;
+            }
         });
     </script>
 </body>
