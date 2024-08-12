@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        class Book {
+            constructor(title, pages, done = false) {
+                this.title = title;
+                this.pages = pages;
+                this.done = done;
+            }
+
+            printInfo () {                
+                console.log(`제목 : ${this.title}, 총 페이지 : ${this.pages}, 정독 여부 : ${this.done}`);
+            }
+        }
+        
+        let book1 = new Book("웹 표준의 정석", 648);
+        let book2 = new Book("수학의 정석", 400, true);
+
+        book1.printInfo();
+        book2.printInfo();
+    </script>
+</body>
+
+</html>
