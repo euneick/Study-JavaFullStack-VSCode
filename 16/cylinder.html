@@ -41,7 +41,7 @@
             this.height = height;
 
             this.getVolume = function () {
-                let radius = diameter * 0.5;
+                let radius = this.diameter * 0.5;
                 return (radius * radius * Math.PI * this.height).toFixed(2)
             }
         }
