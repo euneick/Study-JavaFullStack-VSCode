@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>even, odd 선택자</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        /*
+            even 선택자
+                - $("selector:even")
+             * selector 요소들 중 짝수 번째 요소들을 선택
+
+            odd 선택자
+                - $("selector:odd")
+             * selector 요소들 중 홀수 번째 요소들을 선택
+        */
+
+        $(() => {
+            $("#menu li:even").css("background-color", "pink");
+            $("#menu li:odd").css("background-color", "aqua");
+        });
+    </script>
+</head>
+
+<body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+        <li>내용4</li>
+    </ul>
+</body>
+
+</html>
