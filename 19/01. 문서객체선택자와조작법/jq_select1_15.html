@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가장 가까운 상위요소 선택자</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        /*
+            $(selector1).closest(selector2);
+                - selector1의 모든 상위요소 중 가장 가까운 selector2 요소를 선택
+        */
+        $(() => {
+            $(".txt1").closest("div").css("border", "2px dashed red");
+        });
+    </script>
+</head>
+
+<body>
+    <h1 class="title">선택자</h1>
+    <div>
+        <div>
+            <p class="txt1">내용</p>
+        </div>
+    </div>
+</body>
+
+</html>
