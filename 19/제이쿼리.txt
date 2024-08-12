@@ -109,7 +109,7 @@
 										의미 - 선택한 요소의 부모요소를 선택하는 부모요소 선택자 parent()
 										
 										
-					------  jq_selec1_7.html 파일 실습
+					------  jq_select1_7.html 파일 실습
 					
 										
 										
@@ -117,7 +117,7 @@
 										의미 - 선택한 요소의 상위요소를 모두 선택하는 상위요소 선택자 parents()
 										
 						
-					-------- jq_selec1_14.html 파일 실습
+					-------- jq_select1_14.html 파일 실습
 					
 						
 			
@@ -125,14 +125,14 @@
 					가장 가까운 상위요소 선택자  $("요소선택").closest("div")   
 										의미 - 선택한 요소의 상위 요소중 가장 가까운 <div>만 선택하는 선택자  closest("선택할상위요소명")
 					
-					--------- jq_selec1_15.html 파일 실습 
+					--------- jq_select1_15.html 파일 실습 
 					
 					
 					
 					하위 요소 선택자  $("요소선택 하위요소명")
 										의미 - 선택한 요소에 지정한 하위요소를 선택합니다.
 										
-					---------- jq_selec1_8.html 파일 실습					
+					---------- jq_select1_8.html 파일 실습					
 										
 										
 										
@@ -140,21 +140,21 @@
 										의미 - 선택한 요소를 기준으로 자식관계에 지정한 요소만 선택합니다.
 										
 					
-					---------  jq_selec1_9.html 파일 실습 
+					---------  jq_select1_9.html 파일 실습 
 					
 					
 					
 					형(이전)요소 선택자     prev()메소드   와              
 					동생(다음)  next()메소드 ,  + 
 					
-					---------  jq_selec1_10.html 파일 실습
+					---------  jq_select1_10.html 파일 실습
 					
 					
 					
 					전체 형(이전)요소선택자  prevAll()메소드  와
 					전체 동생(다음) 요소 선택자   nextAll() 메소드 
 					
-					---------- jq_selec1_11.html 파일 실습 
+					---------- jq_select1_11.html 파일 실습 
 					
 					
 					전체 형제 요소선택자   siblings()메소드
@@ -179,25 +179,25 @@
 						
 					1.2.1.위치 탐색 선택자 종류 실습
 						
-					----------------- jq_selec2_1_test.html 파일 실습    first , last 선택자
-					----------------- jq_selec2_2_test.html 파일 실습    even , odd 선택자
-					----------------- jq_selec2_3_test.html 파일 실습    eq(index) ,  lt(index), gt(index) 선택자
-					----------------- jq_selec2_4_test.html 파일 실습    first-of-type ,   last-of-type 선택자 
-					----------------- jq_selec2_5_test.html 파일 실습    nth-child(숫자) 또는 nth-child(숫자n) ,     
+					----------------- jq_select2_1_test.html 파일 실습    first , last 선택자
+					----------------- jq_select2_2_test.html 파일 실습    even , odd 선택자
+					----------------- jq_select2_3_test.html 파일 실습    eq(index) ,  lt(index), gt(index) 선택자
+					----------------- jq_select2_4_test.html 파일 실습    first-of-type ,   last-of-type 선택자 
+					----------------- jq_select2_5_test.html 파일 실습    nth-child(숫자) 또는 nth-child(숫자n) ,     
 																		nth-last-of-type(숫자) 선택자   
 					
 					
-					----------------- jq_selec2_6_test.html 파일 실습    only-child  ,  slice(index)  선택자 				
+					----------------- jq_select2_6_test.html 파일 실습    only-child  ,  slice(index)  선택자 				
 				
 					1.2.1.2. 위치 탐색 선택자와 같이 알아 놓으면 좋은 배열 관련 메소드 종류 실습
 					
-					----------------- jq_selec2_7_test.html 파일 실습    each() , $.each() 메소드 
-					----------------- jq_selec2_7_1_test.html 파일 실습   응용
+					----------------- jq_select2_7_test.html 파일 실습    each() , $.each() 메소드 
+					----------------- jq_select2_7_1_test.html 파일 실습   응용
 					
-					----------------- jq_selec2_8_test.html 파일 실습   $.map() , $.grep() 메소드
-					----------------- jq_selec2_9_test.html 파일 실습   $.inArray() , $.isArray(),  $.merge() 메소드
-					----------------- jq_selec2_10_test.html 파일 실습   index() 메소드
-					------------------jq_selec2_10_1.html 파일 실습
+					----------------- jq_select2_8_test.html 파일 실습   $.map() , $.grep() 메소드
+					----------------- jq_select2_9_test.html 파일 실습   $.inArray() , $.isArray(),  $.merge() 메소드
+					----------------- jq_select2_10_test.html 파일 실습   index() 메소드
+					------------------jq_select2_10_1.html 파일 실습
 					
 					
 					----------------- jq_application.html 응용 종합 실습  
@@ -205,14 +205,14 @@
 				
 				
 					1.2.2.1. 속성 탐색 선택자 종류 실습
-					----------------- jq_selec2_11_test.html 파일 실습    속성과 값에 따른 탐색 선택자
-					----------------- jq_selec2_12_test.html 파일 실습    속성상태에 따른 탐색 선택자
+					----------------- jq_select2_11_test.html 파일 실습    속성과 값에 따른 탐색 선택자
+					----------------- jq_select2_12_test.html 파일 실습    속성상태에 따른 탐색 선택자
 					
-					----------------- jq_selec2_13_test.html 파일 실습    그외 콘텐츠 탐색 선택자1
-					----------------- jq_selec2_14_test.html 파일 실습    그외 콘텐츠 탐색 선택자2
+					----------------- jq_select2_13_test.html 파일 실습    그외 콘텐츠 탐색 선택자1
+					----------------- jq_select2_14_test.html 파일 실습    그외 콘텐츠 탐색 선택자2
 						
 					1.2.2.2. 속성 탐색 선택자와 알아두면 유용한 메서드 종류 실습
-					----------------- jq_selec2_15_test.html 파일 실습    is(), $.noConflict(),  get() 메소드
+					----------------- jq_select2_15_test.html 파일 실습    is(), $.noConflict(),  get() 메소드
 
 
 
@@ -251,44 +251,44 @@
 				
 					2-1. 속성조작 메소드 실습
 					
-					------------------jq_selec3_1_test.html 파일 실습       html()  ,  text() 메소드
-					------------------jq_selec3_2_test.html 파일 실습       attr()  ,  removeAttr() 메소드	
-					------------------jq_selec3_3_test.html  223page 파일 실습      addClass()  ,  
+					------------------jq_select3_1_test.html 파일 실습       html()  ,  text() 메소드
+					------------------jq_select3_2_test.html 파일 실습       attr()  ,  removeAttr() 메소드	
+					------------------jq_select3_3_test.html  223page 파일 실습      addClass()  ,  
 																			removeClass(),  
 																			toggleClass(),
 																			hasClass() 메소드 	
 					
-					------------------jq_selec3_4_test.html 파일 실습      val() 메소드
-					------------------jq_selec3_5_test.html 파일 실습      prop() 메소드
+					------------------jq_select3_4_test.html 파일 실습      val() 메소드
+					------------------jq_select3_5_test.html 파일 실습      prop() 메소드
 				
 				
 				
 					2-2. 수치조작 메소드 실습
-					------------------jq_selec3_6_test.html 파일 실습  width(), height(), 
+					------------------jq_select3_6_test.html 파일 실습  width(), height(), 
 																	innerHeight(), innerWidth(), 
 																	outerHeight(),outerWidth() 메소드
 					
 
-					------------------jq_selec3_7_test.html 파일 실습    position(), offset() 메소드
+					------------------jq_select3_7_test.html 파일 실습    position(), offset() 메소드
 					
-					------------------jq_selec3_8_test.html 파일 실습   scrollTop() 메소드
+					------------------jq_select3_8_test.html 파일 실습   scrollTop() 메소드
 				
 
 				2-3. 객체 편집 메소드 실습
 					
-					------------------jq_selec3_9_test.html 파일 실습   before(), insertBefore(), after(), insertAfter() 메소드
+					------------------jq_select3_9_test.html 파일 실습   before(), insertBefore(), after(), insertAfter() 메소드
 					
-					------------------jq_selec3_10_test.html 파일 실습   append(), appendTo(), prepend(), predpendTo() 메소드
+					------------------jq_select3_10_test.html 파일 실습   append(), appendTo(), prepend(), predpendTo() 메소드
 				
-					------------------jq_selec3_11_test.html 파일 실습   clone(), empty(), remove() 메소드
+					------------------jq_select3_11_test.html 파일 실습   clone(), empty(), remove() 메소드
 				
-					------------------jq_selec3_12_test.html 파일 실습   replaceAll(), replaceWith() 메소드
+					------------------jq_select3_12_test.html 파일 실습   replaceAll(), replaceWith() 메소드
 				
-					------------------jq_selec3_13_test.html 파일 실습   unwrap(), wrap(), wrapAll(), wrapInner() 메소드
+					------------------jq_select3_13_test.html 파일 실습   unwrap(), wrap(), wrapAll(), wrapInner() 메소드
 
 		
 					총정리 (주요 선택자 정리하기)실습
-					--------- jq_selec-last-test.html 파일을 열어서 작성.
+					--------- jq_select-last-test.html 파일을 열어서 작성.
 					
 					도전 Mission!
 					--------------selector_test_1_test.html
