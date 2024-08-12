@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first, last 선택자</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        /*
+            first 선택자
+                - $("selector:first")
+                - $(selector).first()
+             * selector 요소들 중 첫 번째 요소를 선택
+
+            last 선택자
+                - $("selector:last")
+                - $(selector).last()
+             * selector 요소들 중 마지막 요소를 선택
+        */
+
+        $(() => {
+            $("#menu li:first").css("background-color", "pink");
+            $("#menu li").first().css("border", "2px dashed red");
+
+            $("#menu li:last").css("background-color", "aqua");
+            $("#menu li").last().css("border", "2px dotted blue");
+        });
+    </script>
+</head>
+
+<body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+        <li>내용4</li>
+    </ul>
+</body>
+
+</html>
