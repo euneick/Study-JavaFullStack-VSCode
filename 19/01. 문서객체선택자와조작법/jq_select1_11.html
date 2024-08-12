@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>이전/다음 전체 요소 선택자</title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		/*
+			전체 형(이전)요소 선택자
+				prevAll(selector?: string)
+
+			전체 동생(다음)요소 선택자
+				nextAll(selector?: string)
+		*/
+		$(function () {
+			var style_1 = { "background-color": "aqua", "border": "2px solid red" }
+			var style_2 = { "background-color": "yellow", "border": "2px dashed red" }
+
+			$(".txt").prevAll().css(style_1);
+			$(".txt").nextAll().css(style_2);
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<h1>인접관계 선택자</h1>
+		<p>내용1</p>
+		<p class="txt">내용2</p>
+		<p>내용3</p>
+		<p>내용4</p>
+	</div>
+</body>
+
+</html>
