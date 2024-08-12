@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<!-- 주제 : 아이디 선택자  # 을 사용하기 위해 만든 간단한 예제 -->
+
+	<!-- JQUERY문법 사용하기 위한 한줄 작성 -->
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	
+	<script type="text/javascript">
+		//웹브라우저창(window객체)이 html문서 내부에 있는 모든 HTML태그들을 로딩했을때 
+		//이벤트처리 함수 function이 호출되어 실행되게 선언하자
+		$(function(){			
+			//id속성에 설정된 아이디명이 tit인 <h2>요소 한쌍을 선택해서 가져옴
+			//그리고 css메소드를 사용하여 선택한 <h2>요소영역의 배경색을 빨간색으로 설정
+			//또한 css메소드를 한번더 사용하여 선택한 <h2>요소영역의 바깥 테두리선을 노란색 실선을 2px굵기로 설정 
+			$("#tit")
+			.css("background-color","red")
+			.css("border","2px solid yellow");
+					
+		});
+	</script>
+</head>
+<body>
+
+	<h1>제이쿼리</h1>
+	<h2 id="tit">선택자</h2>
+	<h3>직접선택자</h3>
+
+</body>
+</html>
