@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상위요소 선택자</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        $(() => {
+            /*
+                $(selector).parents()
+                    - selector 의 모든 상위요소들을 선택
+                $(selector1).parents(selector2)
+                    - selector1 의 모든 상위요소들 중에 selector2 에 맞는 요소들을 선택
+            */
+            $(".txt1").parents().css("border", "2px dashed red");
+
+            $(".txt2").parents("div").css("border", "4px dotted blue");
+        });
+    </script>
+</head>
+
+<body>
+    <h1 class="title">선택자</h1>
+    <section>
+        <div>
+            <p class="txt1">내용</p>
+        </div>
+    </section>
+    <section>
+        <div>
+            <p class="txt2">내용2</p>
+        </div>
+    </section>
+</body>
+
+</html>
