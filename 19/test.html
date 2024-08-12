@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+        jQuery 사용법 1.
+            jQuery 문법을 사용하기 위해 jQuery 문법이 담겨있는 js파일 불러오기
+    -->
+    <!-- <script src="js/jquery-3.7.1.js"></script> -->
+
+    <!--
+        jQuery 사용법 2.
+            CDN 링크를 사용하여 jQuery 사이트에 있는 js파일을 직접 불러오기
+            아래의 링크는 항상 최신버전을 유지하여 불러옴
+    -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+    <h1>자바스크립트</h1>
+    <h1 id="h1">자바스크립트2</h1>
+    <br>
+    <h2>제이쿼리</h2>
+    <h2 id="h2">제이쿼리2</h2>
+
+    <script>
+        let h1Element1 = document.getElementsByTagName("h1")[0];    // js문법으로 태그명 선택
+        console.log(h1Element1);
+
+        let h1Element2 = document.getElementById("h1");             // js 문법으로 아이디명 선택
+        console.log(h1Element2);
+
+        let h2Element1 = $("h2")[0];                                // jQuery 문법으로 태그명 선택
+        console.log(h2Element1);
+
+        let h2Element2 = $("#h2")[0];                               // jQuery 문법으로 아이디명 선택
+        console.log(h2Element2);
+    </script>
+</body>
+
+</html>
