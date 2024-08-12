@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first/last-of-type 선택자</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        /*
+            first-of-type 선택자
+                - $("selector:first-of-type")
+             * selector 요소들 중 첫 번째에 해당하는 요소들을 모두 선택
+             
+            last-of-type 선택자
+                - $("selector:last-of-type")
+             * selector 요소들 중 마지막에 해당하는 요소들을 모두 선택
+        */
+
+        $(() => {
+            $("ul li:first-of-type").css("background-color", "pink");
+            $("ul li:last-of-type").css("background-color", "aqua");
+        });
+    </script>
+</head>
+
+<body>
+    <h1>탐색 선택자</h1>
+    <ul>
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+    </ul>
+    <ul>
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+    </ul>
+</body>
+
+</html>
