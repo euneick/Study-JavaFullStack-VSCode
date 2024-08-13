@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>each() 메소드 활용 예제</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        function add() {
+            let elements = [];
+
+            for (let i = 0; i < 100; i++) {
+                elements.push(`<div>This is element ${i}</div>`);
+            }
+
+            $.each(elements, (index, element) => {
+                $("#container").append(element);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="add()">추가</button>
+
+    <div id="container"></div>
+</body>
+
+</html>
