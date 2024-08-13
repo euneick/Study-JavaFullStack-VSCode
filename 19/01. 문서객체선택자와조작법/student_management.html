@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 관리 시스템</title>
+
+    <style>
+        #student-list {
+            list-style-type: none;
+            padding: 0px;
+        }
+
+        .student-item {
+            margin: 5px 0px;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+    <h1>학생 관리 시스템</h1>
+    <div>
+        <input type="text" id="student-name" placeholder="학생 이름">
+        <button id="add-student">추가</button>
+    </div>
+    <hr>
+    <ul id="student-list"></ul>
+
+    <script>
+        let students = [];
+
+        const inputNameEl = $("#student-name");
+        const studentListEl = $("#student-list");
+
+        function addStudent(studentName) {
+            students.push(studentName);
+            renderList();
+        }
+
+        function deleteStudent(studentName) {
+            students = $.grep(students, (student, index) => {
+                return student !== studentName;
+            });
+            renderList();
+        }
+
+        function renderList() {
+            studentListEl.empty();
+
+            $.each(students, (index, student) => {
+                let newElement = $("<li>", {
+                    "class": "student-item",
+                    "text": student
+                });
+
+                let deleteBtn = $("<button>", {
+                    "class": "delete-student",
+                    "data-name": student,
+                    "text": "제거"
+                });
+
+                studentListEl.append(newElement.append(deleteBtn));
+            });
+        }
+
+        inputNameEl.focus();
+
+        // jQuery 문법으로 click listener 등록
+        $("#add-student").click(() => {
+            // jQuery 문법으로 value값 가져오기
+            let studentName = inputNameEl.val().trim();
+
+            if (studentName === "") alert("학생 이름을 입력하세요.");
+            else if ($.inArray(studentName, students) !== -1) alert("이미 등록된 학생입니다.")
+            else {
+                addStudent(studentName);
+                inputNameEl.val("");
+            }
+
+            /*
+                동적 요소에 대한 이벤트 등록
+                    $(selector).on(events: string, data: any, handler: (eventObject: JQueryEventObject, ...args: any[]) => any)
+                     * events       - 등록할 이벤트 명
+                     * data         - 자식요소 중 이벤트를 등록 할 요소
+                     * handler      - 이벤트 리스너
+            */
+            studentListEl.on("click", ".delete-student", function () {
+                let studentName = $(this).data("name");
+                deleteStudent(studentName);
+            });
+
+            inputNameEl.focus();
+        });
+
+    </script>
+</body>
+
+</html>
