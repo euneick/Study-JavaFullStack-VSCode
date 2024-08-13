@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index() 메소드</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        /*
+            $(selector1).index(selector2: string | JQuery | Element): number
+                - selector1 요소들 중 selector2를 찾고 그 index를 반환하는 메소드
+        */
+
+        $(() => {
+            console.log($("li").index($("#list3")));
+        });
+    </script>
+</head>
+
+<body>
+    <h1>배열 관련 메소드</h1>
+    <ul>
+        <li>내용 1</li>
+        <li>내용 2</li>
+        <li id="list3">내용 3</li>
+        <li>내용 4</li>
+    </ul>
+</body>
+
+</html>
