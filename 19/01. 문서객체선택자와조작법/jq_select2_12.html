@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 탐색 선택자 </title>
+
+	<!-- 
+		속성탐색 선택자 중에서  속성상태에 따른 탐색선택자 
+			- 선택한 요소 중 속성 상태에 따라 요소를 선택하는 선택자
+			- 문법
+				$("요소들선택:visible 또는 :hidden")
+					선택한 요소들중에서 숨겨진 상태 또는 보이는 상태의 요소만 최종 선택합니다.
+			
+				$(":selected")
+					선택상자 중 현재 선택된 option요소만 선택합니다.
+				
+				$(":checked")
+					체크박스 또는 라디오 버튼 요소중  체크된 상태의 요소만 최종 선택합니다.
+	 -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		$(function () {
+			$("#wrap p:hidden").css({
+				"display": "block",
+				"background": "yellow"
+			});
+
+			console.log($("#zone1 :selected").val());
+
+			console.log($("#zone2 :checked").val());
+
+			console.log($("input[type=radio]:checked").val());
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<p>내용1</p>
+		<p style="display:none">내용2</p>
+		<p>내용3</p>
+	</div>
+	<form action="#">
+		<p id="zone1">
+			<select name="course" id="course">
+				<option value="opt1">옵션1</option>
+				<option value="opt2" selected>옵션2</option>
+				<option value="opt3">옵션3</option>
+			</select>
+		</p>
+		<p id="zone2">
+			<input type="checkbox" name="hobby1" value="독서"> 독서
+			<input type="checkbox" name="hobby2" value="자전거"> 자전거
+			<input type="checkbox" name="hobby3" value="등산" checked> 등산
+		</p>
+		<p id="zone3">
+			<input type="radio" name="gender" value="male"> 남성
+			<input type="radio" name="gender" value="female" checked> 여성
+		</p>
+	</form>
+</body>
+
+</html>
