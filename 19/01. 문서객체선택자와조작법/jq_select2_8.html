@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$.map(), $.grep() 메소드</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        /*
+            $.map(array: any[], callback: (elementOfArray?: any, indexInArray?: number) => any): any[]
+                - callback 함수 부분에서 새로운 배열을 만들어 return
+
+            $.grep(array: any[], func: (elementOfArray?: any, indexInArray?: number) => boolean, invert?: boolean): any[]
+                - callback 함수 내에서 조건식을 확인하여 true인 경우만 새로운 배열에 할당하여 return
+
+             ※ 데이터를 가공하여 새로운 배열을 만드는 데에 목적이 있음
+             ※ callback함수 부분의 매개변수가 each() 메소드와는 반대로 (element, index) 의 순서를 가짐
+        */
+
+        let arr1 = [
+            { area: "서울", name: "무대리" },
+            { area: "부산", name: "홍과장" },
+            { area: "대전", name: "박사장" },
+            { area: "서울", name: "빅마마" }
+        ];
+
+        let arr2 = $.map(arr1, (element, index) => {
+            if (element.area === "서울") {
+                return element;
+            }
+        });
+        console.log(arr2);
+
+        let arr3 = $.grep(arr1,(element, index)=>{
+            return element.area === "서울";
+        });
+        console.log(arr3);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
