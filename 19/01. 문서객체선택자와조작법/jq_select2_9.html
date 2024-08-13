@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$.inArray(), $.isArray(), $.merge() 메소드</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        /*
+            $.inArray(value: any, array: any[], fromIndex?: number): number
+                - array 배열 객체 내에서 value을 찾고 그 index를 return, 찾지 못한다면 -1을 return
+                - fromIndex 값 전달 시 해당 index부터 검색 시작, default 값은 0
+
+            $.isArray(obj: any): boolean
+                - obj가 array object 인지 확인하여 그 여부를 return
+
+            $.merge(first: any[], second: any[]): any[]
+                - first 배열 객체의 내용에 second 배열 객체의 내용을 병합하여 새로운 배열 객체를 return
+        */
+
+        let arr1 = ["서울", "대전", "부산", "전주"];
+        let arr2 = ["한국", "미국", "일본", "중국"];
+        let obj = { name: "정부장", area: "서울" };
+
+        let findIndex = $.inArray("부산", arr1);
+        console.log(findIndex);
+
+        let isArray = $.isArray(obj);
+        console.log(isArray);
+
+        let arr3 = $.merge(arr1, arr2);
+        console.log(arr3);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
