@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>each() 메소드</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        /*
+            DOM 배열을 각각 실행하는 반복문
+             1. $(selector).each(func: (index: number, elem: Element) => any)
+             2. $.each(collection: any[], callback: (indexInArray: number, valueOfElement: any) => any)
+        */
+        $(() => {
+            // 1번 방법
+            $("ul li").each((index, element) => {
+                $(element).css("color", "magenta");
+            })
+
+            // 2번 방법
+            $.each($("#menu1 li"), (index, element) => {
+                $(element).css("background-color", "aqua");
+            });
+
+            // 2번 방법 - 매개변수로 element를 선택하지 않고 this키워드를 사용하여 element를 선택하기
+            $.each($("#menu2 li"), function () {
+                $($(this)).css("background-color", "pink");
+            });
+            // $.each($("#menu2 li"), () => { console.log($(this)); });     // Lambda Expression에서 this 키워드는 상위스코프를 가리킨다.
+        });
+    </script>
+</head>
+
+<body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu1">
+        <li>내용 1-1</li>
+        <li>내용 1-2</li>
+        <li>내용 1-3</li>
+    </ul>
+    <ul id="menu2">
+        <li>내용 2-1</li>
+        <li>내용 2-2</li>
+        <li>내용 2-3</li>
+    </ul>
+</body>
+
+</html>
