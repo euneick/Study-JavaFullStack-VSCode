@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 객체 조작 및 생성 </title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+	<h1><strong>객체 조작 및 생성</strong></h1>
+	<form action="#" id="form_1">
+		<p>
+			ID : <input type="text" name="id" id="user_id" value="admin">
+		</p>
+		<p>
+			<input type="checkbox" name="chk1" id="chk1">
+			<label for="chk1">chk1</label>
+			<input type="checkbox" name="chk2" id="chk2" checked>
+			<label for="chk2">chk2</label>
+			<input type="checkbox" name="chk3" id="chk3">
+			<label for="chk3">chk3</label>
+		</p>
+		<p>
+			<select name="se_1" id="se_1">
+				<option value="opt1">option1</option>
+				<option value="opt2">option2</option>
+				<option value="opt3" selected>option3</option>
+			</select>
+		</p>
+	</form>
+
+	<script>
+		/*
+		getter
+			$(selector).prop(propertyName: string)
+				- 선택한 요소의 propertyName 속성의 상태를 반환하는 메소드
+				 * propertyName의 종류
+					- checked			체크의 여부 확인
+					- selected			선택의 여부 확인
+					- selectedIndex		선택된 option의 index 확인
+					- defaultValue		변경되기 전 value 값 확인
+					- tagName			선택한 요소의 태그 이름 확인
+					- nodeType			선택한 요소의 노드 타입 확인
+
+				※ nodeType이란?
+					- HTML요소에는 각각의 nodeType속성이 있음					
+					- propertyName를 nodeType로 지정하면 다음과 같은 정수를 반환함
+						유형			Node Type			Number
+						============================================
+						HTML태그 		ElementNode 		1
+						텍스트 			TextNode 			3
+						주석기호 		CommentNode 		8
+						문서파일 		DocumentNode 		9
+						속성 			AttributeNode 		2
+
+		setter
+			$(selector).prop(propertyName: string, value: string | number | boolean)
+				- 선택한 요소의 propertyName 속성의 상태를 value로 설정하는 메소드
+		*/
+		console.log($("#chk1").prop("checked"));
+		console.log($("#chk2").prop("checked"));
+
+		$("#chk3").prop("checked", true);
+
+		console.log($("#se_1").prop("selectedIndex"));
+
+		console.log($("label:eq(0)").prop("nodeType"));		// $("label:eq(0)") 는 Element Node 이므로 1 반환
+
+		$("#user_id").val("scott");
+		console.log($("#user_id").prop("defaultValue"));	// 윗 줄에서 value를 수정해도 defaultValue 는 변하지 않음
+	</script>
+</body>
+
+</html>
