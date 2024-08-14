@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+	<h1><strong>객체 조작 및 생성</strong></h1>
+	<section id="sec_1">
+		<h2>이미지 속성</h2>
+		<p><img src="images/math_img_1.jpg" alt="가위" border="2"> </p>
+	</section>
+
+	<script type="text/javascript">
+		/*
+			attribute getter
+				$(selector).attr(attributeName: string)
+					- 선택한 요소에 attributeName 속성에 대한 값을 반환하는 메소드
+
+			attribute setter
+				$(selector).attr(attributeName: string, value: string | number)
+					- 선택한 요소에 attributeName 속성을 부여하고 그 값을 value로 설정하는 메소드
+				$(selector).attr(attributes: object)
+					- 선택한 요소에 attributes 객체를 활용하여 속성을 설정하는 메소드
+
+
+			$(selector).removeAttr(attributeName: string)
+				- 선택한 요소에 attributeName 과 동일한 속성을 삭제하는 메소드
+		*/
+
+		let result = $("[alt='가위']").attr("src");
+		console.log(typeof result);
+		console.log(result);
+
+		$("#sec_1 img").attr("src", "images/math_img_3.jpg");
+
+		$("#sec_1 img").attr({
+			"alt": "보",
+			"border": "3"
+		});
+
+		$("img").removeAttr("src");
+	</script>
+</body>
+
+</html>
