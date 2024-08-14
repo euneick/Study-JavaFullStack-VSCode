@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 객체 조작 및 생성 </title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<p>내용1</p>
+		<p>내용2</p>
+		<p>내용3</p>
+	</div>
+
+	<script>
+		/*
+			$(selector).before(content1: JQuery | any[] | Element | DocumentFragment | Text | string, ...content2: any[])
+				- selector 요소의 이전에 content1 요소를 생성하여 추가하는 메소드
+
+			$(selector).after(content1: JQuery | any[] | Element | DocumentFragment | Text | string, ...content2: any[])
+				- selector 요소의 다음에 content1 요소를 생성하여 추가하는 메소드
+
+
+			$(content).insertBefore(target: JQuery | any[] | Element | Text | string)
+				- target 요소 이전에 content 요소를 생성하여 추가하는 메소드
+			
+			$(content).insertAfter(target: JQuery | any[] | Element | Text | string)
+				- target 요소 다음에 content 요소를 생성하여 추가하는 메소드
+		*/
+		const p0El = $("#wrap p:eq(0)");
+		const p1El = $("#wrap p:eq(1)");
+		const p2El = $("#wrap p:eq(2)");
+
+		p0El.before("<p>Before</p>");
+		p1El.after("<p>After</p>");
+
+		$("<p>insertBefore</p>").insertBefore(p2El);
+		$("<p>insertAfter</p>").insertAfter(p2El);
+	</script>
+</body>
+
+</html>
