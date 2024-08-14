@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 객체 조작 및 생성 </title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+	<style>
+		* {
+			padding: 0;
+		}
+
+		#p1,
+		#p2,
+		#p3 {
+			width: 100px;
+			height: 50px;
+			padding: 20px;
+			border: 5px solid #000;
+			background-color: #ff0;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>수치 조작 메서드</h1>
+	<p id="p1">내용1</p>
+	<p id="p2">내용2</p>
+	<p id="p3">내용3</p>
+
+	<script>
+		// getter
+		console.log($("#p1").width());			// content 영역의 너비
+		console.log($("#p2").innerWidth());		// content 영역에 padding 영역까지 합한 너비
+		console.log($("#p3").outerWidth());		// content 영역에 padding 영역과 border 영역까지 합한 너비
+
+		// setter
+		$("#p1").width("200px");
+		$("#p2").innerWidth("200px");
+		$("#p3").outerWidth("200px");
+
+		// height 메소드도 동일하게 계산하여 반환
+	</script>
+</body>
+
+</html>
