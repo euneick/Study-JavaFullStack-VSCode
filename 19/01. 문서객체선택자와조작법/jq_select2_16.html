@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 탐색 선택자 </title>
+
+	<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+	<button id="fetch-data">데이터 가져오기</button>
+	<div id="result"></div>
+
+	<script>
+		/*
+			get() method
+				- 외부 서버페이지로부터 데이터를 비동기적으로 얻어오는데 쓰이는 메소드
+				- 주로 REST API와의 통신에 사용되며, GET 요청을 통해 데이터를 요청 할 때 쓰임
+				- 문법
+					$.get(url: string, data?: Object | string, success?: (data: any, textStatus: string, jqXHR: JQueryXHR) => any, dataType?: string): JQueryXHR
+					 * url 		- 요청할 주소
+					 * data 	- 요청 시 전송할 데이터
+					 * success 	- 요청 성공 시 실행할 callback 함수
+		*/
+
+		$("#fetch-data").click(() => {
+			$.get("https://jsonplaceholder.typicode.com/posts/1", (data, textStatus, jqXHR) => {
+				console.log(data);
+				console.log(textStatus);
+				console.log(jqXHR);
+
+				$("#result").html(`<h2>${data.title}</h2><p>${data.body}</p>`);
+			});
+		});
+	</script>
+</body>
+
+</html>
