@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 객체 조작 및 생성 </title>
+	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			line-height: 1;
+		}
+
+		#wrap {
+			height: 5000px;
+			padding-top: 2000px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<h1>위치 메서드</h1>
+	</div>
+
+	<script>
+		/*
+		getter
+			$(window).scrollTop()
+				스크롤바가 수직방향으로 움직인 수치를 반환하는 메소드
+
+			$(window).scrollLeft()
+				스크롤바가 수평방향으로 움직인 수치를 반환하는 메소드
+				
+
+		setter
+			$(window).scrollTop(value: number)
+				스크롤바의 수직방향 위치를 value 만큼 설정하는 메소드
+
+			$(window).scrollLeft(value: number)
+				스크롤바의 수평방향 위치를 value 만큼 설정하는 메소드
+		*/
+
+		let topNum = $("h1").offset().top;	// 문서를 기준으로 한 h1의 y 좌표 값
+
+		$(window).scrollTop(topNum);
+		console.log($(window).scrollTop());
+	</script>
+</body>
+
+</html>
