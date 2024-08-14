@@ -212,7 +212,8 @@
 					----------------- jq_select2_14_test.html 파일 실습    그외 콘텐츠 탐색 선택자2
 						
 					1.2.2.2. 속성 탐색 선택자와 알아두면 유용한 메서드 종류 실습
-					----------------- jq_select2_15_test.html 파일 실습    is(), $.noConflict(),  get() 메소드
+					----------------- jq_select2_15_test.html 파일 실습    is()
+					----------------- jq_select2_16_test.html 파일 실습    $.noConflict(),  get() 메소드
 
 
 
