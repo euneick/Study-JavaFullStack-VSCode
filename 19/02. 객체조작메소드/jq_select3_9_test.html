@@ -17,18 +17,19 @@
 
 	<script>
 		/*
-			$(selector).before(content1: JQuery | any[] | Element | DocumentFragment | Text | string, ...content2: any[])
-				- selector 요소의 이전에 content1 요소를 생성하여 추가하는 메소드
-
+		after
 			$(selector).after(content1: JQuery | any[] | Element | DocumentFragment | Text | string, ...content2: any[])
 				- selector 요소의 다음에 content1 요소를 생성하여 추가하는 메소드
-
-
-			$(content).insertBefore(target: JQuery | any[] | Element | Text | string)
-				- target 요소 이전에 content 요소를 생성하여 추가하는 메소드
 			
 			$(content).insertAfter(target: JQuery | any[] | Element | Text | string)
 				- target 요소 다음에 content 요소를 생성하여 추가하는 메소드
+				
+		before
+			$(selector).before(content1: JQuery | any[] | Element | DocumentFragment | Text | string, ...content2: any[])
+				- selector 요소의 이전에 content1 요소를 생성하여 추가하는 메소드
+
+			$(content).insertBefore(target: JQuery | any[] | Element | Text | string)
+				- target 요소 이전에 content 요소를 생성하여 추가하는 메소드
 		*/
 		const p0El = $("#wrap p:eq(0)");
 		const p1El = $("#wrap p:eq(1)");
