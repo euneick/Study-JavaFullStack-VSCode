@@ -27,12 +27,17 @@
 			console.log(result_1.eq(0).is(":visible"));
 			console.log(result_1.eq(1).is(":visible"));
 
-			if ($("#chk1").is(":checked")) {
-				$("#inner_2 h2").css("background-color", "pink");
-			}
-			else if ($("#chk2").is(":checked")) {
-				$("#inner_2 h2").css("background-color", "aqua");
-			}
+			// if ($("#chk1").is(":checked")) {
+			// 	$("#inner_2 h2").css("background-color", "pink");
+			// }
+			// else if ($("#chk2").is(":checked")) {
+			// 	$("#inner_2 h2").css("background-color", "aqua");
+			// }
+
+			$("#inner_2 input[type=checkbox]").each((index, element) => {
+				if ($(element).is(":checked"))
+					$("#inner_2 h2").css("background-color", "pink");
+			});
 		});
 	</script>
 </head>
