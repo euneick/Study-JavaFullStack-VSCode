@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$(".btn1").click(function () {
+				$(this).parent().next("p").css("color", "red");
+			});
+
+			// 등록한 이벤트 동작을 이벤트 발생 없이 바로 실행
+			$(".btn1").click();
+
+			const btn2 = $(".btn2");
+			btn2.on("mouseover focus", function () {
+				$(this).parent().next("p").css("color", "blue");
+			});
+
+			// 선택한 요소에 이벤트를 미리 등록해놔야 trigger 메소드로 해당 이벤트 동작을 강제로 실행 할 수 있음
+			btn2.trigger("mouseover");
+		});
+	</script>
+</head>
+
+<body>
+	<p>
+		<button class="btn1">버튼1</button>
+	</p>
+	<p>내용1</p>
+	<p>
+		<button class="btn2">버튼2</button>
+	</p>
+	<p>내용2</p>
+</body>
+
+</html>
