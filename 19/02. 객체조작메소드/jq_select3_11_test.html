@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 객체 조작 및 생성 </title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+	<div class="box1">
+		<p>내용1</p>
+		<p>내용2</p>
+	</div>
+	<div class="box2">
+		<p>내용3</p>
+		<p>내용4</p>
+	</div>
+	<div class="box3">
+		<p>내용5</p>
+		<p>내용6</p>
+	</div>
+
+	<script>
+		/*
+			$(selector).clone(withDataAndEvents?: boolean, deepWithDataAndEvents?: boolean)
+				- 선택한 요소들을 복제한 배열을 반환하는 메소드
+
+			$(selector).empty()
+				- 선택한 요소의 자식요소들을 삭제하는 메소드
+
+			$(selector).remove(selector?: string)
+				- 선택한 요소를 삭제하는 메소드
+		*/
+		let copyPEls = $(".box1").children().clone();
+		console.log(copyPEls);
+		$(".box3").append(copyPEls);
+
+		$(".box2").remove();
+
+		$(".box3").empty();
+	</script>
+</body>
+
+</html>
