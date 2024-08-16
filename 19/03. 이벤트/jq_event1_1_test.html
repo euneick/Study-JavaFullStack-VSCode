@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		$(function () {
+			$(".btn1").click(function () {
+				$(this).parent().next("p").css("background-color", "red");
+			});
+
+			$(".btn2").on({
+				"mouseover focus": function () {
+					$(this).parent().next("p").css("background-color", "blue");
+				},
+				"mouseout blur": function () {
+					$(this).parent().next("p").css("background-color", "aqua");
+				}
+			})
+
+			$(".btn3").on(
+				"click mouseover focus", function () {
+					$("body").css("background-color", "green");
+					$(this).parent().next("p").text("내용");
+				}
+			);
+		});
+	</script>
+</head>
+
+<body>
+	<p>
+		<button class="btn1">버튼1</button>
+	</p>
+	<p>내용1</p>
+	<p>
+		<button class="btn2">버튼2</button>
+	</p>
+	<p>내용2</p>
+	<p>
+		<button class="btn3">버튼3</button>
+	</p>
+	<p>내용3</p>
+</body>
+
+</html>
