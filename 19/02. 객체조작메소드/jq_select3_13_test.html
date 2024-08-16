@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 객체 조작 및 생성 </title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+	<style>
+		div {
+			background-color: aqua;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 id="tit_1">
+		<strong>객체 조작 및 생성</strong>
+	</h1>
+	<p class="ct1">내용1</p>
+	<p class="ct1">내용2</p>
+	<p class="ct2">내용3</p>
+	<p class="ct2">내용4</p>
+	<ul>
+		<li>내용3</li>
+		<li>내용4</li>
+	</ul>
+
+	<script>
+		/*
+			$(selector).unwrap()
+				- 선택한 요소의 부모 요소를 제거하는 메소드
+
+			$(selector).wrap(wrappingElement: JQuery | Element | string)
+				- 선택한 요소들을 각각 wrappingElement 로 감싸는 메소드
+
+			$(selector).wrapAll(wrappingElement: JQuery | Element | string)
+				- 선택한 요소들을 wrappingElement 로 모두 한꺼번에 감싸는 메소드
+
+			$(selector).wrapInner(wrappingElement: JQuery | Element | string)
+				- 선택한 요소들 각각의 자식 요소들을 wrappingElement로 감싸는 메소드
+		*/
+
+		$("strong").unwrap();
+
+		$(".ct1").wrap("<div>");
+
+		$(".ct2").wrapAll("<div>");
+
+		$("li").wrapInner("<h3>");
+	</script>
+</body>
+
+</html>
