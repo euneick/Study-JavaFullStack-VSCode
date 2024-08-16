@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교수 관리 시스템</title>
+
+    <!--
+        교수 관리 시스템 코드는 다음과 같은 기능을 수행합니다
+            교수 추가: 사용자가 입력한 이름과 전공을 기반으로 새로운 교수 정보를 테이블에 추가합니다.
+            교수 삭제: 체크된 교수 항목을 삭제합니다.
+            교수 수정: 사용자가 선택한 교수 정보를 수정할 수 있게 해줍니다.
+            교수 선택: 체크박스를 통해 선택된 교수 목록을 실시간으로 보여줍니다.
+
+        전반적 흐름
+            - 사용자는 교수 정보를 입력하고 "추가" 버튼을 클릭하여 새 교수 정보를 테이블에 추가합니다.
+            - 추가된 교수 정보 옆에는 "수정" 버튼이 있어, 사용자가 원하는 교수 정보를 수정할 수 있습니다.
+            - 사용자는 여러 교수 항목을 체크한 후 "삭제" 버튼을 클릭하여 선택된 교수 정보를 한 번에 삭제할 수 있습니다.
+            - 체크박스를 통해 선택된 교수의 이름이 화면에 표시되어, 사용자가 어떤 교수 정보를 선택했는지 쉽게 확인할 수 있습니다.
+    -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>교수 관리 시스템</h1>
+
+    <table id="professor-table">
+        <thead>
+            <tr>
+                <th>선택</th>
+                <th>이름</th>
+                <th>전공</th>
+                <th>수정</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 교수 목록이 여기에 추가됩니다. -->
+            <tr>
+                <td><input type="checkbox" class="professor-checkbox"></td>
+                <td>name</td>
+                <td>major</td>
+                <td><button class="edit-professor">수정</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>교수 추가/수정</h2>
+    <label for="name">이름:</label>
+    <input type="text" id="name" required>
+    <label for="major">전공:</label>
+    <input type="text" id="major" required>
+    <button id="add-professor">추가</button>
+    <button id="update-professor" style="display:none;">수정</button>
+    <button id="delete-professor">선택한 교수 삭제</button>
+
+    <h2>교수 선택</h2>
+    <label for="selected-professor">선택한 교수:</label>
+    <div id="selected-professor"></div>
+
+    <script>
+        let currentRow = null;
+
+        // 교수 추가
+        $("#add-professor").click(function () {
+            const name = $("#name").val();
+            const major = $("#major").val();
+
+            if (name && major) {
+                const newRow = `<tr>
+                    <td><input type="checkbox" class="professor-checkbox"></td>
+                    <td>${name}</td>
+                    <td>${major}</td>
+                    <td><button class="edit-professor">수정</button></td>
+                    </tr>`;
+
+                $("#professor-table tbody").append(newRow);
+                $("#name").val("");
+                $("#major").val("");
+            }
+            else {
+                alert("이름과 전공을 입력하세요.");
+            }
+        });
+
+        // 교수 선택
+        // 동적으로 생성된 요소 중 class 속성 값이 professor-checkbox 인 요소에 change 이벤트 등록
+        $(document).on("change", ".professor-checkbox", function () {
+            const selectedProfessors = [];
+
+            $("#professor-table .professor-checkbox:checked").each(function () {
+                const row = $(this).closest("tr")
+                const name = row.find("td:nth-child(2)").text();
+
+                selectedProfessors.push(name);
+            });
+        });
+
+        // 교수 수정
+        $(document).on("click", ".edit-professor", function () {
+            currentRow = $(this).closest("tr");
+            const name = currentRow.find("td:nth-child(2)").text();
+            const major = currentRow.find("td:nth-child(3)").text();
+
+            $("#name").val(name);
+            $("#major").val(major);
+
+            $("#add-professor").hide();         // 선택 요소 안보이게
+            $("#update-professor").show();      // 선택 요소 보이게
+        });
+
+        $("#update-professor").click(function () {
+            const name = $("#name").val();
+            const major = $("#major").val();
+
+            if (name && major && currentRow) {
+                currentRow.find("td:nth-child(2)").text(name);
+                currentRow.find("td:nth-child(3)").text(major);
+
+                $("#name").val("");
+                $("#major").val("");
+
+                $("#update-professor").hide();      // 선택 요소 안보이게
+                $("#add-professor").show();         // 선택 요소 보이게
+
+                currentRow = null;
+            }
+            else {
+                alert("수정할 이름과 전공을 입력하세요.");
+            }
+        });
+
+        // 교수 삭제
+        $("#delete-professor").click(function () {
+            $(".professor-checkbox:checked").each(function () {
+                $(this).closest("tr").remove();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
