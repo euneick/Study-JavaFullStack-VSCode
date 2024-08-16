@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 객체 조작 및 생성 </title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+	<section class="box1">
+		<h2>제목1</h2>
+		<div>내용1</div>
+		<div>내용2</div>
+	</section>
+	<section class="box2">
+		<h2>제목2</h2>
+		<div>내용3</div>
+		<div>내용4</div>
+	</section>
+
+	<script>
+		/*
+			$(selector).replaceWith(newContent: JQuery | any[] | Element | Text | string)
+				- 선택한 요소를 newContent로 치환하는 메소드
+				
+			$(newContent).replaceAll(target: JQuery | any[] | Element | string)
+				- target 요소를 newContent로 치환하는 메소드
+		*/
+
+		$("h2").replaceWith("<h3>replaceWith()</h3>");
+
+		$("<p>replaceAll</p>").replaceAll($("div"));
+	</script>
+</body>
+
+</html>
