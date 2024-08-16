@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+
+<body>
+	<p>
+		<button class="btn1">버튼1</button>
+	</p>
+	<p>내용1</p>
+	<p>
+		<button class="btn2">버튼2</button>
+	</p>
+	<p>내용2</p>
+
+	<script type="text/javascript">
+		/*
+			$(selector).off(events: string, selector?: string, handler?: (eventObject: JQueryEventObject) => any)
+				- 선택한 요소에 등록된 이벤트들 중 events 이벤트를 제거
+		*/
+		$(".btn1").on("click", function () {
+			$(this).parent().next().css("color", "red");
+		});
+
+		$(".btn1").off("click");
+
+		$(".btn2").on("mouseover focus", function () {
+			$(this).parent().next().css("background-color", "blue");
+		});
+
+		$(".btn2").off("mouseover focus");
+	</script>
+</body>
+
+</html>
