@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+
+<body>
+	<p><img src="http://place-hold.it/600X600"></p>
+
+	<script type="text/javascript">
+		/*
+			$(document).ready(handler: (jQueryAlias?: JQueryStatic) => any)
+				- HTML문서 내부의 모든 DOM을 웹 브라우저가 읽어들인 동작(이벤트)를 등록하는 메소드
+				
+					$(document).ready(function () { 이벤트처리코드작성; });				
+					$(document).on("ready",function () { 이벤트처리코드작성; });
+					$(function () {});					
+					Jquery(document).ready(function () { 이벤트처리코드작성; });
+			
+			$(window).load(handler: (eventObject: JQueryEventObject) => any)
+				- 외부 사이트 문서를 웹브라우저가 읽어들이는 동작(이벤트)를 window객체(창)에 등록하는 메소드
+
+					$(window).load(function () { 이벤트 처리코드 작성; });		
+					$(window).on("load",function () { 이벤트 처리코드 작성; });
+		*/
+		$(document).on('ready', function () {
+			let h1 = $("img").height();
+			console.log(h1);
+		});
+
+		$(window).load(() => {
+			let h1 = $("img").height();
+			console.log(h1);
+		})
+	</script>
+</body>
+
+</html>
