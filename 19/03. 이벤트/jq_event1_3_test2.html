@@ -101,7 +101,8 @@
                 if (cart[productName]) {
                     cart[productName].quantity++;
                     console.log(cart[productName]);
-                } else {
+                }
+                else {
                     cart[productName] = {
                         price: productPrice,
                         quantity: 1
@@ -125,25 +126,25 @@
                     totalPrice += totalItemPrice;
 
                     cartTableBody.append(`
-                    <tr>
-                        <td>${name}</td>
-                        <td>
-                            <button class="decrease-quantity button">-</button>
-                            <span>${item.quantity}</span>
-                            <button class="increase-quantity button">+</button>
-                        </td>
-                        <td>${totalItemPrice.toLocaleString()}원</td>
-                        <td><button class="remove-item button">삭제</button></td>
-                    </tr>
-                `);
+                        <tr>
+                            <td>${name}</td>
+                            <td>
+                                <button class="decrease-quantity button">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="increase-quantity button">+</button>
+                            </td>
+                            <td>${totalItemPrice.toLocaleString()}원</td>
+                            <td><button class="remove-item button">삭제</button></td>
+                        </tr>
+                    `);
                 });
 
                 cartTableBody.append(`
-                <tr>
-                    <td colspan="2"><strong>총 가격</strong></td>
-                    <td colspan="2"><strong>${totalPrice.toLocaleString()}원</strong></td>
-                </tr>
-            `);
+                    <tr>
+                        <td colspan="2"><strong>총 가격</strong></td>
+                        <td colspan="2"><strong>${totalPrice.toLocaleString()}원</strong></td>
+                    </tr>
+                `);
 
                 $('.increase-quantity').off('click').on('click', function () {
                     let productName = $(this).closest('tr').find('td:first').text();
