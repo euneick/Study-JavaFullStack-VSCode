@@ -40,15 +40,13 @@
 				 * complete 		- fadeToggle 이 완료되면 실행 할 콜백 함수				
 			*/
 
-			$(".btn-group").on("click", processFadeButtons);
-
-			function processFadeButtons() {
+			$(".btn-group button").on("click", function () {
 				let id = $(this).attr("id");
 
 				if (id === "btn1") $("h1").fadeOut(1000);
 				else if (id === "btn2") $("h1").fadeIn(1000);
 				else $("h1").fadeToggle(1000);
-			}
+			});
 		});
 	</script>
 </head>
