@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		$(function () {
+			/*
+				scroll
+					- 선택한 요소에서 스크롤 막대바를 이동했을 때 발생하는 이벤트
+					- 보통 window를 선택하여 이벤트를 등록함
+	
+				$(window).scroll(handler: (eventObject: JQueryEventObject) => any)
+			*/
+			$(window).on("scroll", function () {
+				$(".top").text($(this).scrollTop());
+				$(".left").text($(this).scrollLeft());
+			});
+		});
+	</script>
+	<style>
+		body {
+			height: 10000px;
+			width: 5000px;
+		}
+
+		#wrap {
+			position: fixed;
+			left: 10px;
+			top: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrap">
+		<p>scrollTop: <span class="top">0</span>px</p>
+		<p>scrollLeft: <span class="left">0</span>px</p>
+	</div>
+</body>
+
+</html>
