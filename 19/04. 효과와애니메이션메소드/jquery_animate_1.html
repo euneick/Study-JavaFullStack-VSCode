@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<style>
+		h1 {
+			width: 50px;
+			height: 30px;
+			background-color: yellow;
+			font-size: 100%;
+		}
+
+		h2 {
+			width: 50px;
+			height: 30px;
+			background-color: orange;
+			font-size: 100%;
+		}
+
+		h3 {
+			width: 50px;
+			height: 30px;
+			background-color: aqua;
+			font-size: 100%;
+		}
+	</style>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+	<h1>내용</h1>
+	<h2>내용</h2>
+	<h3>내용</h3>
+
+	<script type="text/javascript">
+		/*
+			$(selector).animate(properties: Object, duration?: string | number, complete?: Function)
+				- 선택한 요소에 애니메이션 효과를 적용하는 메소드
+			 * properties 			- 애니메이션 관련 속성 css 값들로 이루어진 객체
+			 * duration 			- 애니메이션을 실행할 시간 (단위 : ms)
+			 * complete				- 애니메이션이 끝난 후 실행할 콜백 함수
+		*/
+		$("h1").animate({ "margin-left": "250px" }, 5000);
+
+		$("h2").animate({
+			"margin-left": "250px",
+			"width": "100px",
+			"opacity": "0.3"
+		}, 5000);
+
+		// $("h3").animate({
+		// 	"margin-left": "250px"
+		// }, 3000, function () {
+		// 	$(this).animate({
+		// 		"margin-left": "150px"
+		// 	}, 2000);
+		// });
+		$("h3").animate({ marginLeft: "250px" }, 3000).animate({ marginLeft: "150px" }, 2000).animate({ marginTop: "250px" }, 2000);
+	</script>
+</body>
+
+</html>
