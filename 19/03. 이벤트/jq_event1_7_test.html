@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		$(function () {
+			/*
+				mouseenter
+					- 선택한 요소에 마우스가 들어갔을 때 발생하는 이벤트
+	
+				mouseleave
+					- 선택한 요소에서 마우스가 벗어났을 때 발생하는 이벤트
+	
+				※ mouseover, mouseout과 기능은 비슷하지만 버블링, 캡쳐 현상이 발생하지 않음
+			*/
+			$("#box_1").on("mouseenter", function () {
+				$("#box_1").css("background-color", "yellow");
+			});
+
+			$("#box_2").on("mouseleave", function () {
+				$("#box_2").css("background-color", "pink");
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<h1>mouseout</h1>
+	<div id="box_1">
+		<p><a href="#">내용1</a></p>
+		<p><a href="#">내용2</a></p>
+		<p><a href="#">내용3</a></p>
+	</div>
+
+	<h1>mouseleave</h1>
+	<div id="box_2">
+		<p><a href="#">내용4</a></p>
+		<p><a href="#">내용5</a></p>
+		<p><a href="#">내용6</a></p>
+	</div>
+</body>
+
+</html>
