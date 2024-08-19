@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		$(function () {
+			/*
+				mousemove
+					- 마우스 포인터를 이동했을 때 발생하는 이벤트
+					- handler 의 eventObject 매개변수를 통해 마우스포인터의 현재 위치 (clientX, clientY, pageX, pageY 등)를 얻을 수 있음
+				
+				$(document).mousemove(handler: (eventObject: JQueryMouseEventObject) => any)
+			*/
+			$(document).mousemove(function (event) {
+				$(".clientX").text(event.clientX);
+				$(".clientY").text(event.clientY);
+
+				$(".pageX").text(event.pageX);
+				$(".pageY").text(event.pageY);
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<h1>mousemove</h1>
+	<p>clientX : <span class="clientX">0</span>px</p>
+	<p>clientY : <span class="clientY">0</span>px</p>
+	<p>pageX : <span class="pageX">0</span>px</p>
+	<p>pageY : <span class="pageY">0</span>px</p>
+</body>
+
+</html>
