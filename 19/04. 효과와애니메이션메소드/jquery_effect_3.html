@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<style>
+		h1 {
+			width: 50px;
+			height: 30px;
+			background-color: red;
+			font-size: 100%;
+		}
+	</style>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/*
+			Fade Out
+				$(selector).fadeOut(duration?: number | string, complete?: Function)
+					- 선택한 요소를 시간에 걸쳐 숨기는 메소드
+				* duration 		- 몇 ms 에 걸쳐서 동작할 지 정하는 매개변수
+								- string으로 "fast", "normal", "slow" 값을 전달 가능
+				* complete 		- fadeOut 이 완료되면 실행 할 콜백 함수
+				
+			Fade In
+				$(selector).fadeIn(duration?: number | string, complete?: Function)
+					- 선택한 요소를 시간에 걸쳐 노출시키는 메소드
+				* duration 		- 몇 ms 에 걸쳐서 동작할 지 정하는 매개변수
+								- string으로 "fast", "normal", "slow" 값을 전달 가능
+				* complete 		- fadeIn 이 완료되면 실행 할 콜백 함수
+				
+			Fade Toggle
+				$(selector).fadeToggle(duration?: number | string, complete?: Function)
+					- 선택한 요소가 숨겨져 있으면 노출되게, 노출되어 있으면 숨겨지게 시간에 걸쳐 전환하는 메소드
+				* duration 		- 몇 ms 에 걸쳐서 동작할 지 정하는 매개변수
+								- string으로 "fast", "normal", "slow" 값을 전달 가능
+				* complete 		- fadeToggle 이 완료되면 실행 할 콜백 함수				
+			*/
+
+			$("#btn1").on("click", function () {
+				$("h1").fadeOut("fast");
+			});
+
+			$("#btn2").on("click", function () {
+				$("h1").fadeIn("fast");
+			});
+
+			$("#btn3").on("click", function () {
+				$("h1").fadeToggle("fast");
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div class="btn-group">
+		<button id="btn1">fadeOut</button>
+		<button id="btn2">fadeIn</button>
+		<button id="btn3">fadeToggle</button>
+	</div>
+	<h1>내용</h1>
+</body>
+
+</html>
