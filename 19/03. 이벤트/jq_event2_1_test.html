@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		$(function () {
+			/*
+				focus
+					- 선택한 요소를 focusing 했을 때 발생하는 이벤트
+
+				blur
+					- 선택한 요소가 focusing 되었다가 해제 되었을 때 발생하는 이벤트
+				
+				※ 버블링, 캡쳐 현상이 발생함
+
+				focusin
+					- 선택한 요소를 focusing 했을 때 발생하는 이벤트
+
+				focusout
+					- 선택한 요소가 focusing 되었다가 해제 되었을 때 발생하는 이벤트
+					
+				※ 버블링, 캡쳐 현상이 발생하지 않음
+			*/
+
+			$("#user_id_1, #user_pw_1").on({
+				"focus": function () {
+					$(this).css("background-color", "aqua");
+				},
+				"blur": function () {
+					$(this).css("background-color", "white");
+				}
+			});
+
+			$("form:eq(1)").on({
+				"focusin": function () {
+					$("#user_id_2, #user_pw_2", this).on({
+						"focus": function () {
+							$(this).css("background-color", "pink");
+						}
+					});
+				},
+				"focusout": function () {
+					$("#user_id_2, #user_pw_2", this).on({
+						"blur": function () {
+							$(this).css("background-color", "white");
+						}
+					});
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<h1>focus / blur</h1>
+	<form action="#">
+		<p>
+			<label for="user_id_1">ID</label>
+			<input type="text" name="user_id_1" id="user_id_1">
+		</p>
+		<p>
+			<label for="user_pw_1">PW</label>
+			<input type="password" name="user_pw_1" id="user_pw_1">
+		</p>
+	</form>
+	<h1>focusin / focusout</h1>
+	<form action="#" id="frm_2">
+		<p>
+			<label for="user_id_2">ID</label>
+			<input type="text" name="user_id_2" id="user_id_2">
+		</p>
+		<p>
+			<label for="user_pw_2">PW</label>
+			<input type="password" name="user_pw_2" id="user_pw_2">
+		</p>
+	</form>
+</body>
+
+</html>
