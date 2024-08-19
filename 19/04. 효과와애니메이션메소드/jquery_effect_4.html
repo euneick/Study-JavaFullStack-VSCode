@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<style>
+		h1 {
+			width: 50px;
+			height: 30px;
+			background-color: red;
+			font-size: 100%;
+		}
+	</style>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+	<script type="text/javascript">
+		$(function () {
+			/*
+				$(selector).fadeTo(duration: string | number, opacity: number, complete?: Function)
+					- 선택한 요소의 투명도 값을 duration ms 에 걸쳐 opacity 로 설정하는 메소드
+				 * duration 		- fade 애니메이션이 실행되는 경과 시간 (단위 : ms)
+				 * opacity 			- fade 애니메이션이 끝난 후 투명도 값 (0 ~ 1 사이의 값)
+				 * complete 		- fade 애니메이션이 끝난 후 실행할 콜백 함수
+			*/
+			$("#btn1").on("click", function () {
+				$("h1").fadeTo(1000, 0.3);
+			});
+
+			$("#btn2").on("click", () => {
+				$("h1").fadeTo(1000, 1);
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<button id="btn1">투명도(30%)</button>
+	<button id="btn2">투명도(100%)</button>
+	<h1>내용</h1>
+</body>
+
+</html>
