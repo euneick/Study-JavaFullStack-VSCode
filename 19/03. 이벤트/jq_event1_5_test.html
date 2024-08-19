@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function () {
+			/*
+				<a>, <form> 태그에 click 이벤트 등록시 default로 등록된 이벤트 차단하기
+				
+				$(selector).click(function () {
+					...
+					return false;		// a 또는 form 내부의 submit 버튼의 클릭이벤트를 나중에 차단
+				});
+
+			 ★ $(selector).click(function (event) {
+					event.preventDefault();		// a 또는 form 내부의 submit 버튼의 클릭 이벤트를 먼저 차단
+					...
+				});
+			*/
+
+			$(".btn1").on("click", function () {
+				$(".txt1").css("background-color", "yellow");
+
+				return false;
+			});
+
+			$(".btn2").on("click", function (event) {
+				event.preventDefault();
+
+				$(".txt2").css("background-color", "pink");
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<p><a href="http://www.easyspub.co.kr/" class="btn1">버튼1</a></p>
+	<p class="txt1">내용1</p>
+	<p><a href="http://www.easyspub.co.kr/" class="btn2">버튼2</a></p>
+	<p class="txt2">내용2</p>
+	<p><button class="btn3">버튼3</button></p>
+	<p class="txt3">내용3</p>
+</body>
+
+</html>
