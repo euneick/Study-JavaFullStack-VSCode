@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		$(function () {
+			/*
+				$(selector).clearQueue(queueName?: string)
+					- 선택한 요소의 실행 중인 애니메이션 Queue 를 제외하고 대기중인 모든 Queue를 제거하는 메소드
+
+				$(selector).dequeue(queueName?: string)
+					- 선택한 요소의 Queue에 등록된 모든 애니메이션을 제거하는 메소드
+
+				$(selector).finish(queueName?: string)
+					- 선택한 요소에 애니메이션을 모두 중지하고 최종 완료시점만 보여주는 메소드
+			*/
+			$("h1").animate({ marginLeft: "300px" }, 1000).animate({ marginLeft: 0 }, 1000);
+
+			$("h2").animate({ marginLeft: "300px" }, 1000).animate({ marginLeft: 0 }, 1000);
+			$("h2").clearQueue();
+
+			$("h3").animate({ marginLeft: "300px" }, 1000).animate({ marginLeft: 0 }, 1000);
+			$("h3").dequeue();
+
+			$("h4").animate({ marginLeft: "300px" }, 1000).animate({ marginLeft: 0 }, 1000).animate({ marginLeft: "150px" }, 1000);
+			$("h4").finish();
+		});
+	</script>
+
+	<style>
+		h1 {
+			width: 50px;
+			height: 30px;
+			background-color: red;
+			font-size: 100%;
+		}
+
+		h2 {
+			width: 50px;
+			height: 30px;
+			background-color: orange;
+			font-size: 100%;
+		}
+
+		h3 {
+			width: 50px;
+			height: 30px;
+			background-color: aqua;
+			font-size: 100%;
+		}
+
+		h4 {
+			width: 50px;
+			height: 30px;
+			background-color: pink;
+			font-size: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>내용</h1>
+	<h2>내용</h2>
+	<h3>내용</h3>
+	<h4>내용</h4>
+</body>
+
+</html>
