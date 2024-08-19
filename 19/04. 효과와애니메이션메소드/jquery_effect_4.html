@@ -25,12 +25,8 @@
 				 * opacity 			- fade 애니메이션이 끝난 후 투명도 값 (0 ~ 1 사이의 값)
 				 * complete 		- fade 애니메이션이 끝난 후 실행할 콜백 함수
 			*/
-			$("#btn1").on("click", function () {
-				$("h1").fadeTo(1000, 0.3);
-			});
-
-			$("#btn2").on("click", () => {
-				$("h1").fadeTo(1000, 1);
+			$("button").on("click", function () {
+				$("h1").fadeTo(1000, $(this).attr("id") === "btn1"? 0.3 : 1);
 			});
 		});
 	</script>
