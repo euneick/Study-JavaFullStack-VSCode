@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		$(function () {
+			/*
+				마우스 이벤트와 대응하는 키보드 이벤트 
+		
+					마우스이벤트 			키보드이벤트
+					mouseover 				focus
+					mouseout 				blur
+
+				※ 사용자의 마우스와 키보드 이벤트를 모두 대응 할 수 있게 서로 대응 하는 이벤트를 같이 등록해 주는 것이 좋음
+			*/
+			// 마우스 이벤트에 대응하는 키보드 이벤트 등록을 안한 경우
+			$("#btn1").data({ "text": "javascript" }).on({
+				"mouseover": overFnc,
+				"mouseout": outFnc
+			});
+
+			// 마우스 이벤트에 대응하는 키보드 이벤트 등록을 한 경우
+			$("#btn2").data({ "text": "javascript" }).on({
+				"mouseover focus": overFnc,
+				"mouseout blur": outFnc
+			});
+
+			function overFnc() {
+				$(".txt").text($(this).data("text"));
+			}
+
+			function outFnc() {
+				$(".txt").text("");
+			}
+		});
+	</script>
+</head>
+
+<body>
+	<p><button id="btn1">버튼1</button></p>
+	<p><button id="btn2">버튼2</button></p>
+	<p class="txt"></p>
+</body>
+
+</html>
