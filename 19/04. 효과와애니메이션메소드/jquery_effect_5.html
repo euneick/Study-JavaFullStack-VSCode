@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<style>
+		h1 {
+			width: 300px;
+			height: 200px;
+			background-color: yellow;
+		}
+	</style>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			/*
+			Slide Down
+				$(selector).slideDown(duration: string | number, complete?: Function)
+					- 선택한 요소를 아래로 slide 하여 펼치는 메소드
+				 * duration 		- slide 애니메이션의 경과시간
+				 * complete 		- slide 애니메이션이 종료된 후 실행 할 콜백 함수
+
+			Slide Up
+				$(selector).slideUp(duration: string | number, complete?: Function)
+					- 선택한 요소를 위로 slide 하여 접는 메소드
+				 * duration 		- slide 애니메이션의 경과시간
+				 * complete 		- slide 애니메이션이 종료된 후 실행 할 콜백 함수
+
+			Slide Toggle
+				$(selector).slideToggle(duration: string | number, complete?: Function)
+					- 선택한 요소의 slide 상태를 전환하는 메소드
+				 * duration 		- slide 애니메이션의 경과시간
+				 * complete 		- slide 애니메이션이 종료된 후 실행 할 콜백 함수
+			*/
+			$("button").on("click", function () {
+				let id = $(this).attr("id");
+				const h1El = $("h1");
+
+				if (id === "btn1") h1El.slideUp(1000);
+				else if (id === "btn2") h1El.slideDown(1000);
+				else h1El.slideToggle(1000);
+			});
+		});
+	</script>
+
+</head>
+
+<body>
+	<button id="btn1">slideUp</button>
+	<button id="btn2">slideDown</button>
+	<button id="btn3">slideToggle</button>
+	<h1>내용</h1>
+</body>
+
+</html>
