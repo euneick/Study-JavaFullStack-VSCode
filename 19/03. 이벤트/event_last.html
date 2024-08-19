@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title> 이벤트 </title>
+	<style>
+		body {
+			font: 14px Malgun Gothic, "맑은고딕", sans-serif;
+		}
+
+		.zoomBtnZone {
+			font-size: 14px;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+		$(function () {
+			let originFontSize = 14;
+			let currentFontSize = originFontSize;
+
+			$(".zoomBtnZone button").on("click", zoomInOut);
+
+			function zoomInOut() {
+				if ($(this).hasClass("zoomOutBtn")) {
+					if (currentFontSize <= 8) return false;
+
+					currentFontSize--;
+				}
+				else if ($(this).hasClass("zoomInBtn")) {
+					if (currentFontSize >= 20) return false;
+
+					currentFontSize++;
+				}
+				else {
+					currentFontSize = originFontSize;
+				}
+
+				$(".fontSize").text(`${currentFontSize}px`);
+				$("body").css("font-size", currentFontSize);
+
+				return true;
+			}
+		});
+	</script>
+</head>
+
+<body>
+	<p class="zoomBtnZone">
+		<button class="zoomOutBtn">-</button>
+		<button class="originBtn">100%</button>
+		<button class="zoomInBtn">+</button>
+	</p>
+	<p class="fontSize">14px</p>
+	<div id="wrap">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas feugiat consectetur nibh, ut luctus urna
+		placerat non. Phasellus consectetur nunc nec mi feugiat egestas. Pellentesque et consectetur mauris, sed rutrum
+		est. Etiam odio nunc, ornare quis urna sed, fermentum fermentum augue. Nam imperdiet vestibulum ipsum quis
+		feugiat. Nunc non pellentesque diam, nec tempor nibh. Ut consequat sem sit amet ullamcorper sodales.
+	</div>
+</body>
+
+</html>
