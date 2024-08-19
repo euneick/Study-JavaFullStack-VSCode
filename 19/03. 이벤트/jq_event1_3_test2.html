@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,24 +11,19 @@
             text-align: center;
             margin-top: 50px;
         }
-
         table {
             margin: 0 auto;
             border-collapse: collapse;
             width: 80%;
         }
-
-        th,
-        td {
+        th, td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
         }
-
         th {
             background-color: #f4f4f4;
         }
-
         .button {
             padding: 5px 10px;
             cursor: pointer;
@@ -37,96 +31,168 @@
         }
     </style>
 </head>
-
 <body>
 
-    <h1>온라인 쇼핑몰</h1>
-    <h2>상품 목록</h2>
-    <table id="productTable">
+<h1>온라인 쇼핑몰</h1>
+<h2>상품 목록</h2>
+<table id="productTable">
+    <thead>
+        <tr>
+            <th>상품명</th>
+            <th>가격</th>
+            <th>추가</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>상품 1</td>
+            <td>10,000원</td>
+            <td><button class="add-to-cart button">장바구니에 추가</button></td>
+        </tr>
+        <tr>
+            <td>상품 2</td>
+            <td>20,000원</td>
+            <td><button class="add-to-cart button">장바구니에 추가</button></td>
+        </tr>
+        <tr>
+            <td>상품 3</td>
+            <td>30,000원</td>
+            <td><button class="add-to-cart button">장바구니에 추가</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<div id="cart">
+    <h2>장바구니</h2>
+    <table id="cartTable">
         <thead>
             <tr>
                 <th>상품명</th>
-                <th>가격</th>
-                <th>추가</th>
+                <th>수량</th>
+                <th>총 가격</th>
+                <th>삭제</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>상품 1</td>
-                <td>10,000원</td>
-                <td><button class="add-to-cart button">장바구니에 추가</button></td>
-            </tr>
-            <tr>
-                <td>상품 2</td>
-                <td>20,000원</td>
-                <td><button class="add-to-cart button">장바구니에 추가</button></td>
-            </tr>
-            <tr>
-                <td>상품 3</td>
-                <td>30,000원</td>
-                <td><button class="add-to-cart button">장바구니에 추가</button></td>
-            </tr>
         </tbody>
     </table>
-
-    <div id="cart">
-        <h2>장바구니</h2>
-        <table id="cartTable">
-            <thead>
-                <tr>
-                    <th>상품명</th>
-                    <th>수량</th>
-                    <th>총 가격</th>
-                    <th>삭제</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <button id="clearCart" class="button">장바구니 비우기</button>
-    </div>
-    <!--
+    <button id="clearCart" class="button">장바구니 비우기</button>
+</div>
+<!--
 jQuery의 off() 메소드를 활용하여 장바구니의 상품을 추가하고, 
 해당 상품의 수량을 조절하며, 
 필요 시 이벤트를 제거하는 예제를 만들어보자. 
-장바구니에서 상품 수량을 증가 
-또는 감소시키는 버튼을 클릭할 때 
-해당 이벤트를 동적으로 추가하고 제거하는 방식을 보여줍니다.
+장바구니에서 상품 수량을 증가 또는 감소시키는 버튼을 클릭할 때 해당 이벤트를 동적으로 추가하고 제거하는 방식을 보여줍니다.
 -->
-    <script>
-        $(document).ready(function () {
-            let cart = {};
+<script>
+    $(document).ready(function() {
+        //장바구니를 나타내는 빈 객체를 생성합니다. 
+        //여기서 상품명을 키로 하고 가격과 수량을 값으로 저장합니다.
+        let cart = {};
 
-            // 장바구니에 상품 추가
-            $('.add-to-cart').on('click', function () {
-                let row = $(this).closest('tr');
-                let productName = row.find('td:first').text();
-                let productPrice = parseInt(row.find('td:nth-child(2)').text().replace(',', '').replace('원', ''));
+        // 장바구니에 상품 추가 
+        //"장바구니에 추가" <button class="add-to-cart button">장바구니에 추가</button> 버튼이 클릭될 때 실행되는 이벤트 핸들러를 설정합니다.
+        $('.add-to-cart').on('click', function() {
 
-                // 장바구니에 상품 추가 또는 수량 증가
-                if (cart[productName]) {
-                    cart[productName].quantity++;
-                } else {
-                    cart[productName] = {
-                        price: productPrice,
-                        quantity: 1
-                    };
-                }
-                updateCart();
-            });
+            //$(this).closest('tr'); 클릭된 장바구니에 추가 버튼의 부모 <tr> 요소를 찾습니다.
+            /*
+                <tr>
+                    <td>상품 1</td>
+                    <td>10,000원</td>
+                    <td><button class="add-to-cart button">장바구니에 추가</button></td>
+                </tr>
+            */
+            let row = $(this).closest('tr');
 
-            // 장바구니 업데이트
-            function updateCart() {
-                let cartTableBody = $('#cartTable tbody');
-                cartTableBody.empty(); // 기존 내용 삭제
+            // 해당 행의 첫 번째 <td>상품 1</td>셀에서 상품명  '상품 1'을 가져옵니다.
+            let productName = row.find('td:first').text();
+            // 클릭한 장바구니추가 버튼 행의 상품명 -> '상품 1' 얻기 
 
-                let totalPrice = 0;
+            //가격을 가져와서 문자열에서 숫자로 변환합니다. 
+            //여기서 replace() 메소드를 사용하여 문자열에서 쉼표와 "원"을 제거합니다.
+            /*
+                <tr>
+                    <td>상품 1</td>
+                    <td>10,000원</td>
+                    <td><button class="add-to-cart button">장바구니에 추가</button></td>
+                </tr> 
+                에서.. 두번째 <td>10,000원</td>를 얻어 .text()메소드로  "10,000원"를 얻고
+                "10,000원".replace(',', '')를 호출하여  , 문자를 '' 으로 치환한 전체 문자열 '10000원'을 얻고
+                '10000원'.replace('원','')를 호출하여 '원'을 ''으로 치환한 '10000'을얻는다.
+                마지막으로 parseInt('10000')을 호출하여 '10000'을 10000 숫자로 변환해서 얻는다. 
+            */
+            let productPrice = parseInt(row.find('td:nth-child(2)').text().replace(',', '').replace('원', ''));
+            console.log(productPrice);//10000
+            console.log(typeof productPrice); //number
+            // 클릭한 장바구니추가 버튼 행의 상가격 -> 10000 얻기 
 
-                $.each(cart, function (name, item) {
-                    let totalItemPrice = item.price * item.quantity;
-                    totalPrice += totalItemPrice;
+        // 장바구니에 상품 추가 또는 수량 증가
+            //장바구니에 해당 상품이 이미 있으면?
+            if (cart[productName]) {
 
-                    cartTableBody.append(`
+                //이미 존재하면 수량을 증가시킵니다.
+                //{price: 10000, quantity: 1}.quantity++;
+                cart[productName].quantity++;
+
+                console.log(cart[productName]); //{price: 10000, quantity: 2}
+
+            //장바구니 추가 버튼을 클릭할떄마다     
+            //장바구니에 해당 상품이  없으면 새로운 항목을 추가합니다.    
+            } else {
+                //가격과 수량을 포함하는 객체를 생성합니다.
+                cart[productName] = {
+                    price: productPrice,
+                    quantity: 1
+                };
+                console.log(cart);
+               // {
+               //   상품 1 : {price: 10000, quantity: 1},
+               //   상품 2 : {price: 20000, quantity: 1}
+               // }
+            }
+
+            //장바구니를 업데이트하는 함수를 호출합니다.
+            updateCart();
+        });
+
+        // 장바구니 업데이트
+        function updateCart() {
+
+            //장바구니 테이블의  <tbody></tbody>을 선택합니다.
+            let cartTableBody = $('#cartTable tbody');
+
+            // <tbody>..</tbody> 사이의 자식요소들 제거 
+            cartTableBody.empty(); //기존의 모든 내용을 삭제합니다.
+
+            //장바구니 테이블에 담긴 상품들의 총 가격을 저장할 변수를 초기화합니다.
+            let totalPrice = 0;
+
+            /*
+            cart(장바구니)객체
+                  {
+                    상품 1 : {price: 10000, quantity: 1},
+                    상품 2 : {price: 20000, quantity: 1}
+                  }
+
+            */
+            //cart 객체를 순회하며 각 상품의 이름(name)과 정보(item)에 접근합니다.
+            $.each(cart, function(name, item) {
+                //상품 1, {price: 10000, quantity: 1}  <- function이 한번 호출 될때
+                //상품 2, {price: 20000, quantity: 1}  <- function이 두번 호출 될때
+                console.log(name , item);
+                                    //{price: 10000, quantity: 1}.price 는 10000 <- 가격
+                                    //{price: 10000, quantity: 1}.quantity 는 1  <- 수량
+                                    //가격 * 수량
+                let totalItemPrice = item.price * item.quantity;
+
+                //장바구니 테이블에 담긴 상품들의 가격을 하나씩 누적해서 총금액을 계산
+                totalPrice += totalItemPrice;
+
+                //장바구니 추가를 누른 수만 큼 
+                //<tbody>..</tbody> 사이에  
+                //아래의  장바구니 테이블에 새로운 행을 추가합니다. 
+                //이 행에는 상품명, 수량, 총 가격, 삭제 버튼이 포함됩니다.
+                cartTableBody.append(`
                     <tr>
                         <td>${name}</td>
                         <td>
@@ -138,50 +204,138 @@ jQuery의 off() 메소드를 활용하여 장바구니의 상품을 추가하고
                         <td><button class="remove-item button">삭제</button></td>
                     </tr>
                 `);
-                });
+                /*
+                  <tbody>
+                     <tr>
+                        <td>상품 1</td>
+                        <td>
+                            <button class="decrease-quantity button">-</button>
+                            <span>1</span>
+                            <button class="increase-quantity button">+</button>
+                        </td>
+                        <td>10,000원</td>
+                        <td><button class="remove-item button">삭제</button></td>
+                    </tr>
+                     <tr>
+                        <td>상품 2</td>
+                        <td>
+                            <button class="decrease-quantity button">-</button>
+                            <span>1</span>
+                            <button class="increase-quantity button">+</button>
+                        </td>
+                        <td>20,000원</td>
+                        <td><button class="remove-item button">삭제</button></td>
+                    </tr>
+                  </tbody> 
+                */
+                //상품 1	- 1 +	10,000원	삭제
+                //상품 2	- 1 +	20,000원	삭제
+            });
 
-                // 총 가격 표시
-                cartTableBody.append(`
+            // 총 가격 표시
+            //총 가격	10,000원
+            cartTableBody.append(`
                 <tr>
                     <td colspan="2"><strong>총 가격</strong></td>
                     <td colspan="2"><strong>${totalPrice.toLocaleString()}원</strong></td>
                 </tr>
             `);
 
-                // 수량 증가 버튼 이벤트 추가
-                $('.increase-quantity').off('click').on('click', function () {
-                    let productName = $(this).closest('tr').find('td:first').text();
-                    cart[productName].quantity++;
-                    updateCart();
-                });
+        // 수량 증가 버튼 <button class="increase-quantity button">+</button> click이벤트 추가
+            //수량 증가 버튼에 click이벤트를 등록하기 전  off('click') 한 이유는 
+            //이전에 설정된 click 이벤트 핸들러function을 제거합니다. 
+            //이는 click이벤트가 중복 등록되는 것을 방지하기 위한 조치입니다.
+            $('.increase-quantity').off('click').on('click', function() {
 
-                // 수량 감소 버튼 이벤트 추가
-                $('.decrease-quantity').off('click').on('click', function () {
-                    let productName = $(this).closest('tr').find('td:first').text();
-                    if (cart[productName].quantity > 1) {
-                        cart[productName].quantity--;
-                    } else {
-                        delete cart[productName]; // 수량이 0이 되면 삭제
-                    }
-                    updateCart();
-                });
+                //클릭한 해당 버튼이 속한 상품의 이름을 찾고, 
+                /*
+                    $(this): 현재 클릭된 버튼을 참조합니다.
+                    .closest('tr'): 클릭된 버튼이 속한 가장 가까운 <tr>(행) 요소를 찾습니다. 이는 해당 상품의 정보를 포함하는 행입니다.
+                    .find('td:first'): 해당 행에서 첫 번째 <td>(셀) 요소를 찾습니다. 이 셀은 상품명을 포함하고 있습니다.
+                    .text(): 셀의 텍스트 내용을 가져옵니다. 즉, 상품명을 가져오는 것입니다.
+                */
+                let productName = $(this).closest('tr').find('td:first').text();
+                console.log("해당 상품명 : " , productName);
 
-                // 삭제 버튼 이벤트 추가
-                $('.remove-item').off('click').on('click', function () {
-                    let productName = $(this).closest('tr').find('td:first').text();
-                    delete cart[productName];
-                    updateCart();
-                });
-            }
+                console.log("전 : " , cart[productName]);        
+                cart[productName].quantity++; //그 상품의 수량을 1 증가시킨 후
+                console.log("++후 : " , cart[productName]);
 
-            // 장바구니 비우기
-            $('#clearCart').on('click', function () {
-                cart = {};
+                //장바구니를 업데이트하여 화면에 반영하는 기능을 수행합니다. 
                 updateCart();
             });
+            /*
+                .off('click')를 사용하는 이유
+                    
+                1. 이벤트 중복 방지:
+                        .on('click', ...)을 여러 번 호출하면, 
+                        동일한 버튼에 대해 클릭 이벤트가 여러 번 등록될 수 있습니다. 
+                        이 경우 버튼을 클릭할 때마다 여러 번의 함수가 실행될 수 있습니다.
+                        예를 들어, 사용자가 수량 증가 버튼을 여러 번 클릭하면, 
+                        수량이 예상보다 더 많이 증가할 수 있습니다.
+                2.동적 요소 처리:
+                        웹 페이지에서 동적으로 생성되는 요소에 이벤트를 등록할 때, 
+                        이전 이벤트 핸들러를 제거하지 않으면 문제가 발생할 수 있습니다. 
+                        동적으로 생성된 버튼에 대해 여러 번 이벤트가 등록될 수 있습니다.
+            */
+
+
+
+
+
+            // 수량 감소 버튼 이벤트 추가
+            $('.decrease-quantity').off('click').on('click', function() {
+                /*
+                    $(this): 현재 클릭된 버튼을 참조합니다.
+                    .closest('tr'): 클릭된 버튼이 속한 가장 가까운 <tr>(행) 요소를 찾습니다. 이는 해당 상품의 정보를 포함하는 행입니다.
+                    .find('td:first'): 해당 행에서 첫 번째 <td>(셀) 요소를 찾습니다. 이 셀은 상품명을 포함하고 있습니다.
+                    .text(): 셀의 텍스트 내용을 가져옵니다. 즉, 상품명을 가져오는 것입니다.
+                    목적: 수량을 감소시킬 상품의 이름을 가져오기 위함입니다.
+                */
+                let productName = $(this).closest('tr').find('td:first').text();
+                /*
+                    설명: 현재 상품의 수량이 1보다 큰지 확인합니다.
+                    목적: 수량이 1보다 크면 수량을 감소시키고, 그렇지 않으면 해당 상품을 장바구니에서 삭제합니다.
+                */
+                if (cart[productName].quantity > 1) {
+                    /*
+                        설명:
+                            cart: 장바구니 객체입니다. 여기에는 상품명(키)에 해당하는 객체가 포함되어 있습니다.
+                            cart[productName]: 방금 가져온 상품명을 키로 사용하여 해당 상품의 객체에 접근합니다.
+                            .quantity--: 해당 상품의 수량을 1 감소시킵니다.
+                            목적: 선택한 상품의 수량을 감소시켜 장바구니에 반영하기 위함입니다.
+                    */
+                    cart[productName].quantity--;
+
+                /*
+                    설명: 만약 현재 상품의 수량이 1 이하라면, 해당 상품을 장바구니에서 삭제합니다.
+                    목적: 수량이 0이 되면 장바구니에서 해당 상품을 제거하여 불필요한 데이터를 삭제합니다.
+                */
+                } else {
+                    delete cart[productName]; // 수량이 0이 되면 삭제
+                }
+                /*
+                    설명: 장바구니의 내용을 업데이트하는 함수를 호출합니다. 이 함수는 장바구니의 현재 상태를 화면에 반영합니다.
+                    목적: 수량이 변경된 후 장바구니의 내용을 새로고침하여 사용자에게 최신 정보를 보여주기 위함입니다.
+                */
+                updateCart();
+            });
+
+            // 삭제 버튼 이벤트 추가
+            $('.remove-item').off('click').on('click', function() {
+                let productName = $(this).closest('tr').find('td:first').text();
+                delete cart[productName];
+                updateCart();
+            });
+        }
+
+        // 장바구니 비우기
+        $('#clearCart').on('click', function() {
+            cart = {};
+            updateCart();
         });
-    </script>
+    });
+</script>
 
 </body>
-
 </html>
