@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+	<style>
+		/*상단 메뉴 스타일*/
+		.menu {
+			/* 메뉴 아이템을 가로 방향으로 배열*/
+			display: flex;
+			/*상단 div메뉴영역의 배경색 검정으로 설정*/
+			background-color: #333;
+		}
+
+		/* 상단 Menu 1 <a> ~ Menu 6 <a>를 모두 선택해서 */
+		.menu-item {
+			/*메뉴 아이템 글자 색상을 흰색으로 설정*/
+			color: white;
+			/* a태그의 링크(밑줄) 없애기 */
+			text-decoration: none;
+			/*메뉴 아이템의 좌우 패팅 설정*/
+			padding: 0 16px;
+			/* 메뉴 아이팀의 세로 높이 설정*/
+			line-height: 40px;
+		}
+
+		/*하위 메뉴 스타일*/
+		.submenu {
+			/*초기 상태는 하위 div영역 숨김*/
+			display: none;
+			/*하위 메뉴  div영역 배경색 흰색 설정*/
+			background-color: white;
+			/* 하위 메뉴 div영역의 위치를 절대 위치로 설정할수 있다.*/
+			position: absolute;
+			/* 하위 메뉴 div영역의 최소 너비 설정*/
+			min-width: 200px;
+			/*하위 메뉴 div영역의 너비를 초과한 내용은 스크롤되게 설정*/
+			overflow: auto;
+		}
+
+		.submenu>a {
+			/*하위 메뉴의 a태그 항목을 블록 요소로 설정*/
+			display: block;
+			/*하위 메뉴 a태그의 안쪽 여백 설정  */
+			padding: 12px 16px;
+			/*하위 메뉴 a태그의 텍스트노드 색성을 검정으로 설정*/
+			color: black;
+			/*하위 메뉴 a태그의 링크(밑줄) 없앰*/
+			text-decoration: none;
+		}
+
+		/*하위 메뉴 a들중에서도 마우스포인터가 올라간 a만 선택해서 가져와서 스타일 정의*/
+		.submenu>a:hover {
+			/*마우스 포인터가 올라가 있는 a에만 배경색주기*/
+			background-color: #ddd;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+	<div class="menu">
+
+		<a href="#" class="menu-item">Menu 1</a>
+
+		<div class="menu-with-submenu">
+			<a href="#" class="menu-item">Menu 2</a>
+			<div class="submenu">
+				<a href="#">Submenu 1</a>
+				<a href="#">Submenu 2</a>
+				<a href="#">Submenu 3</a>
+			</div>
+		</div>
+
+		<a href="#" class="menu-item">Menu 3</a>
+		<a href="#" class="menu-item">Menu 4</a>
+		<a href="#" class="menu-item">Menu 5</a>
+		<a href="#" class="menu-item">Menu 6</a>
+	</div>
+
+	<script type="text/javascript">
+		let animationDuration = 250;
+
+		$(".menu-with-submenu").on({
+			"mouseenter": function () {
+				$(this).find(".submenu").stop(true, true).slideDown(animationDuration);
+			},
+			"mouseleave": function () {
+				$(this).find(".submenu").stop(true, true).slideUp(animationDuration);
+			}
+		});
+	</script>
+</body>
+
+</html>
