@@ -89,6 +89,19 @@ $(function () {
     }
 
     $("#pop_wrap").css("cursor", "move").draggable();       // JQuery UI 의 draggable() 메소드를 통해 선택한 요소 이동
+
+    $("#pop_wrap area:eq(0)").on("click", function() {
+        $("#pop_wrap").fadeOut("slow");
+
+        return false;       // href 이벤트 제거
+    });
+
+    $("#pop_wrap area:eq(1)").on("click", function() {
+        $.cookie("pop", "no", 1);
+        $("#pop_wrap").fadeOut("slow");
+
+        return false;
+    });
     //#endregion
 
 
