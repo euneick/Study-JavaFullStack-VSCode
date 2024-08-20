@@ -101,35 +101,34 @@ $(function () {
     $("#gnb>li").on("mouseleave", function () {
         $("#gnb ul:visible").stop().slideUp("fast");
 
-        // a 태그를 mouseleave 했지만 sub menu 위에 아직 mouseover 한 상태도 같이 처리
-        if(beforeEl) {
+        if (beforeEl) {
             let newSrc = beforeEl.children("img").attr("src").replace("over.gif", "out.gif");
             beforeEl.children("img").attr("src", newSrc);
         }
     });
     // #endregion
 
+    // #region Slide All Menu
+    let checkTotalBtnClick = false;
 
+    $("#total_btn>a").on("click", function () {
+        checkTotalBtnClick = !checkTotalBtnClick;
 
+        $("#total_menu").stop().slideToggle("normal");
+        $("img", this).attr("src", `images/allmenu_btn_${checkTotalBtnClick ? "over.gif" : "out.gif"}`);
 
-    //-----------------------------------------------------------------------------------------------------
-    /*
-     주제: 슬라이드 전체 메뉴 만들기
-     - 전체 메뉴를 클릭 했을 때 전체메뉴가 slide효과로 펼쳐지고
-       전체 메뉴 버튼 이미지도 바뀌도록 만들어 보자
-     - [전체메뉴]버튼을 클릭 했을때 전체 메뉴가 아래로 펼쳐지며
-       [CLOSE]버튼을 클릭했을때는 다시 전체메뉴가 위로 접히면서 사라지게 해보자.  
-     */
+        return false;
+    });
 
+    $("#total_close>a").on("click", function () {
+        checkTotalBtnClick = false;
 
+        $("#total_menu").stop().slideUp("normal");
+        $("#total_btn>a>img").attr("src", "images/allmenu_btn_out.gif");
 
-
-
-
-
-
-
-    //-----------------------------------------------------------------------------------------------------
+        return false;
+    });
+    // #endregion
 
     // #region Current Date
     let today = new Date();
