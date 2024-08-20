@@ -158,32 +158,15 @@ $(function () {
     }, oneSecond);
     // #endregion
 
+    // #region Related Sites Link
+    $("form[name='rel_f']").submit(function () {
+        let url = $("select", this).val();
 
+        window.open(url);
 
-
-
-
-
-
-
-
-
-
-
-
-
-    //-----------------------------------------------------------------------------------------------------
-
-    /*
-       주제 : 관련 사이트 이동 선택 상자 만들기
-       -푸터 영역에는 관련 사이트 이동 선택 상자가 있습니다.
-            사이트에 방문객체 관련 사이트를 선택한 후 [이동]버튼을 클릭하였을 때 새창으로 선택한 사이트가 열리도록 할것입니다.
-            여기서는 [이동] 버튼을 클릭했을때 <form>태그에서 전송이 일어나므로 submit 이벤트를 적용 하겠습니다.
-            이벤트가 발생 했을 때 이벤트 핸들러에 window.open(사이트 경로)메서드를 이용해 새창 으로 지정한 사이트가 열리도록 만들것입니다.  
-      */
-
-
-
+        return false;
+    });
+    // #endregion
 
     // #region Side Quick Menu
     const $quickMenu = $("#quick_menu");
