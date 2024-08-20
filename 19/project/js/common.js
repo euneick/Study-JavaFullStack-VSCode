@@ -175,22 +175,14 @@ $(function () {
 
 
 
-    //-----------------------------------------------------------------------------------------------------
+    // #region Side Quick Menu
+    const $quickMenu = $("#quick_menu");
+    let originTopPos = parseInt($quickMenu.css("top"));
 
-    /*옆쪽 퀵 메뉴*/
-    /*
-          클라이언트가 index.html사이트를 웹브라우저로 처음 요청했을떄
-          퀵 메뉴 영역인 <div id="quick_menu"></div>요소영역의 CSS설정 top속성의 위치 이동값 100을 구하기 위해
-          퀵 메뉴 영역을  선택해서 가져와  css("top")메소드를 호출하면
-          미리 설정되어 있는 top 속성값 "100px" 문자열을 얻는다.
-          "100px" top속성의 값을 나중에 스크롤막대바가 세로로 이동한 거릿값과 + 계산하기 위해 
-          100정수만 추출해서 얻어낸다.
-      
-      요약 : div에 css문법으로 설정된 기본전체 문서 상단에서 퀵 메뉴영역(div)이 위치한 top속성값 !
-            퀵 메뉴가 아래로 위치한 top속성값 얻기 
-    */
-
-
-
-
+    $(window).on("scroll", function () {
+        $quickMenu.stop().animate({
+            top: `${originTopPos + $(this).scrollTop()}px`
+        });
+    });
+    // #endregion 
 });
