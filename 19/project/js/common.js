@@ -79,24 +79,35 @@ $(function () {
     });
     // #endregion
 
+    // #region Global Navigation Bar
+    let beforeEl;
 
+    $("#gnb>li>a").on("mouseover focus", function () {
+        // 현재 태그의 자식요소 중 img 선택
+        let $img = $("img", this);
+        $img.attr("src", $img.attr("src").replace("out.gif", "over.gif"));
 
+        $(this).next().stop().slideDown("normal");
 
+        beforeEl = $(this);
+    });
 
-    //-----------------------------------------------------------------------------------------------------
+    // #gnb>li>a 로 선택하여 mouseleave 이벤트를 등록할 경우
+    // a 태그를 벗어나자마자 sub menu와는 상관없이 sub menu가 slideUp 함.
 
-    /*
-     주제 : GNB(글로벌 네비게이션 바) 메뉴 만들기
-     사이트의 모든 페이지에 노출되는 메뉴를 가리키며,
-     보통 사이트 상단에 위치합니다.
-     GNB상위 메뉴에 마우스가 올라갔을때, 해당 상위 메뉴 이미지는 활성화(컬러)된 이미지로 바뀌게 됨.
-     이어서 마우스를 다른 상위메뉴로 이동하면,
-     앞서 활성화된 상위 메뉴 이미지는 다시 비활성화(무채도)된 이미지로 바뀌고,
-     현재 마우스가 올라간 상위 메뉴의 이미지는 활성화된 이미지로 바뀌도록 만들자 
-     */
-    /*GNB 메뉴*/
+    // a 태그를 벗어나 sub menu에 mouseover 했을 때
+    // a 태그의 정보를 잃어버리지 않게 변수 beforeEl를 미리 저장
+    // sub menu도 계속 slideDown 상태를 유지하기 위해 #gnb>li 선택
+    $("#gnb>li").on("mouseleave", function () {
+        $("#gnb ul:visible").stop().slideUp("fast");
 
-
+        // a 태그를 mouseleave 했지만 sub menu 위에 아직 mouseover 한 상태도 같이 처리
+        if(beforeEl) {
+            let newSrc = beforeEl.children("img").attr("src").replace("over.gif", "out.gif");
+            beforeEl.children("img").attr("src", newSrc);
+        }
+    });
+    // #endregion
 
 
 
