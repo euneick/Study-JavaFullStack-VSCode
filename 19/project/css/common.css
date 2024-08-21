@@ -34,7 +34,7 @@
 body {
 	font: 12px gulim, "����", sans-serif;
 	color: #333;
-	background-color: #000;
+	background-color: #f3f3f3;
 	min-width: 1003px;
 }
 
@@ -65,7 +65,7 @@ a:hover, a:focus {
 #header h1 {
 	position: absolute;
 	left: 36px;
-	/* top: 53px; */
+	top: 53px;
 }
 
 /*�α��� ����*/
