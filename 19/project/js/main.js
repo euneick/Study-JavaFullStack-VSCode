@@ -15,15 +15,27 @@
   나머지 주제 소스들이 들어가는 content영역으로 나뉘었음.  
 */
 
-
-//-----------------------------------------------------------
-/*
- 주제 : 비주얼 배너 터치 슬라이드 만들기
- 비주얼 배너 영역은 배너 중 한개만 노출되어 이루어져 있으며,
- [이전/다음]버튼을 누르면 배너가 이동되어 바뀌게 됨.
- 스마트폰에서는 손가락으로 터치 했을때 도 배너가 바뀔수 있도록 제작 하자
- */
 $(function () {
+    //#region Visual Banner Touch Slide
+    // swipe.js 플러그인 이용           - 개발자 지원 중단, 대체 사이트 https://swiperjs.com/
+    window.mySwipe = $("#mySwipe").Swipe({
+        auto: 3000,                                 // 슬라이드의 자동 전환 시간 간격 (단위 : ms), 값을 설정하지 않으면 자동 전환 비활성화
+        continuous: true,                           // 마지막 슬라이드 이후 재시작 여부 (true, false)
+        callback: function (index, element) {       // 하나의 슬라이드가 전환된 직후 호출되는 콜백함수
+            /*
+            매개변수
+                * index     - 현재 슬라이드의 index
+                * element   - 현재 슬라이드의 요소
+             */
+            $(".touch_bullet .active").attr("src", "images/visual_bullet_off.png").removeClass("active");
+            $(".touch_bullet img").eq(index).attr("src", "images/visual_bullet_on.png").addClass("active");
+        }
+    }).data("Swipe");
+
+    $(".touch_left_btn a").on("click", function () { mySwipe.prev(); return false; });
+    $(".touch_right_btn a").on("click", function () { mySwipe.next(); return false; });
+    //#endregion
+
     //#region Best Book Slider
     // https://bxslider.com 에서 제공하는 자동 슬라이드 배너 플러그인 이용
     let mySlider = $("#best_bg ul").bxSlider({
@@ -56,6 +68,7 @@ $(function () {
     });
     //#endregion
 
+    //#region Popup Window
     /*  
         주제 : 제이쿼리 UI플러그인과 쿠키 플러그인 사용 하기
         - 팝업창을 드래그 하여 이동시키 위해 제이쿼리 UI플러그인을 사용함.
@@ -83,20 +96,19 @@ $(function () {
             "pop"에 저장된 쿠키값 삭제의 예)
                 $.cookie("pop",null);
     */
-    //#region Popup Window
     if ($.cookie("pop") !== "no") {
         $("#pop_wrap").show();
     }
 
     $("#pop_wrap").css("cursor", "move").draggable();       // JQuery UI 의 draggable() 메소드를 통해 선택한 요소 이동
 
-    $("#pop_wrap area:eq(0)").on("click", function() {
+    $("#pop_wrap area:eq(0)").on("click", function () {
         $("#pop_wrap").fadeOut("slow");
 
         return false;       // href 이벤트 제거
     });
 
-    $("#pop_wrap area:eq(1)").on("click", function() {
+    $("#pop_wrap area:eq(1)").on("click", function () {
         $.cookie("pop", "no", 1);
         $("#pop_wrap").fadeOut("slow");
 
