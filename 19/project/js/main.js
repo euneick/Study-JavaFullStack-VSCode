@@ -145,10 +145,10 @@ $(function () {
 
     let buttonNumber = 0;
     function autoPlay() {
-        if(++buttonNumber >= $rollBannerButtons.length) buttonNumber = 0;
+        if (++buttonNumber >= $rollBannerButtons.length) buttonNumber = 0;
 
         $rollBannerButtons.eq(buttonNumber).trigger("click");       // 미리 등록한 click 이벤트 강제 실행
-        
+
         _autoPlay = window.setTimeout(autoPlay, 4000);
     }
 
@@ -165,7 +165,7 @@ $(function () {
 
     $(".stopBtn").on("click", function () {
         clearTimeout(_autoPlay);
-        
+
         $("img", this).attr("src", "images/pop_btn_stop_on.gif");
         $(".playBtn img").attr("src", "images/pop_btn_play_off.gif");
 
@@ -173,20 +173,24 @@ $(function () {
     });
     //#endregion
 
-    //-----------------------------------------------------------
-    /*
-     주제 : 탭 메뉴를 이용해 최근 게시물 리스트 만들기
-    
-    - 탭메뉴의 경우 최초 탭버튼인[공지사항]이 활성화되어 보입니다.
-          만일 방문자가 [질문과답변]탭을 클릭했을 때는 [공지사항]은 숨겨져야 하고,
-      [질문과 답변]의 내용은 활성화되어 보여야 합니다.
-      
-    - 먼저 탭버튼에 <a>에 on()메서드를 사용하여 mouseover,focus,click이벤트를 등록하였고,
-          이벤트 핸들러에는 이벤트가 발생 했을때 마우스를 올린 탭 버튼과 탭에 해당하는 게시물 목록이 활성화되어 보이도록 만들자. 
-     */
-
     //#region Recently Post List
-    
+    let onTab = $("#tabmenu dt a:first");
+
+    $("#tabmenu dt a").on("mouseover focus click", function () {
+        $("#tabmenu dd:visible").hide();
+
+        let path = $("img", onTab).attr("src").replace("over.gif", "out.gif");
+        $("img", onTab).attr("src", path);
+
+        path = $("img", this).attr("src").replace("out.gif", "over.gif");
+        $("img", this).attr("src", path);
+
+        $(this).parent().next().show();
+
+        onTab = $(this);
+
+        return false;
+    });
     //#endregion
 });
 
