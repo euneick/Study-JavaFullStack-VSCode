@@ -17,7 +17,7 @@
 
 $(function () {
     //#region Visual Banner Touch Slide
-    // swipe.js 플러그인 이용           - 개발자 지원 중단, 대체 사이트 https://swiperjs.com/
+    // https://github.com/bradbirdsall/Swipe 플러그인 이용           - 개발자 지원 중단, 대체 사이트 https://swiperjs.com/
     window.mySwipe = $("#mySwipe").Swipe({
         auto: 3000,                                 // 슬라이드의 자동 전환 시간 간격 (단위 : ms), 값을 설정하지 않으면 자동 전환 비활성화
         continuous: true,                           // 마지막 슬라이드 이후 재시작 여부 (true, false)
@@ -116,21 +116,58 @@ $(function () {
     });
     //#endregion
 
+    //#region Notice Roll Banner
+    // dd - 이미지  //  dt - 버튼
+    $("#roll_banner_wrap dd").not(":first").hide();
 
+    const $rollBannerButtons = $("#roll_banner_wrap dt a");
+    $rollBannerButtons.on("click", function () {
+        // button
+        let activedBtn = $("#roll_banner_wrap .active");
+        let path = activedBtn.children("img").attr("src");
+        path = path.replace("over.gif", "out.gif");
+        activedBtn.children("img").attr("src", path);
+        activedBtn.removeClass("active");
 
-    //-----------------------------------------------------------
+        path = $(this).children("img").attr("src");
+        path = path.replace("out.gif", "over.gif");
+        $(this).children("img").attr("src", path);
+        $(this).addClass("active");
 
-    /*
-     주제 : 자동 롤링 배너와 제어 버튼을 활용한 알림판 만들기
-    
-     알림판은 일정 시간 간격으로 자동으로 배너 이미지가 바뀌면서 해당하는 배너에 버튼이 활성화 됨.
-     이때 버튼을 마우스로 클릭하면 버트넹 해당하는 배너로 이동 됨.
-     그리고 정지 ■ 버튼을 누르면 자동으로 넘어가던 배너가 정지되거, 재상 ▶ 버튼을 누르면 다시 배너가 넘어가게 됨 
-     */
+        // image
+        $("#roll_banner_wrap dd:visible").hide();
+        $(this).parent().next().show();
 
+        return false;
+    });
 
+    let _autoPlay = window.setTimeout(autoPlay, 3000);
 
+    let buttonNumber = 0;
+    function autoPlay() {
+        if(++buttonNumber >= $rollBannerButtons.length) buttonNumber = 0;
 
+        $rollBannerButtons.eq(buttonNumber).trigger("click");       // 미리 등록한 click 이벤트 강제 실행
+        
+        _autoPlay = window.setTimeout(autoPlay, 4000);
+    }
+
+    $(".playBtn").on("click", function () {
+        // 여러번 클릭 시 stack memory 영역에 setTimeOut 메소드 들이 쌓여 문제가 발생 할 가능성이 있기에 clearTimeout() 메소드 호출
+        clearTimeout(_autoPlay);
+        _autoPlay = setTimeout(autoPlay, 1000);
+
+        $("img", this).attr("src", "images/pop_btn_play_on.gif");
+        $(".stopBtn img").attr("src", "images/pop_btn_stop_off.gif");
+    });
+
+    $(".stopBtn").on("click", function () {
+        clearTimeout(_autoPlay);
+        
+        $("img", this).attr("src", "images/pop_btn_stop_on.gif");
+        $(".playBtn img").attr("src", "images/pop_btn_play_off.gif");
+    });
+    //#endregion
 
     //-----------------------------------------------------------
     /*
@@ -144,16 +181,8 @@ $(function () {
           이벤트 핸들러에는 이벤트가 발생 했을때 마우스를 올린 탭 버튼과 탭에 해당하는 게시물 목록이 활성화되어 보이도록 만들자. 
      */
 
-
-
-
-
-
-
-
-
+    //#region Recently Post List
+    
+    //#endregion
 });
-
-
-//https://github.com/bradbirdsall/Swipe
 
