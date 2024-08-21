@@ -159,6 +159,8 @@ $(function () {
 
         $("img", this).attr("src", "images/pop_btn_play_on.gif");
         $(".stopBtn img").attr("src", "images/pop_btn_stop_off.gif");
+
+        return false;
     });
 
     $(".stopBtn").on("click", function () {
@@ -166,6 +168,8 @@ $(function () {
         
         $("img", this).attr("src", "images/pop_btn_stop_on.gif");
         $(".playBtn img").attr("src", "images/pop_btn_play_off.gif");
+
+        return false;
     });
     //#endregion
 
