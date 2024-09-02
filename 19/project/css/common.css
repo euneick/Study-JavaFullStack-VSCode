@@ -1,10 +1,5 @@
-/*�⺻ ���̾ƿ�*/
 
-/* ��� ������ �ΰ��̹���, �α��� ��, ��ƿ �޴���, GNB, ��ü�޴�, ���ó�¥ǥ�� ������� ���� ��. */
-
-/* id�� wrap�� <div>�±� ȭ�� ��ü�� �����Ͽ� CSS */
 #wrap {
-/* 	ȭ�� ��ü �ʺ� ���� */
 	width: 1003px;
 	margin: 0 auto;
 	background-color: #fff;
@@ -30,7 +25,6 @@
 	padding: 15px 0 0 350px;
 }
 
-/*�⺻ �۲� �� ��ũ �ؽ�Ʈ �ٹ̱�*/
 body {
 	font: 12px gulim, "����", sans-serif;
 	color: #333;
@@ -61,14 +55,12 @@ a:hover, a:focus {
 	text-indent: -9999px;
 }
 
-/*��� ����*/
 #header h1 {
 	position: absolute;
 	left: 36px;
 	top: 53px;
 }
 
-/*�α��� ����*/
 .login_wrap {
 	position: relative;
 }
@@ -136,7 +128,6 @@ a:hover, a:focus {
 	margin-left: 20px;
 }
 
-/*��ƿ�޴� ����*/
 #util_menu dd {
 	float: left;
 	padding: 0 5px;
@@ -172,7 +163,6 @@ a:hover, a:focus {
 	padding-left: 5px;
 }
 
-/*GNB ����*/
 #gnb {
 	position: absolute;
 	top: 175px;
@@ -219,7 +209,6 @@ a:hover, a:focus {
 	margin-left: 438px;
 }
 
-/*��ü �޴� ����*/
 #total_btn {
 	position: absolute;
 	bottom: 18px;
@@ -257,7 +246,6 @@ a:hover, a:focus {
 	right: 16px;
 }
 
-/*���� ��¥ ����*/
 #date_wrap {
 	font-family: "nanum Gothic", Malgun Gothic, "��������", sans-serif;
 	font-weight: bold;
@@ -277,7 +265,6 @@ a:hover, a:focus {
 	padding: 15px;
 }
 
-/*���޴�*/
 #quick_menu {
 	width: 95px;
 	text-align: center;
@@ -286,7 +273,6 @@ a:hover, a:focus {
 	right: -96px;
 }
 
-/*�ٴڿ���*/
 #inner_footer h3.footer_logo {
 	position: absolute;
 	left: 35px;
